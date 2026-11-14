@@ -1,0 +1,4757 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_53312212b3a04ef64162c397852c5a42 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_53312212b3a04ef64162c397852c5a42" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_53312212b3a04ef64162c397852c5a42 = L.map(
+                "map_53312212b3a04ef64162c397852c5a42",
+                {
+                    center: [36.0, 128.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c2fc1139027fc721fc84b8732f93d82f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c2fc1139027fc721fc84b8732f93d82f.addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var marker_ebce61c1f4a637acee87461ebe644972 = L.marker(
+                [34.7075, 131.8973],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_640e7503546affb1764bb3a3f32a9289 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0bf8633cf6646b039ddb1c90484b3a72 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_cdff85a0f93e6e6aa4742df8ac2311bc = $(`<div id="html_cdff85a0f93e6e6aa4742df8ac2311bc" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> IBX84<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 8534.4 m<br>             <b>속도:</b> 206.81 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_0bf8633cf6646b039ddb1c90484b3a72.setContent(html_cdff85a0f93e6e6aa4742df8ac2311bc);
+            
+        
+
+        marker_ebce61c1f4a637acee87461ebe644972.bindPopup(popup_0bf8633cf6646b039ddb1c90484b3a72)
+        ;
+
+        
+    
+    
+            marker_ebce61c1f4a637acee87461ebe644972.bindTooltip(
+                `<div>
+                     IBX84 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ebce61c1f4a637acee87461ebe644972.setIcon(icon_640e7503546affb1764bb3a3f32a9289);
+            
+    
+            var marker_c7a6fe29a86cd44c1a4c8fb2f4671dbe = L.marker(
+                [37.4513, 126.4475],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_75bde3e8e47bf4dd872ccd61acfff7f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_da49d59bf2f27d0ffa33176c1f61e03b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3748e2ec7373592edd84b40d0c1ff74d = $(`<div id="html_3748e2ec7373592edd84b40d0c1ff74d" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> UAL806<br>             <b>국적:</b> United States<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 0.9 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_da49d59bf2f27d0ffa33176c1f61e03b.setContent(html_3748e2ec7373592edd84b40d0c1ff74d);
+            
+        
+
+        marker_c7a6fe29a86cd44c1a4c8fb2f4671dbe.bindPopup(popup_da49d59bf2f27d0ffa33176c1f61e03b)
+        ;
+
+        
+    
+    
+            marker_c7a6fe29a86cd44c1a4c8fb2f4671dbe.bindTooltip(
+                `<div>
+                     UAL806 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c7a6fe29a86cd44c1a4c8fb2f4671dbe.setIcon(icon_75bde3e8e47bf4dd872ccd61acfff7f1);
+            
+    
+            var marker_74b7f4247e54e6c31f33e3f21ec7bbe9 = L.marker(
+                [37.1748, 125.1714],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_2bc09c67faa3f33b418cb256107398ad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9bf8b9255093b1060981e2e5dd63dcc4 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_43b28d184fad15de261890466e2ea1d1 = $(`<div id="html_43b28d184fad15de261890466e2ea1d1" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CSN317<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> 4785.36 m<br>             <b>속도:</b> 189.3 m/s<br>             <b>수직 승강률:</b> -2.28 m/s         </div>         </div>`)[0];
+                popup_9bf8b9255093b1060981e2e5dd63dcc4.setContent(html_43b28d184fad15de261890466e2ea1d1);
+            
+        
+
+        marker_74b7f4247e54e6c31f33e3f21ec7bbe9.bindPopup(popup_9bf8b9255093b1060981e2e5dd63dcc4)
+        ;
+
+        
+    
+    
+            marker_74b7f4247e54e6c31f33e3f21ec7bbe9.bindTooltip(
+                `<div>
+                     CSN317 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_74b7f4247e54e6c31f33e3f21ec7bbe9.setIcon(icon_2bc09c67faa3f33b418cb256107398ad);
+            
+    
+            var marker_3426a96c4cb01554de0f9a3b2aee21ca = L.marker(
+                [37.675, 126.3707],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_fe08cb1b60f9e6a150d45c709f7ce75a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a132ca179fbcd17ef92dad35a4e9c2a1 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_9322e114fbf82b2cdf5ab984c78e7582 = $(`<div id="html_9322e114fbf82b2cdf5ab984c78e7582" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> PAC947<br>             <b>국적:</b> United States<br>             <b>기압 고도:</b> 937.26 m<br>             <b>속도:</b> 103.86 m/s<br>             <b>수직 승강률:</b> -1.63 m/s         </div>         </div>`)[0];
+                popup_a132ca179fbcd17ef92dad35a4e9c2a1.setContent(html_9322e114fbf82b2cdf5ab984c78e7582);
+            
+        
+
+        marker_3426a96c4cb01554de0f9a3b2aee21ca.bindPopup(popup_a132ca179fbcd17ef92dad35a4e9c2a1)
+        ;
+
+        
+    
+    
+            marker_3426a96c4cb01554de0f9a3b2aee21ca.bindTooltip(
+                `<div>
+                     PAC947 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3426a96c4cb01554de0f9a3b2aee21ca.setIcon(icon_fe08cb1b60f9e6a150d45c709f7ce75a);
+            
+    
+            var marker_f789c95c82475415bfdb558dc2d1bcbf = L.marker(
+                [35.451, 126.9007],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_e87fdec949c43e3bc36910eb4b38c1cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cba1c97f296246587e0e663536d87408 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_df620c94f1a67b0d158f7bed69884c92 = $(`<div id="html_df620c94f1a67b0d158f7bed69884c92" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CPA434<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> 10584.18 m<br>             <b>속도:</b> 248.99 m/s<br>             <b>수직 승강률:</b> -4.88 m/s         </div>         </div>`)[0];
+                popup_cba1c97f296246587e0e663536d87408.setContent(html_df620c94f1a67b0d158f7bed69884c92);
+            
+        
+
+        marker_f789c95c82475415bfdb558dc2d1bcbf.bindPopup(popup_cba1c97f296246587e0e663536d87408)
+        ;
+
+        
+    
+    
+            marker_f789c95c82475415bfdb558dc2d1bcbf.bindTooltip(
+                `<div>
+                     CPA434 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f789c95c82475415bfdb558dc2d1bcbf.setIcon(icon_e87fdec949c43e3bc36910eb4b38c1cf);
+            
+    
+            var marker_4a21d3cb155486cb55b35b86c536c3ef = L.marker(
+                [37.456, 126.4423],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_634188a9d21ec9f5a0b74457c710fc1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6367cf76a5ae04cd58ae3d0cffcd8b64 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_56c146c99f68ab5198d6654e3b2dcaf3 = $(`<div id="html_56c146c99f68ab5198d6654e3b2dcaf3" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CSN313<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 3.09 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_6367cf76a5ae04cd58ae3d0cffcd8b64.setContent(html_56c146c99f68ab5198d6654e3b2dcaf3);
+            
+        
+
+        marker_4a21d3cb155486cb55b35b86c536c3ef.bindPopup(popup_6367cf76a5ae04cd58ae3d0cffcd8b64)
+        ;
+
+        
+    
+    
+            marker_4a21d3cb155486cb55b35b86c536c3ef.bindTooltip(
+                `<div>
+                     CSN313 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4a21d3cb155486cb55b35b86c536c3ef.setIcon(icon_634188a9d21ec9f5a0b74457c710fc1d);
+            
+    
+            var marker_8bb84a651e874b3a64119451008e371c = L.marker(
+                [36.8782, 129.488],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_85189d063a0205c4857adc7a3c82bebe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5dcc1b13a0ee5e1c78e37e2735eb43cf = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_02a5e9e3686e0369a4d4627f6b18d25d = $(`<div id="html_02a5e9e3686e0369a4d4627f6b18d25d" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CCA927<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> 9448.8 m<br>             <b>속도:</b> 262.45 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_5dcc1b13a0ee5e1c78e37e2735eb43cf.setContent(html_02a5e9e3686e0369a4d4627f6b18d25d);
+            
+        
+
+        marker_8bb84a651e874b3a64119451008e371c.bindPopup(popup_5dcc1b13a0ee5e1c78e37e2735eb43cf)
+        ;
+
+        
+    
+    
+            marker_8bb84a651e874b3a64119451008e371c.bindTooltip(
+                `<div>
+                     CCA927 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8bb84a651e874b3a64119451008e371c.setIcon(icon_85189d063a0205c4857adc7a3c82bebe);
+            
+    
+            var marker_04dd2fb8e452771ab16eff227613b4a2 = L.marker(
+                [36.1186, 129.2295],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_95f048bc507435589319952604b77bd7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c060cc27fd6d32f31b4ac22a29439f01 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_b35a236fd20c30f598cc4da5350dc891 = $(`<div id="html_b35a236fd20c30f598cc4da5350dc891" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> Unknown<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 8450.58 m<br>             <b>속도:</b> 209.67 m/s<br>             <b>수직 승강률:</b> -4.88 m/s         </div>         </div>`)[0];
+                popup_c060cc27fd6d32f31b4ac22a29439f01.setContent(html_b35a236fd20c30f598cc4da5350dc891);
+            
+        
+
+        marker_04dd2fb8e452771ab16eff227613b4a2.bindPopup(popup_c060cc27fd6d32f31b4ac22a29439f01)
+        ;
+
+        
+    
+    
+            marker_04dd2fb8e452771ab16eff227613b4a2.bindTooltip(
+                `<div>
+                     Unknown 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_04dd2fb8e452771ab16eff227613b4a2.setIcon(icon_95f048bc507435589319952604b77bd7);
+            
+    
+            var marker_aa0d2a1b21a8c213c91e6f36650cec7a = L.marker(
+                [37.453, 126.4392],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_cb0a8a37b1414967ec44637e52976dd2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_105107de59426df9b802c076174ac832 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a040bffc122e52289640cdfa712d195e = $(`<div id="html_a040bffc122e52289640cdfa712d195e" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CSN686<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 2.06 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_105107de59426df9b802c076174ac832.setContent(html_a040bffc122e52289640cdfa712d195e);
+            
+        
+
+        marker_aa0d2a1b21a8c213c91e6f36650cec7a.bindPopup(popup_105107de59426df9b802c076174ac832)
+        ;
+
+        
+    
+    
+            marker_aa0d2a1b21a8c213c91e6f36650cec7a.bindTooltip(
+                `<div>
+                     CSN686 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aa0d2a1b21a8c213c91e6f36650cec7a.setIcon(icon_cb0a8a37b1414967ec44637e52976dd2);
+            
+    
+            var marker_586646ee0dfcd787a88773e503bc905a = L.marker(
+                [35.7121, 126.9291],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_f62f12637f85c27025bf520f07ab188b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8168695a3d265af449a40b5b0db8e50d = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_5bb8bfe7cc733d9c6eb88cd10f227c54 = $(`<div id="html_5bb8bfe7cc733d9c6eb88cd10f227c54" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CES5041<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> 8564.88 m<br>             <b>속도:</b> 225.19 m/s<br>             <b>수직 승강률:</b> -6.18 m/s         </div>         </div>`)[0];
+                popup_8168695a3d265af449a40b5b0db8e50d.setContent(html_5bb8bfe7cc733d9c6eb88cd10f227c54);
+            
+        
+
+        marker_586646ee0dfcd787a88773e503bc905a.bindPopup(popup_8168695a3d265af449a40b5b0db8e50d)
+        ;
+
+        
+    
+    
+            marker_586646ee0dfcd787a88773e503bc905a.bindTooltip(
+                `<div>
+                     CES5041 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_586646ee0dfcd787a88773e503bc905a.setIcon(icon_f62f12637f85c27025bf520f07ab188b);
+            
+    
+            var marker_6b7b44dec33337781f601fc715549dc6 = L.marker(
+                [36.3336, 126.9978],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_7ff7fab034c4a6c2b8934df82ef50601 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0cdc25a8ab60ac9e8d7430d85df55048 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_06b84bd7106b559c639d1e65a93bebf5 = $(`<div id="html_06b84bd7106b559c639d1e65a93bebf5" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> AAR8704<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 5181.6 m<br>             <b>속도:</b> 211.22 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_0cdc25a8ab60ac9e8d7430d85df55048.setContent(html_06b84bd7106b559c639d1e65a93bebf5);
+            
+        
+
+        marker_6b7b44dec33337781f601fc715549dc6.bindPopup(popup_0cdc25a8ab60ac9e8d7430d85df55048)
+        ;
+
+        
+    
+    
+            marker_6b7b44dec33337781f601fc715549dc6.bindTooltip(
+                `<div>
+                     AAR8704 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6b7b44dec33337781f601fc715549dc6.setIcon(icon_7ff7fab034c4a6c2b8934df82ef50601);
+            
+    
+            var marker_40b2da79d6f7ed29861dd4dcfb0f09bd = L.marker(
+                [35.6539, 128.5823],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_ff3e8ffa5b3466f573d9309312b684a8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd52c181c284c5db326817cc93aaf6a4 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3718a0ffcb0b022ed620214984f0f6ea = $(`<div id="html_3718a0ffcb0b022ed620214984f0f6ea" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JNA424<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3337.56 m<br>             <b>속도:</b> 153.11 m/s<br>             <b>수직 승강률:</b> -5.2 m/s         </div>         </div>`)[0];
+                popup_cd52c181c284c5db326817cc93aaf6a4.setContent(html_3718a0ffcb0b022ed620214984f0f6ea);
+            
+        
+
+        marker_40b2da79d6f7ed29861dd4dcfb0f09bd.bindPopup(popup_cd52c181c284c5db326817cc93aaf6a4)
+        ;
+
+        
+    
+    
+            marker_40b2da79d6f7ed29861dd4dcfb0f09bd.bindTooltip(
+                `<div>
+                     JNA424 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_40b2da79d6f7ed29861dd4dcfb0f09bd.setIcon(icon_ff3e8ffa5b3466f573d9309312b684a8);
+            
+    
+            var marker_f3713f719d8e4c6daa4700886c62c379 = L.marker(
+                [37.2661, 126.5292],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_6a999959c949f59870e624c8fb38f9f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_527e424a0c4469a6ad4b105aedd2ed9e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2e8038364d3be32cf67601098bf66b69 = $(`<div id="html_2e8038364d3be32cf67601098bf66b69" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL887<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 2339.34 m<br>             <b>속도:</b> 157.6 m/s<br>             <b>수직 승강률:</b> 15.93 m/s         </div>         </div>`)[0];
+                popup_527e424a0c4469a6ad4b105aedd2ed9e.setContent(html_2e8038364d3be32cf67601098bf66b69);
+            
+        
+
+        marker_f3713f719d8e4c6daa4700886c62c379.bindPopup(popup_527e424a0c4469a6ad4b105aedd2ed9e)
+        ;
+
+        
+    
+    
+            marker_f3713f719d8e4c6daa4700886c62c379.bindTooltip(
+                `<div>
+                     KAL887 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f3713f719d8e4c6daa4700886c62c379.setIcon(icon_6a999959c949f59870e624c8fb38f9f5);
+            
+    
+            var marker_169c72d20433b20d94d0ebf1ec5cd7cc = L.marker(
+                [35.8951, 128.2016],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_49a09f5c1f4f496ca7c3c8cd44c848e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa64d9ea5313e9aeadc5008ed29208b2 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_5f452769fb53f7423b49c658df625dbc = $(`<div id="html_5f452769fb53f7423b49c658df625dbc" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> TWB923<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 6400.8 m<br>             <b>속도:</b> 205.96 m/s<br>             <b>수직 승강률:</b> -2.28 m/s         </div>         </div>`)[0];
+                popup_fa64d9ea5313e9aeadc5008ed29208b2.setContent(html_5f452769fb53f7423b49c658df625dbc);
+            
+        
+
+        marker_169c72d20433b20d94d0ebf1ec5cd7cc.bindPopup(popup_fa64d9ea5313e9aeadc5008ed29208b2)
+        ;
+
+        
+    
+    
+            marker_169c72d20433b20d94d0ebf1ec5cd7cc.bindTooltip(
+                `<div>
+                     TWB923 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_169c72d20433b20d94d0ebf1ec5cd7cc.setIcon(icon_49a09f5c1f4f496ca7c3c8cd44c848e4);
+            
+    
+            var marker_b35a1c6b86169930563520d892328485 = L.marker(
+                [35.206, 126.7105],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_f85ed437038b911b146b9157bbe99168 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a75b1fe79278804cf82f2fe4d1e57db8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e6344024e5ccad5c368e366f5fdd32b6 = $(`<div id="html_e6344024e5ccad5c368e366f5fdd32b6" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> AAR8935<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 7315.2 m<br>             <b>속도:</b> 221.56 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_a75b1fe79278804cf82f2fe4d1e57db8.setContent(html_e6344024e5ccad5c368e366f5fdd32b6);
+            
+        
+
+        marker_b35a1c6b86169930563520d892328485.bindPopup(popup_a75b1fe79278804cf82f2fe4d1e57db8)
+        ;
+
+        
+    
+    
+            marker_b35a1c6b86169930563520d892328485.bindTooltip(
+                `<div>
+                     AAR8935 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b35a1c6b86169930563520d892328485.setIcon(icon_f85ed437038b911b146b9157bbe99168);
+            
+    
+            var marker_3f7ef59b8acdc00b7ac9f9d0d1142dce = L.marker(
+                [37.5811, 126.7595],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_1915880be2b3a98cc344e20dee09f4a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b3cc1fe72b39cd834c611bc8a84d06de = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_cdde0436f82289a15af82cb610889383 = $(`<div id="html_cdde0436f82289a15af82cb610889383" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> TWB710<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 114.3 m<br>             <b>속도:</b> 77.85 m/s<br>             <b>수직 승강률:</b> -3.58 m/s         </div>         </div>`)[0];
+                popup_b3cc1fe72b39cd834c611bc8a84d06de.setContent(html_cdde0436f82289a15af82cb610889383);
+            
+        
+
+        marker_3f7ef59b8acdc00b7ac9f9d0d1142dce.bindPopup(popup_b3cc1fe72b39cd834c611bc8a84d06de)
+        ;
+
+        
+    
+    
+            marker_3f7ef59b8acdc00b7ac9f9d0d1142dce.bindTooltip(
+                `<div>
+                     TWB710 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3f7ef59b8acdc00b7ac9f9d0d1142dce.setIcon(icon_1915880be2b3a98cc344e20dee09f4a2);
+            
+    
+            var marker_856d96531348245d74ece58257d5de1b = L.marker(
+                [37.6665, 126.512],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_9a38097acc30296a2c992fbaa110862b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1a00bc918736f8a891721c20418b29ec = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_74a5351fd78cf0d639446ea5ee513fda = $(`<div id="html_74a5351fd78cf0d639446ea5ee513fda" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JJA1612<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 1562.1 m<br>             <b>속도:</b> 121.71 m/s<br>             <b>수직 승강률:</b> -3.25 m/s         </div>         </div>`)[0];
+                popup_1a00bc918736f8a891721c20418b29ec.setContent(html_74a5351fd78cf0d639446ea5ee513fda);
+            
+        
+
+        marker_856d96531348245d74ece58257d5de1b.bindPopup(popup_1a00bc918736f8a891721c20418b29ec)
+        ;
+
+        
+    
+    
+            marker_856d96531348245d74ece58257d5de1b.bindTooltip(
+                `<div>
+                     JJA1612 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_856d96531348245d74ece58257d5de1b.setIcon(icon_9a38097acc30296a2c992fbaa110862b);
+            
+    
+            var marker_9bc308509c906e91a026a6efe55e90b7 = L.marker(
+                [35.7437, 131.404],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_c076010b07ac10e854ba5d71fde9a0b2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_697e662a46e09380dd72b8502cad0359 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_484121fd82990a73a6470356489331a4 = $(`<div id="html_484121fd82990a73a6470356489331a4" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> TWB312<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 9753.6 m<br>             <b>속도:</b> 198.69 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_697e662a46e09380dd72b8502cad0359.setContent(html_484121fd82990a73a6470356489331a4);
+            
+        
+
+        marker_9bc308509c906e91a026a6efe55e90b7.bindPopup(popup_697e662a46e09380dd72b8502cad0359)
+        ;
+
+        
+    
+    
+            marker_9bc308509c906e91a026a6efe55e90b7.bindTooltip(
+                `<div>
+                     TWB312 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9bc308509c906e91a026a6efe55e90b7.setIcon(icon_c076010b07ac10e854ba5d71fde9a0b2);
+            
+    
+            var marker_828ccfc6664ba15dbdfc4c130fb2924c = L.marker(
+                [37.4382, 126.8584],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_e7a03582f8e2955e02ac3d049eacc394 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e9007a8a479dab827cc78e1f9a837e4 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f01a47daf04a0bc537f4a03524c3a211 = $(`<div id="html_f01a47daf04a0bc537f4a03524c3a211" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JJA110<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 2567.94 m<br>             <b>속도:</b> 131.73 m/s<br>             <b>수직 승강률:</b> -3.25 m/s         </div>         </div>`)[0];
+                popup_7e9007a8a479dab827cc78e1f9a837e4.setContent(html_f01a47daf04a0bc537f4a03524c3a211);
+            
+        
+
+        marker_828ccfc6664ba15dbdfc4c130fb2924c.bindPopup(popup_7e9007a8a479dab827cc78e1f9a837e4)
+        ;
+
+        
+    
+    
+            marker_828ccfc6664ba15dbdfc4c130fb2924c.bindTooltip(
+                `<div>
+                     JJA110 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_828ccfc6664ba15dbdfc4c130fb2924c.setIcon(icon_e7a03582f8e2955e02ac3d049eacc394);
+            
+    
+            var marker_9c2b288856c525bdfd7d8ce546550775 = L.marker(
+                [34.0944, 130.8983],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_3bdf5a1d7b8bed49db80f97b1b326dd2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_18b03b57c44859568eb305c7136ca457 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2457ce283781897f4acef753c0ead600 = $(`<div id="html_2457ce283781897f4acef753c0ead600" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CAL130<br>             <b>국적:</b> Taiwan<br>             <b>기압 고도:</b> 12496.8 m<br>             <b>속도:</b> 281.2 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_18b03b57c44859568eb305c7136ca457.setContent(html_2457ce283781897f4acef753c0ead600);
+            
+        
+
+        marker_9c2b288856c525bdfd7d8ce546550775.bindPopup(popup_18b03b57c44859568eb305c7136ca457)
+        ;
+
+        
+    
+    
+            marker_9c2b288856c525bdfd7d8ce546550775.bindTooltip(
+                `<div>
+                     CAL130 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9c2b288856c525bdfd7d8ce546550775.setIcon(icon_3bdf5a1d7b8bed49db80f97b1b326dd2);
+            
+    
+            var marker_5e92c77b3ba9353eb5a1112cef024058 = L.marker(
+                [37.4482, 126.434],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_16c8be438c50341aa2988e3e13860d36 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b8182741fcab22f55ba899a6ec628277 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_34d681515fc9d54cee02526aa80ab1f5 = $(`<div id="html_34d681515fc9d54cee02526aa80ab1f5" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CAL160<br>             <b>국적:</b> Taiwan<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 9.26 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_b8182741fcab22f55ba899a6ec628277.setContent(html_34d681515fc9d54cee02526aa80ab1f5);
+            
+        
+
+        marker_5e92c77b3ba9353eb5a1112cef024058.bindPopup(popup_b8182741fcab22f55ba899a6ec628277)
+        ;
+
+        
+    
+    
+            marker_5e92c77b3ba9353eb5a1112cef024058.bindTooltip(
+                `<div>
+                     CAL160 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5e92c77b3ba9353eb5a1112cef024058.setIcon(icon_16c8be438c50341aa2988e3e13860d36);
+            
+    
+            var marker_fc186a10b6e494cace46f6266200f296 = L.marker(
+                [33.4437, 129.8828],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_335ed66c034cbf125f20d4164b0871dd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11430f49c6209d4f7ad527838e52fe05 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_5eb57d98fc9b5d26723eabec5087414d = $(`<div id="html_5eb57d98fc9b5d26723eabec5087414d" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> Unknown<br>             <b>국적:</b> Taiwan<br>             <b>기압 고도:</b> 10058.4 m<br>             <b>속도:</b> 279.01 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_11430f49c6209d4f7ad527838e52fe05.setContent(html_5eb57d98fc9b5d26723eabec5087414d);
+            
+        
+
+        marker_fc186a10b6e494cace46f6266200f296.bindPopup(popup_11430f49c6209d4f7ad527838e52fe05)
+        ;
+
+        
+    
+    
+            marker_fc186a10b6e494cace46f6266200f296.bindTooltip(
+                `<div>
+                     Unknown 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fc186a10b6e494cace46f6266200f296.setIcon(icon_335ed66c034cbf125f20d4164b0871dd);
+            
+    
+            var marker_0d53015f0e7d98679e89a26dba663544 = L.marker(
+                [36.2287, 127.9127],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_87c6cd536f3cf82c3e7d7ba0d8b0861d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fe55fbe6708e471faafa86ddba8e5caa = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e446ca19d362391baa02edabe8234edf = $(`<div id="html_e446ca19d362391baa02edabe8234edf" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JNA652<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 5486.4 m<br>             <b>속도:</b> 200.69 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_fe55fbe6708e471faafa86ddba8e5caa.setContent(html_e446ca19d362391baa02edabe8234edf);
+            
+        
+
+        marker_0d53015f0e7d98679e89a26dba663544.bindPopup(popup_fe55fbe6708e471faafa86ddba8e5caa)
+        ;
+
+        
+    
+    
+            marker_0d53015f0e7d98679e89a26dba663544.bindTooltip(
+                `<div>
+                     JNA652 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0d53015f0e7d98679e89a26dba663544.setIcon(icon_87c6cd536f3cf82c3e7d7ba0d8b0861d);
+            
+    
+            var marker_3fa6087b1632c3455b442fc5e50c89cf = L.marker(
+                [36.5971, 128.388],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_44eee82d041549d929efecc764f5be18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0cbb6c0fcbc4551e95fc1acc2750ec2e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6d45f1bf23c5a59b7f60f179d7340963 = $(`<div id="html_6d45f1bf23c5a59b7f60f179d7340963" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> ASV712<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 7863.84 m<br>             <b>속도:</b> 194.37 m/s<br>             <b>수직 승강률:</b> -5.85 m/s         </div>         </div>`)[0];
+                popup_0cbb6c0fcbc4551e95fc1acc2750ec2e.setContent(html_6d45f1bf23c5a59b7f60f179d7340963);
+            
+        
+
+        marker_3fa6087b1632c3455b442fc5e50c89cf.bindPopup(popup_0cbb6c0fcbc4551e95fc1acc2750ec2e)
+        ;
+
+        
+    
+    
+            marker_3fa6087b1632c3455b442fc5e50c89cf.bindTooltip(
+                `<div>
+                     ASV712 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3fa6087b1632c3455b442fc5e50c89cf.setIcon(icon_44eee82d041549d929efecc764f5be18);
+            
+    
+            var marker_977120ea86f54300c87e58b235ee1982 = L.marker(
+                [35.2826, 126.7186],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_5b1019c755bafc8f44ac95d87e7ec49a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f90968f98ee38945af9c17a494666897 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1d7e1bf540685b197b14d8076a8ab9ee = $(`<div id="html_1d7e1bf540685b197b14d8076a8ab9ee" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JNA463<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 5486.4 m<br>             <b>속도:</b> 196.22 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_f90968f98ee38945af9c17a494666897.setContent(html_1d7e1bf540685b197b14d8076a8ab9ee);
+            
+        
+
+        marker_977120ea86f54300c87e58b235ee1982.bindPopup(popup_f90968f98ee38945af9c17a494666897)
+        ;
+
+        
+    
+    
+            marker_977120ea86f54300c87e58b235ee1982.bindTooltip(
+                `<div>
+                     JNA463 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_977120ea86f54300c87e58b235ee1982.setIcon(icon_5b1019c755bafc8f44ac95d87e7ec49a);
+            
+    
+            var marker_e4b119de1fb50dbd99a4ba387c4792c2 = L.marker(
+                [37.1158, 126.0588],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_409537ec80171e2ce2a03df2d57555a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_45799379223da99fb04034b1e2f81a29 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_184d2aebd59714eb530c96241111e96b = $(`<div id="html_184d2aebd59714eb530c96241111e96b" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> TWB407<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 4251.96 m<br>             <b>속도:</b> 176.78 m/s<br>             <b>수직 승강률:</b> 4.88 m/s         </div>         </div>`)[0];
+                popup_45799379223da99fb04034b1e2f81a29.setContent(html_184d2aebd59714eb530c96241111e96b);
+            
+        
+
+        marker_e4b119de1fb50dbd99a4ba387c4792c2.bindPopup(popup_45799379223da99fb04034b1e2f81a29)
+        ;
+
+        
+    
+    
+            marker_e4b119de1fb50dbd99a4ba387c4792c2.bindTooltip(
+                `<div>
+                     TWB407 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e4b119de1fb50dbd99a4ba387c4792c2.setIcon(icon_409537ec80171e2ce2a03df2d57555a6);
+            
+    
+            var marker_c3e5f0397503712ce0bfc316259d37bd = L.marker(
+                [37.5907, 126.6831],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_e4fed61e04503e410a5a75e50ce859c2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_003848bf9f1d9040ceafc52628ff9022 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e4d21914ee0181d2e7526ca0d0653573 = $(`<div id="html_e4d21914ee0181d2e7526ca0d0653573" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL788<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 2750.82 m<br>             <b>속도:</b> 117.28 m/s<br>             <b>수직 승강률:</b> -7.48 m/s         </div>         </div>`)[0];
+                popup_003848bf9f1d9040ceafc52628ff9022.setContent(html_e4d21914ee0181d2e7526ca0d0653573);
+            
+        
+
+        marker_c3e5f0397503712ce0bfc316259d37bd.bindPopup(popup_003848bf9f1d9040ceafc52628ff9022)
+        ;
+
+        
+    
+    
+            marker_c3e5f0397503712ce0bfc316259d37bd.bindTooltip(
+                `<div>
+                     KAL788 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c3e5f0397503712ce0bfc316259d37bd.setIcon(icon_e4fed61e04503e410a5a75e50ce859c2);
+            
+    
+            var marker_1419ae90d2a13fbacc8dd14a83dbdb07 = L.marker(
+                [37.5567, 126.803],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_0625cc4852ecbc04a49c177fa7b307a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a0c8b72fc5fec890c6817a2bf97d03e5 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_bbadaafa32878c62e57a4980bded1192 = $(`<div id="html_bbadaafa32878c62e57a4980bded1192" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> AAR8920<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 3.86 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_a0c8b72fc5fec890c6817a2bf97d03e5.setContent(html_bbadaafa32878c62e57a4980bded1192);
+            
+        
+
+        marker_1419ae90d2a13fbacc8dd14a83dbdb07.bindPopup(popup_a0c8b72fc5fec890c6817a2bf97d03e5)
+        ;
+
+        
+    
+    
+            marker_1419ae90d2a13fbacc8dd14a83dbdb07.bindTooltip(
+                `<div>
+                     AAR8920 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1419ae90d2a13fbacc8dd14a83dbdb07.setIcon(icon_0625cc4852ecbc04a49c177fa7b307a1);
+            
+    
+            var marker_699eb8c9b66a59358b3adfe79a7d9c9a = L.marker(
+                [37.0139, 127.6362],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_7148d0cbab0795069adb51992dfd3dde = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_384087b0c65984cb75733bdc52475432 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_668da26ab1ff3ecddca1b46dbe65784c = $(`<div id="html_668da26ab1ff3ecddca1b46dbe65784c" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL2081<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 9418.32 m<br>             <b>속도:</b> 206.1 m/s<br>             <b>수직 승강률:</b> -2.6 m/s         </div>         </div>`)[0];
+                popup_384087b0c65984cb75733bdc52475432.setContent(html_668da26ab1ff3ecddca1b46dbe65784c);
+            
+        
+
+        marker_699eb8c9b66a59358b3adfe79a7d9c9a.bindPopup(popup_384087b0c65984cb75733bdc52475432)
+        ;
+
+        
+    
+    
+            marker_699eb8c9b66a59358b3adfe79a7d9c9a.bindTooltip(
+                `<div>
+                     KAL2081 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_699eb8c9b66a59358b3adfe79a7d9c9a.setIcon(icon_7148d0cbab0795069adb51992dfd3dde);
+            
+    
+            var marker_9d6a1c7be17a8d08f5d3523b82fcc143 = L.marker(
+                [37.5805, 126.7603],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_1895b31a13f7f2faa1c00de9fb00ad4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0312e1537e9a70f5b22038fd6d70bd9c = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c38bc97bb610075076e7b0c33d672ab7 = $(`<div id="html_c38bc97bb610075076e7b0c33d672ab7" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> AAR1055<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 106.68 m<br>             <b>속도:</b> 70.57 m/s<br>             <b>수직 승강률:</b> -3.58 m/s         </div>         </div>`)[0];
+                popup_0312e1537e9a70f5b22038fd6d70bd9c.setContent(html_c38bc97bb610075076e7b0c33d672ab7);
+            
+        
+
+        marker_9d6a1c7be17a8d08f5d3523b82fcc143.bindPopup(popup_0312e1537e9a70f5b22038fd6d70bd9c)
+        ;
+
+        
+    
+    
+            marker_9d6a1c7be17a8d08f5d3523b82fcc143.bindTooltip(
+                `<div>
+                     AAR1055 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9d6a1c7be17a8d08f5d3523b82fcc143.setIcon(icon_1895b31a13f7f2faa1c00de9fb00ad4a);
+            
+    
+            var marker_8670b21d8835afd53526ea55ed83f870 = L.marker(
+                [37.1238, 127.4556],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_0a3a1447f3b06dbeca791b9c5c5a6e96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b71b5300cf8001b3474ba36017231653 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_81b0426f459db4fe2a1a114426e3aa35 = $(`<div id="html_81b0426f459db4fe2a1a114426e3aa35" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> TWB288<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 4960.62 m<br>             <b>속도:</b> 173.39 m/s<br>             <b>수직 승강률:</b> -5.2 m/s         </div>         </div>`)[0];
+                popup_b71b5300cf8001b3474ba36017231653.setContent(html_81b0426f459db4fe2a1a114426e3aa35);
+            
+        
+
+        marker_8670b21d8835afd53526ea55ed83f870.bindPopup(popup_b71b5300cf8001b3474ba36017231653)
+        ;
+
+        
+    
+    
+            marker_8670b21d8835afd53526ea55ed83f870.bindTooltip(
+                `<div>
+                     TWB288 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8670b21d8835afd53526ea55ed83f870.setIcon(icon_0a3a1447f3b06dbeca791b9c5c5a6e96);
+            
+    
+            var marker_5fe09d33f9d5b75f9eba01090dbeb7b3 = L.marker(
+                [37.4214, 126.5128],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_ccc0a2dffd977870664872cc55461f3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_18822d41c0ca93665defbac3a561ac05 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_28c2a2277e23b7acb8d3cf0296d91a49 = $(`<div id="html_28c2a2277e23b7acb8d3cf0296d91a49" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JJA1471<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 975.36 m<br>             <b>속도:</b> 83.53 m/s<br>             <b>수직 승강률:</b> 8.45 m/s         </div>         </div>`)[0];
+                popup_18822d41c0ca93665defbac3a561ac05.setContent(html_28c2a2277e23b7acb8d3cf0296d91a49);
+            
+        
+
+        marker_5fe09d33f9d5b75f9eba01090dbeb7b3.bindPopup(popup_18822d41c0ca93665defbac3a561ac05)
+        ;
+
+        
+    
+    
+            marker_5fe09d33f9d5b75f9eba01090dbeb7b3.bindTooltip(
+                `<div>
+                     JJA1471 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5fe09d33f9d5b75f9eba01090dbeb7b3.setIcon(icon_ccc0a2dffd977870664872cc55461f3d);
+            
+    
+            var marker_75df6d324c0d5ea8e078dadd80a53495 = L.marker(
+                [35.4733, 128.5212],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_51253c67e16b81e2527ebc6ad142f235 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0279036ba36e2589edde101940747506 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_37f3726037750420f1b910a35309bd7a = $(`<div id="html_37f3726037750420f1b910a35309bd7a" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL1811<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3703.32 m<br>             <b>속도:</b> 173.41 m/s<br>             <b>수직 승강률:</b> -8.45 m/s         </div>         </div>`)[0];
+                popup_0279036ba36e2589edde101940747506.setContent(html_37f3726037750420f1b910a35309bd7a);
+            
+        
+
+        marker_75df6d324c0d5ea8e078dadd80a53495.bindPopup(popup_0279036ba36e2589edde101940747506)
+        ;
+
+        
+    
+    
+            marker_75df6d324c0d5ea8e078dadd80a53495.bindTooltip(
+                `<div>
+                     KAL1811 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_75df6d324c0d5ea8e078dadd80a53495.setIcon(icon_51253c67e16b81e2527ebc6ad142f235);
+            
+    
+            var marker_dfc4184bae7a39a844e747f205046281 = L.marker(
+                [37.4118, 126.5346],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_793da88e5d264ae3500f554013a846d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_486df396b8e1e05a1e53e9669980aeac = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_84dd3f5558b12a70f0aa3fb77d78f5c0 = $(`<div id="html_84dd3f5558b12a70f0aa3fb77d78f5c0" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> TWB683<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 9867.9 m<br>             <b>속도:</b> 198.07 m/s<br>             <b>수직 승강률:</b> 8.13 m/s         </div>         </div>`)[0];
+                popup_486df396b8e1e05a1e53e9669980aeac.setContent(html_84dd3f5558b12a70f0aa3fb77d78f5c0);
+            
+        
+
+        marker_dfc4184bae7a39a844e747f205046281.bindPopup(popup_486df396b8e1e05a1e53e9669980aeac)
+        ;
+
+        
+    
+    
+            marker_dfc4184bae7a39a844e747f205046281.bindTooltip(
+                `<div>
+                     TWB683 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dfc4184bae7a39a844e747f205046281.setIcon(icon_793da88e5d264ae3500f554013a846d4);
+            
+    
+            var marker_68539df6e91cf06ff2ea57409c201672 = L.marker(
+                [35.7181, 131.6145],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_4894170de84a8517aad339b0d32ae1aa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e6252823242aa5cb81ae3f2ffb454c5 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e94f29b5536cab17c474f13b40c05c73 = $(`<div id="html_e94f29b5536cab17c474f13b40c05c73" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JJA1392<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 9144.0 m<br>             <b>속도:</b> 202.33 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_6e6252823242aa5cb81ae3f2ffb454c5.setContent(html_e94f29b5536cab17c474f13b40c05c73);
+            
+        
+
+        marker_68539df6e91cf06ff2ea57409c201672.bindPopup(popup_6e6252823242aa5cb81ae3f2ffb454c5)
+        ;
+
+        
+    
+    
+            marker_68539df6e91cf06ff2ea57409c201672.bindTooltip(
+                `<div>
+                     JJA1392 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_68539df6e91cf06ff2ea57409c201672.setIcon(icon_4894170de84a8517aad339b0d32ae1aa);
+            
+    
+            var marker_11cebaace5f8e70e5c70f4ba581840b9 = L.marker(
+                [37.5586, 126.8001],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_bcac4c6e2d4570f5e0c26c7000fae727 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a05104838f9ca9ff61a774025b8cbcc5 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7b09166d79c1c9c6e8779097a0f652bd = $(`<div id="html_7b09166d79c1c9c6e8779097a0f652bd" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JJA108<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 3.09 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_a05104838f9ca9ff61a774025b8cbcc5.setContent(html_7b09166d79c1c9c6e8779097a0f652bd);
+            
+        
+
+        marker_11cebaace5f8e70e5c70f4ba581840b9.bindPopup(popup_a05104838f9ca9ff61a774025b8cbcc5)
+        ;
+
+        
+    
+    
+            marker_11cebaace5f8e70e5c70f4ba581840b9.bindTooltip(
+                `<div>
+                     JJA108 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_11cebaace5f8e70e5c70f4ba581840b9.setIcon(icon_bcac4c6e2d4570f5e0c26c7000fae727);
+            
+    
+            var marker_497903307cca6385fb6919911032de67 = L.marker(
+                [37.1226, 127.4556],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_352c877310dea3329cce0f62a158ec3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c52805de958ca51ba7c08796451f664f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_077bf1fbfc8fcd4db705d2655215ae56 = $(`<div id="html_077bf1fbfc8fcd4db705d2655215ae56" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> GTI8976<br>             <b>국적:</b> United States<br>             <b>기압 고도:</b> 10972.8 m<br>             <b>속도:</b> 202.51 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_c52805de958ca51ba7c08796451f664f.setContent(html_077bf1fbfc8fcd4db705d2655215ae56);
+            
+        
+
+        marker_497903307cca6385fb6919911032de67.bindPopup(popup_c52805de958ca51ba7c08796451f664f)
+        ;
+
+        
+    
+    
+            marker_497903307cca6385fb6919911032de67.bindTooltip(
+                `<div>
+                     GTI8976 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_497903307cca6385fb6919911032de67.setIcon(icon_352c877310dea3329cce0f62a158ec3a);
+            
+    
+            var marker_9a88d6ce5a134e2cbc951588bcd12b55 = L.marker(
+                [37.3285, 125.7802],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_db0b7935e8f4cfab00899b7738cc4aa4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1b001477fec85d962932e9acd3f124d7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8bac11e2291f45ddc42e90a4000a92c9 = $(`<div id="html_8bac11e2291f45ddc42e90a4000a92c9" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL938<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3108.96 m<br>             <b>속도:</b> 169.9 m/s<br>             <b>수직 승강률:</b> -4.88 m/s         </div>         </div>`)[0];
+                popup_1b001477fec85d962932e9acd3f124d7.setContent(html_8bac11e2291f45ddc42e90a4000a92c9);
+            
+        
+
+        marker_9a88d6ce5a134e2cbc951588bcd12b55.bindPopup(popup_1b001477fec85d962932e9acd3f124d7)
+        ;
+
+        
+    
+    
+            marker_9a88d6ce5a134e2cbc951588bcd12b55.bindTooltip(
+                `<div>
+                     KAL938 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9a88d6ce5a134e2cbc951588bcd12b55.setIcon(icon_db0b7935e8f4cfab00899b7738cc4aa4);
+            
+    
+            var marker_d45af2deb5a223e754dac620de272b5a = L.marker(
+                [36.9686, 129.5597],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_484bcd3e161d32493957ca6bf0f0888e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cc732f5c0c10bcb81d928c2b9bf7165d = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1e52ecef8f02fe083061cbfeae325d8c = $(`<div id="html_1e52ecef8f02fe083061cbfeae325d8c" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> TWB303<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 10058.4 m<br>             <b>속도:</b> 264.16 m/s<br>             <b>수직 승강률:</b> 0.33 m/s         </div>         </div>`)[0];
+                popup_cc732f5c0c10bcb81d928c2b9bf7165d.setContent(html_1e52ecef8f02fe083061cbfeae325d8c);
+            
+        
+
+        marker_d45af2deb5a223e754dac620de272b5a.bindPopup(popup_cc732f5c0c10bcb81d928c2b9bf7165d)
+        ;
+
+        
+    
+    
+            marker_d45af2deb5a223e754dac620de272b5a.bindTooltip(
+                `<div>
+                     TWB303 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d45af2deb5a223e754dac620de272b5a.setIcon(icon_484bcd3e161d32493957ca6bf0f0888e);
+            
+    
+            var marker_0d9eb4531a9323fb7bb4c0ca92658710 = L.marker(
+                [37.0676, 126.9277],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_6f2253fcf3086769446d05bfb77befdb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a77fff1ec927cbdc2df08a7d09fb5e5 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_11e5f9d9dfa183d1249169075b4003d8 = $(`<div id="html_11e5f9d9dfa183d1249169075b4003d8" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> ESR887<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3962.4 m<br>             <b>속도:</b> 183.86 m/s<br>             <b>수직 승강률:</b> 13.66 m/s         </div>         </div>`)[0];
+                popup_4a77fff1ec927cbdc2df08a7d09fb5e5.setContent(html_11e5f9d9dfa183d1249169075b4003d8);
+            
+        
+
+        marker_0d9eb4531a9323fb7bb4c0ca92658710.bindPopup(popup_4a77fff1ec927cbdc2df08a7d09fb5e5)
+        ;
+
+        
+    
+    
+            marker_0d9eb4531a9323fb7bb4c0ca92658710.bindTooltip(
+                `<div>
+                     ESR887 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0d9eb4531a9323fb7bb4c0ca92658710.setIcon(icon_6f2253fcf3086769446d05bfb77befdb);
+            
+    
+            var marker_608a931956ff3f56a98e390d4fc1ae3d = L.marker(
+                [36.9716, 127.1264],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_e595a80339156857ff5f2107e7e28e47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d7f7d6a073a413d52d60deb71c8459a6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f0b82d46ef7adda8885c42b640b7ca86 = $(`<div id="html_f0b82d46ef7adda8885c42b640b7ca86" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL791<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 6393.18 m<br>             <b>속도:</b> 204.88 m/s<br>             <b>수직 승강률:</b> 8.45 m/s         </div>         </div>`)[0];
+                popup_d7f7d6a073a413d52d60deb71c8459a6.setContent(html_f0b82d46ef7adda8885c42b640b7ca86);
+            
+        
+
+        marker_608a931956ff3f56a98e390d4fc1ae3d.bindPopup(popup_d7f7d6a073a413d52d60deb71c8459a6)
+        ;
+
+        
+    
+    
+            marker_608a931956ff3f56a98e390d4fc1ae3d.bindTooltip(
+                `<div>
+                     KAL791 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_608a931956ff3f56a98e390d4fc1ae3d.setIcon(icon_e595a80339156857ff5f2107e7e28e47);
+            
+    
+            var marker_0c707d9ce0ac1b3020aa3eb1e50aa837 = L.marker(
+                [37.4816, 126.8347],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_34582931be3cffae6b86f233692b49f9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aaff4de9b4e09f62f0a429d33540568b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8f3300d5eedf873d61fe85d46bada41c = $(`<div id="html_8f3300d5eedf873d61fe85d46bada41c" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL706<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3421.38 m<br>             <b>속도:</b> 122.44 m/s<br>             <b>수직 승강률:</b> -9.43 m/s         </div>         </div>`)[0];
+                popup_aaff4de9b4e09f62f0a429d33540568b.setContent(html_8f3300d5eedf873d61fe85d46bada41c);
+            
+        
+
+        marker_0c707d9ce0ac1b3020aa3eb1e50aa837.bindPopup(popup_aaff4de9b4e09f62f0a429d33540568b)
+        ;
+
+        
+    
+    
+            marker_0c707d9ce0ac1b3020aa3eb1e50aa837.bindTooltip(
+                `<div>
+                     KAL706 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0c707d9ce0ac1b3020aa3eb1e50aa837.setIcon(icon_34582931be3cffae6b86f233692b49f9);
+            
+    
+            var marker_d5062b998f7141877845f19b2a172b84 = L.marker(
+                [37.3956, 125.1524],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_29ef818ff636c9da8e4eb2ae3c262b17 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_efcb1dc849bfb89c0a2e1cc2e96fdfc6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_b202c0e9afbf18be0dc7f4e8468e9412 = $(`<div id="html_b202c0e9afbf18be0dc7f4e8468e9412" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL969<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 6400.8 m<br>             <b>속도:</b> 192.45 m/s<br>             <b>수직 승강률:</b> 4.88 m/s         </div>         </div>`)[0];
+                popup_efcb1dc849bfb89c0a2e1cc2e96fdfc6.setContent(html_b202c0e9afbf18be0dc7f4e8468e9412);
+            
+        
+
+        marker_d5062b998f7141877845f19b2a172b84.bindPopup(popup_efcb1dc849bfb89c0a2e1cc2e96fdfc6)
+        ;
+
+        
+    
+    
+            marker_d5062b998f7141877845f19b2a172b84.bindTooltip(
+                `<div>
+                     KAL969 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d5062b998f7141877845f19b2a172b84.setIcon(icon_29ef818ff636c9da8e4eb2ae3c262b17);
+            
+    
+            var marker_2776216c4028d8392a236eef365046c8 = L.marker(
+                [36.5238, 127.6876],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_c27babb0bd9008045091743c5895a482 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39583934ccef69fda7f9ee1ebd5ababb = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_608f71f83565fae536a4762ef37b81b2 = $(`<div id="html_608f71f83565fae536a4762ef37b81b2" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> ABL158<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 8633.46 m<br>             <b>속도:</b> 248.89 m/s<br>             <b>수직 승강률:</b> 5.85 m/s         </div>         </div>`)[0];
+                popup_39583934ccef69fda7f9ee1ebd5ababb.setContent(html_608f71f83565fae536a4762ef37b81b2);
+            
+        
+
+        marker_2776216c4028d8392a236eef365046c8.bindPopup(popup_39583934ccef69fda7f9ee1ebd5ababb)
+        ;
+
+        
+    
+    
+            marker_2776216c4028d8392a236eef365046c8.bindTooltip(
+                `<div>
+                     ABL158 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2776216c4028d8392a236eef365046c8.setIcon(icon_c27babb0bd9008045091743c5895a482);
+            
+    
+            var marker_10bea842787cb08a0c8dd4fe87929eb6 = L.marker(
+                [37.3908, 124.8797],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_0c293f2e161de5c1f3560137f090c6fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8201507e5219061218cc962050e48423 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4ee0dcfe8730f0e134f04bf2a61f0b8d = $(`<div id="html_4ee0dcfe8730f0e134f04bf2a61f0b8d" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> AAR541<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 8046.72 m<br>             <b>속도:</b> 206.32 m/s<br>             <b>수직 승강률:</b> 5.2 m/s         </div>         </div>`)[0];
+                popup_8201507e5219061218cc962050e48423.setContent(html_4ee0dcfe8730f0e134f04bf2a61f0b8d);
+            
+        
+
+        marker_10bea842787cb08a0c8dd4fe87929eb6.bindPopup(popup_8201507e5219061218cc962050e48423)
+        ;
+
+        
+    
+    
+            marker_10bea842787cb08a0c8dd4fe87929eb6.bindTooltip(
+                `<div>
+                     AAR541 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10bea842787cb08a0c8dd4fe87929eb6.setIcon(icon_0c293f2e161de5c1f3560137f090c6fc);
+            
+    
+            var marker_f0c693506b568cd997a01a7b99075b73 = L.marker(
+                [37.3867, 126.9773],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_09da015b2c7cfa29bbdcb968f00ec5b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d80c03c873a25033023fd52235669d77 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_87c89d22acd0d1d33763b74c66b132fa = $(`<div id="html_87c89d22acd0d1d33763b74c66b132fa" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JJA1302<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 4061.46 m<br>             <b>속도:</b> 135.29 m/s<br>             <b>수직 승강률:</b> -2.93 m/s         </div>         </div>`)[0];
+                popup_d80c03c873a25033023fd52235669d77.setContent(html_87c89d22acd0d1d33763b74c66b132fa);
+            
+        
+
+        marker_f0c693506b568cd997a01a7b99075b73.bindPopup(popup_d80c03c873a25033023fd52235669d77)
+        ;
+
+        
+    
+    
+            marker_f0c693506b568cd997a01a7b99075b73.bindTooltip(
+                `<div>
+                     JJA1302 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f0c693506b568cd997a01a7b99075b73.setIcon(icon_09da015b2c7cfa29bbdcb968f00ec5b9);
+            
+    
+            var marker_ea92429f0be179303a34773f54806cb8 = L.marker(
+                [37.4676, 126.4539],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_803bc6d4d306acb79d4011b953bdcac3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bf27bcbcaf13f3768932a77cdb13447a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_98e0f828e077e906db0536c139301323 = $(`<div id="html_98e0f828e077e906db0536c139301323" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL1408<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 17.49 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_bf27bcbcaf13f3768932a77cdb13447a.setContent(html_98e0f828e077e906db0536c139301323);
+            
+        
+
+        marker_ea92429f0be179303a34773f54806cb8.bindPopup(popup_bf27bcbcaf13f3768932a77cdb13447a)
+        ;
+
+        
+    
+    
+            marker_ea92429f0be179303a34773f54806cb8.bindTooltip(
+                `<div>
+                     KAL1408 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea92429f0be179303a34773f54806cb8.setIcon(icon_803bc6d4d306acb79d4011b953bdcac3);
+            
+    
+            var marker_ddad93f7d4e02a8d8306cfc5e594eaa0 = L.marker(
+                [37.5284, 126.603],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_12d071852377041240cca48361865f9f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3462ef8d905044dc3e20779ac953f7c0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_09e7a61c08054179a555504ac6ff7ae7 = $(`<div id="html_09e7a61c08054179a555504ac6ff7ae7" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL1174<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 1234.44 m<br>             <b>속도:</b> 138.96 m/s<br>             <b>수직 승강률:</b> -2.6 m/s         </div>         </div>`)[0];
+                popup_3462ef8d905044dc3e20779ac953f7c0.setContent(html_09e7a61c08054179a555504ac6ff7ae7);
+            
+        
+
+        marker_ddad93f7d4e02a8d8306cfc5e594eaa0.bindPopup(popup_3462ef8d905044dc3e20779ac953f7c0)
+        ;
+
+        
+    
+    
+            marker_ddad93f7d4e02a8d8306cfc5e594eaa0.bindTooltip(
+                `<div>
+                     KAL1174 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ddad93f7d4e02a8d8306cfc5e594eaa0.setIcon(icon_12d071852377041240cca48361865f9f);
+            
+    
+            var marker_be27e26c086b7fde96ecfb3065416eda = L.marker(
+                [36.9861, 127.7352],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_38482d1748468f033d00354bda790bde = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b0bfcdbdd5e0a845b125bc950ec4a51 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6226c505e9f8008f89a6bd798f719309 = $(`<div id="html_6226c505e9f8008f89a6bd798f719309" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL2190<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 5509.26 m<br>             <b>속도:</b> 184.96 m/s<br>             <b>수직 승강률:</b> -3.58 m/s         </div>         </div>`)[0];
+                popup_2b0bfcdbdd5e0a845b125bc950ec4a51.setContent(html_6226c505e9f8008f89a6bd798f719309);
+            
+        
+
+        marker_be27e26c086b7fde96ecfb3065416eda.bindPopup(popup_2b0bfcdbdd5e0a845b125bc950ec4a51)
+        ;
+
+        
+    
+    
+            marker_be27e26c086b7fde96ecfb3065416eda.bindTooltip(
+                `<div>
+                     KAL2190 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_be27e26c086b7fde96ecfb3065416eda.setIcon(icon_38482d1748468f033d00354bda790bde);
+            
+    
+            var marker_056e80b41d0f935e96b31f7fb2e3b160 = L.marker(
+                [37.358, 127.1563],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_3b9fe4acaac5dbf421405bdcba8075e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c9b4ce0aceceeff34bb98590813f87a5 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ed0b943ce2a51b64087d1a442eac3655 = $(`<div id="html_ed0b943ce2a51b64087d1a442eac3655" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> ESR831<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 7162.8 m<br>             <b>속도:</b> 194.79 m/s<br>             <b>수직 승강률:</b> 7.8 m/s         </div>         </div>`)[0];
+                popup_c9b4ce0aceceeff34bb98590813f87a5.setContent(html_ed0b943ce2a51b64087d1a442eac3655);
+            
+        
+
+        marker_056e80b41d0f935e96b31f7fb2e3b160.bindPopup(popup_c9b4ce0aceceeff34bb98590813f87a5)
+        ;
+
+        
+    
+    
+            marker_056e80b41d0f935e96b31f7fb2e3b160.bindTooltip(
+                `<div>
+                     ESR831 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_056e80b41d0f935e96b31f7fb2e3b160.setIcon(icon_3b9fe4acaac5dbf421405bdcba8075e3);
+            
+    
+            var marker_b4f4a998d03b32c47322fde3c971b261 = L.marker(
+                [35.8006, 126.7743],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_79292a3c208871e43c48c6cb76dc9e68 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c661f8b37acf7db2453d4aeadaf3fc70 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_5dacdc5608938665cd0aa509c86441b3 = $(`<div id="html_5dacdc5608938665cd0aa509c86441b3" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> ESR211<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 7315.2 m<br>             <b>속도:</b> 214.39 m/s<br>             <b>수직 승강률:</b> 0.33 m/s         </div>         </div>`)[0];
+                popup_c661f8b37acf7db2453d4aeadaf3fc70.setContent(html_5dacdc5608938665cd0aa509c86441b3);
+            
+        
+
+        marker_b4f4a998d03b32c47322fde3c971b261.bindPopup(popup_c661f8b37acf7db2453d4aeadaf3fc70)
+        ;
+
+        
+    
+    
+            marker_b4f4a998d03b32c47322fde3c971b261.bindTooltip(
+                `<div>
+                     ESR211 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b4f4a998d03b32c47322fde3c971b261.setIcon(icon_79292a3c208871e43c48c6cb76dc9e68);
+            
+    
+            var marker_fee5df4ca4319fb39a3920fc07648d32 = L.marker(
+                [33.2757, 130.6677],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_5787987a40dfd639cea55f39001101bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c24eef1d9f8f2d4cb2a0144b16e747cd = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_df654efe4a19be04f2799a0c85db5143 = $(`<div id="html_df654efe4a19be04f2799a0c85db5143" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> HGB308<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> 1623.06 m<br>             <b>속도:</b> 116.32 m/s<br>             <b>수직 승강률:</b> -2.93 m/s         </div>         </div>`)[0];
+                popup_c24eef1d9f8f2d4cb2a0144b16e747cd.setContent(html_df654efe4a19be04f2799a0c85db5143);
+            
+        
+
+        marker_fee5df4ca4319fb39a3920fc07648d32.bindPopup(popup_c24eef1d9f8f2d4cb2a0144b16e747cd)
+        ;
+
+        
+    
+    
+            marker_fee5df4ca4319fb39a3920fc07648d32.bindTooltip(
+                `<div>
+                     HGB308 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fee5df4ca4319fb39a3920fc07648d32.setIcon(icon_5787987a40dfd639cea55f39001101bd);
+            
+    
+            var marker_9569a3b3263dbc52a185d99580f8e486 = L.marker(
+                [37.4483, 126.4343],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_9b8a0c2edc045df94717b92a4cc22ee4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a858980c5a89b2b4f2a429e242be4a0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4a430a86967ecdef0d5a0836f3ca3555 = $(`<div id="html_4a430a86967ecdef0d5a0836f3ca3555" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> HKE618<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 13.89 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_9a858980c5a89b2b4f2a429e242be4a0.setContent(html_4a430a86967ecdef0d5a0836f3ca3555);
+            
+        
+
+        marker_9569a3b3263dbc52a185d99580f8e486.bindPopup(popup_9a858980c5a89b2b4f2a429e242be4a0)
+        ;
+
+        
+    
+    
+            marker_9569a3b3263dbc52a185d99580f8e486.bindTooltip(
+                `<div>
+                     HKE618 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9569a3b3263dbc52a185d99580f8e486.setIcon(icon_9b8a0c2edc045df94717b92a4cc22ee4);
+            
+    
+            var marker_c636772fbf8a53c0a3d707e8ff2c7772 = L.marker(
+                [35.9286, 126.5797],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_7cc0d4200267753ca6e5ed1f635eca23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_baec65248574dee7a56775929bf62b1b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_23388185b4690a44c1d64e47b1710ffb = $(`<div id="html_23388185b4690a44c1d64e47b1710ffb" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> TWB281<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 9852.66 m<br>             <b>속도:</b> 215.55 m/s<br>             <b>수직 승강률:</b> 4.88 m/s         </div>         </div>`)[0];
+                popup_baec65248574dee7a56775929bf62b1b.setContent(html_23388185b4690a44c1d64e47b1710ffb);
+            
+        
+
+        marker_c636772fbf8a53c0a3d707e8ff2c7772.bindPopup(popup_baec65248574dee7a56775929bf62b1b)
+        ;
+
+        
+    
+    
+            marker_c636772fbf8a53c0a3d707e8ff2c7772.bindTooltip(
+                `<div>
+                     TWB281 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c636772fbf8a53c0a3d707e8ff2c7772.setIcon(icon_7cc0d4200267753ca6e5ed1f635eca23);
+            
+    
+            var marker_bc16d5fc3066cc33c0df0eaba55a1364 = L.marker(
+                [37.2923, 126.963],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_c5f00b87b01fcda9bdd56a2656503232 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b3141f56843c6b4dadc1a838159e181e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_00f6091842a905b122cc817e6459dd7a = $(`<div id="html_00f6091842a905b122cc817e6459dd7a" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> PTA511<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3032.76 m<br>             <b>속도:</b> 190.54 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_b3141f56843c6b4dadc1a838159e181e.setContent(html_00f6091842a905b122cc817e6459dd7a);
+            
+        
+
+        marker_bc16d5fc3066cc33c0df0eaba55a1364.bindPopup(popup_b3141f56843c6b4dadc1a838159e181e)
+        ;
+
+        
+    
+    
+            marker_bc16d5fc3066cc33c0df0eaba55a1364.bindTooltip(
+                `<div>
+                     PTA511 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bc16d5fc3066cc33c0df0eaba55a1364.setIcon(icon_c5f00b87b01fcda9bdd56a2656503232);
+            
+    
+            var marker_7e8177c1e300b740a61548583c19e977 = L.marker(
+                [37.4688, 126.4437],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_9c6b34c23c0a029f1476a0c9e33b7915 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73f53d86fea185b98b89b62f0ef9ed13 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d9dbe7349c4f37d77435ce6e9c31d17d = $(`<div id="html_d9dbe7349c4f37d77435ce6e9c31d17d" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> PTA503<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 13.38 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_73f53d86fea185b98b89b62f0ef9ed13.setContent(html_d9dbe7349c4f37d77435ce6e9c31d17d);
+            
+        
+
+        marker_7e8177c1e300b740a61548583c19e977.bindPopup(popup_73f53d86fea185b98b89b62f0ef9ed13)
+        ;
+
+        
+    
+    
+            marker_7e8177c1e300b740a61548583c19e977.bindTooltip(
+                `<div>
+                     PTA503 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e8177c1e300b740a61548583c19e977.setIcon(icon_9c6b34c23c0a029f1476a0c9e33b7915);
+            
+    
+            var marker_c909fa88fbf9657ea0d421c47aa4ec30 = L.marker(
+                [37.4521, 126.4453],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_069d5dfd595660d8a5f726533fc53ff4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1a2f61a38614341e2a387f3c36410711 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4de627f8745d83cca26735a89d145339 = $(`<div id="html_4de627f8745d83cca26735a89d145339" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> Unknown<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 0.9 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_1a2f61a38614341e2a387f3c36410711.setContent(html_4de627f8745d83cca26735a89d145339);
+            
+        
+
+        marker_c909fa88fbf9657ea0d421c47aa4ec30.bindPopup(popup_1a2f61a38614341e2a387f3c36410711)
+        ;
+
+        
+    
+    
+            marker_c909fa88fbf9657ea0d421c47aa4ec30.bindTooltip(
+                `<div>
+                     Unknown 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c909fa88fbf9657ea0d421c47aa4ec30.setIcon(icon_069d5dfd595660d8a5f726533fc53ff4);
+            
+    
+            var marker_dceaa79fd5ca639c1a283e01998bf21f = L.marker(
+                [37.2608, 126.1579],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_34092fc9abe3460c147d62755d6c3321 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d92b9ad1da4ea7aaf5fb928bbf9f430 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_be675c65b66e7d3e5361f512b96853a3 = $(`<div id="html_be675c65b66e7d3e5361f512b96853a3" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL892<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 2049.78 m<br>             <b>속도:</b> 127.77 m/s<br>             <b>수직 승강률:</b> -5.85 m/s         </div>         </div>`)[0];
+                popup_8d92b9ad1da4ea7aaf5fb928bbf9f430.setContent(html_be675c65b66e7d3e5361f512b96853a3);
+            
+        
+
+        marker_dceaa79fd5ca639c1a283e01998bf21f.bindPopup(popup_8d92b9ad1da4ea7aaf5fb928bbf9f430)
+        ;
+
+        
+    
+    
+            marker_dceaa79fd5ca639c1a283e01998bf21f.bindTooltip(
+                `<div>
+                     KAL892 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dceaa79fd5ca639c1a283e01998bf21f.setIcon(icon_34092fc9abe3460c147d62755d6c3321);
+            
+    
+            var marker_4c5af563af73e907cf5681a8298a4a85 = L.marker(
+                [36.1269, 126.8082],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_719f91a9908d91935a4fead6b0ffabeb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eae7004ae07a78182922221c9b0cc095 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ffd9dfe89a6ce25c8d4193ae42daa87d = $(`<div id="html_ffd9dfe89a6ce25c8d4193ae42daa87d" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> EJM595<br>             <b>국적:</b> United States<br>             <b>기압 고도:</b> 7924.8 m<br>             <b>속도:</b> 222.76 m/s<br>             <b>수직 승강률:</b> -0.33 m/s         </div>         </div>`)[0];
+                popup_eae7004ae07a78182922221c9b0cc095.setContent(html_ffd9dfe89a6ce25c8d4193ae42daa87d);
+            
+        
+
+        marker_4c5af563af73e907cf5681a8298a4a85.bindPopup(popup_eae7004ae07a78182922221c9b0cc095)
+        ;
+
+        
+    
+    
+            marker_4c5af563af73e907cf5681a8298a4a85.bindTooltip(
+                `<div>
+                     EJM595 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4c5af563af73e907cf5681a8298a4a85.setIcon(icon_719f91a9908d91935a4fead6b0ffabeb);
+            
+    
+            var marker_e2c9de945d27c1a0e522fdfd2957d515 = L.marker(
+                [33.3976, 131.8234],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_fe2630112d4f801630668d17b647426e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c1215bc5ce180fc14d1d0ed637398108 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_af45465e09d93610d88abb36cd56d086 = $(`<div id="html_af45465e09d93610d88abb36cd56d086" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JAL627<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 6240.78 m<br>             <b>속도:</b> 207.24 m/s<br>             <b>수직 승강률:</b> -15.28 m/s         </div>         </div>`)[0];
+                popup_c1215bc5ce180fc14d1d0ed637398108.setContent(html_af45465e09d93610d88abb36cd56d086);
+            
+        
+
+        marker_e2c9de945d27c1a0e522fdfd2957d515.bindPopup(popup_c1215bc5ce180fc14d1d0ed637398108)
+        ;
+
+        
+    
+    
+            marker_e2c9de945d27c1a0e522fdfd2957d515.bindTooltip(
+                `<div>
+                     JAL627 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e2c9de945d27c1a0e522fdfd2957d515.setIcon(icon_fe2630112d4f801630668d17b647426e);
+            
+    
+            var marker_1542c86457df35a634c2e7623267b7ac = L.marker(
+                [37.2577, 128.2842],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_c28af4ed84bf7b093e800a57f6807eb1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bec8c7e5fd9839e258fa5e9369ec4761 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f983210a6bd049e7da27abe7ba046081 = $(`<div id="html_f983210a6bd049e7da27abe7ba046081" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CKS865<br>             <b>국적:</b> United States<br>             <b>기압 고도:</b> 5867.4 m<br>             <b>속도:</b> 257.36 m/s<br>             <b>수직 승강률:</b> 6.83 m/s         </div>         </div>`)[0];
+                popup_bec8c7e5fd9839e258fa5e9369ec4761.setContent(html_f983210a6bd049e7da27abe7ba046081);
+            
+        
+
+        marker_1542c86457df35a634c2e7623267b7ac.bindPopup(popup_bec8c7e5fd9839e258fa5e9369ec4761)
+        ;
+
+        
+    
+    
+            marker_1542c86457df35a634c2e7623267b7ac.bindTooltip(
+                `<div>
+                     CKS865 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1542c86457df35a634c2e7623267b7ac.setIcon(icon_c28af4ed84bf7b093e800a57f6807eb1);
+            
+    
+            var marker_f21df9517cbc96aaff5ce1e8e369241a = L.marker(
+                [37.5241, 127.6053],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_44981b0af682ce64528fac5a04cdc970 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bce91707d03bdb9e32e11d5ce91b1504 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a17863a68bea3e4ab9105884789668d3 = $(`<div id="html_a17863a68bea3e4ab9105884789668d3" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> APJ764<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 3352.8 m<br>             <b>속도:</b> 187.35 m/s<br>             <b>수직 승강률:</b> 7.15 m/s         </div>         </div>`)[0];
+                popup_bce91707d03bdb9e32e11d5ce91b1504.setContent(html_a17863a68bea3e4ab9105884789668d3);
+            
+        
+
+        marker_f21df9517cbc96aaff5ce1e8e369241a.bindPopup(popup_bce91707d03bdb9e32e11d5ce91b1504)
+        ;
+
+        
+    
+    
+            marker_f21df9517cbc96aaff5ce1e8e369241a.bindTooltip(
+                `<div>
+                     APJ764 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f21df9517cbc96aaff5ce1e8e369241a.setIcon(icon_44981b0af682ce64528fac5a04cdc970);
+            
+    
+            var marker_aed2935c8962f565db546860113979c5 = L.marker(
+                [33.7098, 131.2807],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_2114d13c25793df351cfd98ed9d71db5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d142ccea8e77ecb2b51e02b1c3828b00 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1a7e6bc90425308932e2c45dc36b5a36 = $(`<div id="html_1a7e6bc90425308932e2c45dc36b5a36" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CKK242<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> 10972.8 m<br>             <b>속도:</b> 198.93 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_d142ccea8e77ecb2b51e02b1c3828b00.setContent(html_1a7e6bc90425308932e2c45dc36b5a36);
+            
+        
+
+        marker_aed2935c8962f565db546860113979c5.bindPopup(popup_d142ccea8e77ecb2b51e02b1c3828b00)
+        ;
+
+        
+    
+    
+            marker_aed2935c8962f565db546860113979c5.bindTooltip(
+                `<div>
+                     CKK242 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aed2935c8962f565db546860113979c5.setIcon(icon_2114d13c25793df351cfd98ed9d71db5);
+            
+    
+            var marker_ba2465adf220d9985004ff41770e6cb6 = L.marker(
+                [33.083, 130.9455],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_b0a8bf1e8be7ea7ca10f61e611ca66b0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_41035d5f569f25f4e8ade86e3e30361d = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_25e20b0dbb424804fcef37954ba2b6e2 = $(`<div id="html_25e20b0dbb424804fcef37954ba2b6e2" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CES529<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> 9441.18 m<br>             <b>속도:</b> 263.26 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_41035d5f569f25f4e8ade86e3e30361d.setContent(html_25e20b0dbb424804fcef37954ba2b6e2);
+            
+        
+
+        marker_ba2465adf220d9985004ff41770e6cb6.bindPopup(popup_41035d5f569f25f4e8ade86e3e30361d)
+        ;
+
+        
+    
+    
+            marker_ba2465adf220d9985004ff41770e6cb6.bindTooltip(
+                `<div>
+                     CES529 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ba2465adf220d9985004ff41770e6cb6.setIcon(icon_b0a8bf1e8be7ea7ca10f61e611ca66b0);
+            
+    
+            var marker_7711662d54fe4bbbd628dfd6d6c05022 = L.marker(
+                [36.8149, 128.004],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_e158dd9561d4639c67f57614f7d00861 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e6565329962b6347d32d68d903f88de8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e627365a5d18c661fadf69703ce27605 = $(`<div id="html_e627365a5d18c661fadf69703ce27605" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JAL23<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 9745.98 m<br>             <b>속도:</b> 234.79 m/s<br>             <b>수직 승강률:</b> -0.33 m/s         </div>         </div>`)[0];
+                popup_e6565329962b6347d32d68d903f88de8.setContent(html_e627365a5d18c661fadf69703ce27605);
+            
+        
+
+        marker_7711662d54fe4bbbd628dfd6d6c05022.bindPopup(popup_e6565329962b6347d32d68d903f88de8)
+        ;
+
+        
+    
+    
+            marker_7711662d54fe4bbbd628dfd6d6c05022.bindTooltip(
+                `<div>
+                     JAL23 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7711662d54fe4bbbd628dfd6d6c05022.setIcon(icon_e158dd9561d4639c67f57614f7d00861);
+            
+    
+            var marker_89073a891753a0f7c8dcdef721052027 = L.marker(
+                [37.4611, 127.5068],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_9ca891c0cdefb861ec7a0519261e6e9b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2cf50622c80f4ccbd54daf4d6bd25991 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_009b28a02223e464f4462b364a846390 = $(`<div id="html_009b28a02223e464f4462b364a846390" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CKS893<br>             <b>국적:</b> United States<br>             <b>기압 고도:</b> 4267.2 m<br>             <b>속도:</b> 208.78 m/s<br>             <b>수직 승강률:</b> 3.9 m/s         </div>         </div>`)[0];
+                popup_2cf50622c80f4ccbd54daf4d6bd25991.setContent(html_009b28a02223e464f4462b364a846390);
+            
+        
+
+        marker_89073a891753a0f7c8dcdef721052027.bindPopup(popup_2cf50622c80f4ccbd54daf4d6bd25991)
+        ;
+
+        
+    
+    
+            marker_89073a891753a0f7c8dcdef721052027.bindTooltip(
+                `<div>
+                     CKS893 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_89073a891753a0f7c8dcdef721052027.setIcon(icon_9ca891c0cdefb861ec7a0519261e6e9b);
+            
+    
+            var marker_803c4469ca575db27d37f7f9ba42e845 = L.marker(
+                [36.9664, 126.7025],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_903d0d875deadadf6ff35b69c3e2e6d2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a49d1b70a5dc0bb38a63ab6fb0747909 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_05eb2673e8cd2699bedbabff2b2dfd42 = $(`<div id="html_05eb2673e8cd2699bedbabff2b2dfd42" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CCA139<br>             <b>국적:</b> China<br>             <b>기압 고도:</b> 4663.44 m<br>             <b>속도:</b> 192.44 m/s<br>             <b>수직 승강률:</b> -7.8 m/s         </div>         </div>`)[0];
+                popup_a49d1b70a5dc0bb38a63ab6fb0747909.setContent(html_05eb2673e8cd2699bedbabff2b2dfd42);
+            
+        
+
+        marker_803c4469ca575db27d37f7f9ba42e845.bindPopup(popup_a49d1b70a5dc0bb38a63ab6fb0747909)
+        ;
+
+        
+    
+    
+            marker_803c4469ca575db27d37f7f9ba42e845.bindTooltip(
+                `<div>
+                     CCA139 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_803c4469ca575db27d37f7f9ba42e845.setIcon(icon_903d0d875deadadf6ff35b69c3e2e6d2);
+            
+    
+            var marker_a77c306a9c7b552f8b7cac757a57228a = L.marker(
+                [37.0012, 128.8494],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_514fe654293a3d8afb1fd10408caac0f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04bc8add716a24583c461fb322a45557 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8d285f966ed95056e3193d552c88a759 = $(`<div id="html_8d285f966ed95056e3193d552c88a759" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> MGL501<br>             <b>국적:</b> Ireland<br>             <b>기압 고도:</b> 10668.0 m<br>             <b>속도:</b> 264.5 m/s<br>             <b>수직 승강률:</b> 0.33 m/s         </div>         </div>`)[0];
+                popup_04bc8add716a24583c461fb322a45557.setContent(html_8d285f966ed95056e3193d552c88a759);
+            
+        
+
+        marker_a77c306a9c7b552f8b7cac757a57228a.bindPopup(popup_04bc8add716a24583c461fb322a45557)
+        ;
+
+        
+    
+    
+            marker_a77c306a9c7b552f8b7cac757a57228a.bindTooltip(
+                `<div>
+                     MGL501 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a77c306a9c7b552f8b7cac757a57228a.setIcon(icon_514fe654293a3d8afb1fd10408caac0f);
+            
+    
+            var marker_0548405283e24f2924cbece2a0052cb6 = L.marker(
+                [36.9252, 126.741],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_4eda7caaf623a4f20df2440a0aed5cbc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5e0da3caf5d9cfd45cde8b40e0b400b8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_93a84485f4e41f0cb41a2d928ebd81bb = $(`<div id="html_93a84485f4e41f0cb41a2d928ebd81bb" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> HLC273<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 1097.28 m<br>             <b>속도:</b> 53.29 m/s<br>             <b>수직 승강률:</b> 3.25 m/s         </div>         </div>`)[0];
+                popup_5e0da3caf5d9cfd45cde8b40e0b400b8.setContent(html_93a84485f4e41f0cb41a2d928ebd81bb);
+            
+        
+
+        marker_0548405283e24f2924cbece2a0052cb6.bindPopup(popup_5e0da3caf5d9cfd45cde8b40e0b400b8)
+        ;
+
+        
+    
+    
+            marker_0548405283e24f2924cbece2a0052cb6.bindTooltip(
+                `<div>
+                     HLC273 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0548405283e24f2924cbece2a0052cb6.setIcon(icon_4eda7caaf623a4f20df2440a0aed5cbc);
+            
+    
+            var marker_a11eabcc358243b6dfd4cdf232de3f0e = L.marker(
+                [37.1058, 126.7036],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_3a87727a230abaad08fd1829dc2fcd36 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bfe1d8c8d5996a0a1c45dd0a70572d34 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_5616fb42a3f17cb9fae6ee62e2b1df04 = $(`<div id="html_5616fb42a3f17cb9fae6ee62e2b1df04" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> HLC260<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 312.42 m<br>             <b>속도:</b> 47.22 m/s<br>             <b>수직 승강률:</b> 0.33 m/s         </div>         </div>`)[0];
+                popup_bfe1d8c8d5996a0a1c45dd0a70572d34.setContent(html_5616fb42a3f17cb9fae6ee62e2b1df04);
+            
+        
+
+        marker_a11eabcc358243b6dfd4cdf232de3f0e.bindPopup(popup_bfe1d8c8d5996a0a1c45dd0a70572d34)
+        ;
+
+        
+    
+    
+            marker_a11eabcc358243b6dfd4cdf232de3f0e.bindTooltip(
+                `<div>
+                     HLC260 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a11eabcc358243b6dfd4cdf232de3f0e.setIcon(icon_3a87727a230abaad08fd1829dc2fcd36);
+            
+    
+            var marker_707ae9155a0a5807e17a65bbd079a114 = L.marker(
+                [36.2421, 126.682],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_a4db05dc0f3b1bac717c13db875d7c44 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16d3734b9753003af6c1091e150a2ac0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4717d9860a4dd46d63a4a90ce9ef83cf = $(`<div id="html_4717d9860a4dd46d63a4a90ce9ef83cf" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> HLC265<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 1676.4 m<br>             <b>속도:</b> 46.95 m/s<br>             <b>수직 승강률:</b> -0.33 m/s         </div>         </div>`)[0];
+                popup_16d3734b9753003af6c1091e150a2ac0.setContent(html_4717d9860a4dd46d63a4a90ce9ef83cf);
+            
+        
+
+        marker_707ae9155a0a5807e17a65bbd079a114.bindPopup(popup_16d3734b9753003af6c1091e150a2ac0)
+        ;
+
+        
+    
+    
+            marker_707ae9155a0a5807e17a65bbd079a114.bindTooltip(
+                `<div>
+                     HLC265 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_707ae9155a0a5807e17a65bbd079a114.setIcon(icon_a4db05dc0f3b1bac717c13db875d7c44);
+            
+    
+            var marker_d97d280c06abb8fb99ad85c2f8eea5ae = L.marker(
+                [37.1074, 126.7231],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_1e5eca85af4ac50860511bda797e2fbe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_811f8fa4588ce0bb5991ebbe10709ef6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_58150bd492c87c4da42b3ccae72d785f = $(`<div id="html_58150bd492c87c4da42b3ccae72d785f" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> HLC238<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 167.64 m<br>             <b>속도:</b> 37.04 m/s<br>             <b>수직 승강률:</b> 0.65 m/s         </div>         </div>`)[0];
+                popup_811f8fa4588ce0bb5991ebbe10709ef6.setContent(html_58150bd492c87c4da42b3ccae72d785f);
+            
+        
+
+        marker_d97d280c06abb8fb99ad85c2f8eea5ae.bindPopup(popup_811f8fa4588ce0bb5991ebbe10709ef6)
+        ;
+
+        
+    
+    
+            marker_d97d280c06abb8fb99ad85c2f8eea5ae.bindTooltip(
+                `<div>
+                     HLC238 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d97d280c06abb8fb99ad85c2f8eea5ae.setIcon(icon_1e5eca85af4ac50860511bda797e2fbe);
+            
+    
+            var marker_056565a4864e2df22e38a99f25486894 = L.marker(
+                [37.0384, 126.7602],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_646160f9f739896950d0f4283f47b3a5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_865744ecdca85bd1b142fc0952ea5ca6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_638e5d70c4a49074e67b067f641e56e2 = $(`<div id="html_638e5d70c4a49074e67b067f641e56e2" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> HLC282<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 243.84 m<br>             <b>속도:</b> 46.11 m/s<br>             <b>수직 승강률:</b> -0.33 m/s         </div>         </div>`)[0];
+                popup_865744ecdca85bd1b142fc0952ea5ca6.setContent(html_638e5d70c4a49074e67b067f641e56e2);
+            
+        
+
+        marker_056565a4864e2df22e38a99f25486894.bindPopup(popup_865744ecdca85bd1b142fc0952ea5ca6)
+        ;
+
+        
+    
+    
+            marker_056565a4864e2df22e38a99f25486894.bindTooltip(
+                `<div>
+                     HLC282 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_056565a4864e2df22e38a99f25486894.setIcon(icon_646160f9f739896950d0f4283f47b3a5);
+            
+    
+            var marker_9570a680d10a639a99267262bd1ddc3c = L.marker(
+                [37.3932, 126.4782],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_271740a7b358ad0df1fd6afa65b589f0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_de02d35383b9f8352614792104e220da = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8e27120cf930eb4edef64cee462d90f1 = $(`<div id="html_8e27120cf930eb4edef64cee462d90f1" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> HVN431<br>             <b>국적:</b> Viet Nam<br>             <b>기압 고도:</b> 822.96 m<br>             <b>속도:</b> 110.75 m/s<br>             <b>수직 승강률:</b> 4.88 m/s         </div>         </div>`)[0];
+                popup_de02d35383b9f8352614792104e220da.setContent(html_8e27120cf930eb4edef64cee462d90f1);
+            
+        
+
+        marker_9570a680d10a639a99267262bd1ddc3c.bindPopup(popup_de02d35383b9f8352614792104e220da)
+        ;
+
+        
+    
+    
+            marker_9570a680d10a639a99267262bd1ddc3c.bindTooltip(
+                `<div>
+                     HVN431 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9570a680d10a639a99267262bd1ddc3c.setIcon(icon_271740a7b358ad0df1fd6afa65b589f0);
+            
+    
+            var marker_fe10610ee05e113937a8b1958ca7fbd7 = L.marker(
+                [35.17, 126.2022],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_0e4fea971b66f8bfc8d82d3ed21d7ced = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8103f3e65b8604a3c4e7e6572d2bf5be = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3d440195bf4ab2f9c7239972bbc1b52c = $(`<div id="html_3d440195bf4ab2f9c7239972bbc1b52c" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> HVN409<br>             <b>국적:</b> Viet Nam<br>             <b>기압 고도:</b> 9540.24 m<br>             <b>속도:</b> 244.07 m/s<br>             <b>수직 승강률:</b> 4.23 m/s         </div>         </div>`)[0];
+                popup_8103f3e65b8604a3c4e7e6572d2bf5be.setContent(html_3d440195bf4ab2f9c7239972bbc1b52c);
+            
+        
+
+        marker_fe10610ee05e113937a8b1958ca7fbd7.bindPopup(popup_8103f3e65b8604a3c4e7e6572d2bf5be)
+        ;
+
+        
+    
+    
+            marker_fe10610ee05e113937a8b1958ca7fbd7.bindTooltip(
+                `<div>
+                     HVN409 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fe10610ee05e113937a8b1958ca7fbd7.setIcon(icon_0e4fea971b66f8bfc8d82d3ed21d7ced);
+            
+    
+            var marker_7d526f387ff47e4501a147627d67eccd = L.marker(
+                [36.5598, 126.5543],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_892d07e2e02b05946ac16e5ad580f70d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a579cde938c12240728856e268002387 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7a900310e7e73cd7ae9365d5a5c69a67 = $(`<div id="html_7a900310e7e73cd7ae9365d5a5c69a67" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> VJC961<br>             <b>국적:</b> Viet Nam<br>             <b>기압 고도:</b> 5814.06 m<br>             <b>속도:</b> 197.23 m/s<br>             <b>수직 승강률:</b> 5.53 m/s         </div>         </div>`)[0];
+                popup_a579cde938c12240728856e268002387.setContent(html_7a900310e7e73cd7ae9365d5a5c69a67);
+            
+        
+
+        marker_7d526f387ff47e4501a147627d67eccd.bindPopup(popup_a579cde938c12240728856e268002387)
+        ;
+
+        
+    
+    
+            marker_7d526f387ff47e4501a147627d67eccd.bindTooltip(
+                `<div>
+                     VJC961 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7d526f387ff47e4501a147627d67eccd.setIcon(icon_892d07e2e02b05946ac16e5ad580f70d);
+            
+    
+            var marker_ced9c7ca484149681d9719001cfec466 = L.marker(
+                [33.8705, 131.9964],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_b89bca690bfbd381beae6bf84fb267a3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_523580cb0e2d5ccfc5ab215df22c966e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7acaecd2ee999d7fe44221f1292f5f22 = $(`<div id="html_7acaecd2ee999d7fe44221f1292f5f22" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> UPS108<br>             <b>국적:</b> United States<br>             <b>기압 고도:</b> 11582.4 m<br>             <b>속도:</b> 193.16 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_523580cb0e2d5ccfc5ab215df22c966e.setContent(html_7acaecd2ee999d7fe44221f1292f5f22);
+            
+        
+
+        marker_ced9c7ca484149681d9719001cfec466.bindPopup(popup_523580cb0e2d5ccfc5ab215df22c966e)
+        ;
+
+        
+    
+    
+            marker_ced9c7ca484149681d9719001cfec466.bindTooltip(
+                `<div>
+                     UPS108 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ced9c7ca484149681d9719001cfec466.setIcon(icon_b89bca690bfbd381beae6bf84fb267a3);
+            
+    
+            var marker_e18c72787fa035e85d4756204894fee4 = L.marker(
+                [34.276, 131.711],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_9360ab289f468d69d199917da856db0a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_23896c0f9534633640d829a61648783a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2e73c254debf5bd8b1d01ec744457c02 = $(`<div id="html_2e73c254debf5bd8b1d01ec744457c02" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> IBX69<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 6697.98 m<br>             <b>속도:</b> 207.42 m/s<br>             <b>수직 승강률:</b> -0.33 m/s         </div>         </div>`)[0];
+                popup_23896c0f9534633640d829a61648783a.setContent(html_2e73c254debf5bd8b1d01ec744457c02);
+            
+        
+
+        marker_e18c72787fa035e85d4756204894fee4.bindPopup(popup_23896c0f9534633640d829a61648783a)
+        ;
+
+        
+    
+    
+            marker_e18c72787fa035e85d4756204894fee4.bindTooltip(
+                `<div>
+                     IBX69 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e18c72787fa035e85d4756204894fee4.setIcon(icon_9360ab289f468d69d199917da856db0a);
+            
+    
+            var marker_a6679e9e63659e51f468ba2edae548e6 = L.marker(
+                [34.2581, 131.302],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_0f011688c4a1d19331b509f5bf1f7885 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4225248d0f97c2d5916047fd11263064 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_de9041de3ab9db70e66c556f1f9bc96e = $(`<div id="html_de9041de3ab9db70e66c556f1f9bc96e" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> SKY831<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 7551.42 m<br>             <b>속도:</b> 200.97 m/s<br>             <b>수직 승강률:</b> -16.58 m/s         </div>         </div>`)[0];
+                popup_4225248d0f97c2d5916047fd11263064.setContent(html_de9041de3ab9db70e66c556f1f9bc96e);
+            
+        
+
+        marker_a6679e9e63659e51f468ba2edae548e6.bindPopup(popup_4225248d0f97c2d5916047fd11263064)
+        ;
+
+        
+    
+    
+            marker_a6679e9e63659e51f468ba2edae548e6.bindTooltip(
+                `<div>
+                     SKY831 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a6679e9e63659e51f468ba2edae548e6.setIcon(icon_0f011688c4a1d19331b509f5bf1f7885);
+            
+    
+            var marker_232d5f76fa3814d6562b9be31e197e4a = L.marker(
+                [37.2741, 126.6592],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_e72bc43d2a5b6f513e15bea1a575a48d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b4dd87ad9df140d4afb1d0ce7937d2a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_49198743e5e9371072bf774225f86940 = $(`<div id="html_49198743e5e9371072bf774225f86940" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> CKS961<br>             <b>국적:</b> United States<br>             <b>기압 고도:</b> 1661.16 m<br>             <b>속도:</b> 145.25 m/s<br>             <b>수직 승강률:</b> 6.83 m/s         </div>         </div>`)[0];
+                popup_9b4dd87ad9df140d4afb1d0ce7937d2a.setContent(html_49198743e5e9371072bf774225f86940);
+            
+        
+
+        marker_232d5f76fa3814d6562b9be31e197e4a.bindPopup(popup_9b4dd87ad9df140d4afb1d0ce7937d2a)
+        ;
+
+        
+    
+    
+            marker_232d5f76fa3814d6562b9be31e197e4a.bindTooltip(
+                `<div>
+                     CKS961 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_232d5f76fa3814d6562b9be31e197e4a.setIcon(icon_e72bc43d2a5b6f513e15bea1a575a48d);
+            
+    
+            var marker_d3ab85491003d50a05f71432241f874b = L.marker(
+                [36.8265, 127.9832],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_e879f72cf1c4712f826fa5212ad3bde6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1d28c568701775f43ae77ace17597c12 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ab2cb60b26000dad01dea1a43d644b1f = $(`<div id="html_ab2cb60b26000dad01dea1a43d644b1f" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JJA1602<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 6446.52 m<br>             <b>속도:</b> 177.56 m/s<br>             <b>수직 승강률:</b> -5.2 m/s         </div>         </div>`)[0];
+                popup_1d28c568701775f43ae77ace17597c12.setContent(html_ab2cb60b26000dad01dea1a43d644b1f);
+            
+        
+
+        marker_d3ab85491003d50a05f71432241f874b.bindPopup(popup_1d28c568701775f43ae77ace17597c12)
+        ;
+
+        
+    
+    
+            marker_d3ab85491003d50a05f71432241f874b.bindTooltip(
+                `<div>
+                     JJA1602 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d3ab85491003d50a05f71432241f874b.setIcon(icon_e879f72cf1c4712f826fa5212ad3bde6);
+            
+    
+            var marker_74644d5e201328bafa7116edab1643af = L.marker(
+                [37.5646, 126.7889],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_197f77c8767412d1ab6e2619107c1e81 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_27fe59de57f1763d9980c30137937180 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6ab04417dfb81cd18b4fdc40d4046bb1 = $(`<div id="html_6ab04417dfb81cd18b4fdc40d4046bb1" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> VJT712<br>             <b>국적:</b> Malta<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 7.46 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_27fe59de57f1763d9980c30137937180.setContent(html_6ab04417dfb81cd18b4fdc40d4046bb1);
+            
+        
+
+        marker_74644d5e201328bafa7116edab1643af.bindPopup(popup_27fe59de57f1763d9980c30137937180)
+        ;
+
+        
+    
+    
+            marker_74644d5e201328bafa7116edab1643af.bindTooltip(
+                `<div>
+                     VJT712 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_74644d5e201328bafa7116edab1643af.setIcon(icon_197f77c8767412d1ab6e2619107c1e81);
+            
+    
+            var marker_f77f23dff76f51b31b50022e54ae1877 = L.marker(
+                [33.3487, 131.0092],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_2bc4c2bb68cfae834c100be2c3c00b47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_180030f02992e688449f37ad3614b67c = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f4ca293d69cf5ce9a378113c9edccab9 = $(`<div id="html_f4ca293d69cf5ce9a378113c9edccab9" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> ANA248<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 5852.16 m<br>             <b>속도:</b> 226.29 m/s<br>             <b>수직 승강률:</b> 10.73 m/s         </div>         </div>`)[0];
+                popup_180030f02992e688449f37ad3614b67c.setContent(html_f4ca293d69cf5ce9a378113c9edccab9);
+            
+        
+
+        marker_f77f23dff76f51b31b50022e54ae1877.bindPopup(popup_180030f02992e688449f37ad3614b67c)
+        ;
+
+        
+    
+    
+            marker_f77f23dff76f51b31b50022e54ae1877.bindTooltip(
+                `<div>
+                     ANA248 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f77f23dff76f51b31b50022e54ae1877.setIcon(icon_2bc4c2bb68cfae834c100be2c3c00b47);
+            
+    
+            var marker_84a55969aaf295e2958856bd8c6f790f = L.marker(
+                [33.0261, 130.3832],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_96de0165c5bcbc39a4f5a607ab9ab28d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1994d008790aa56f3c42404bb96faefa = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_123ed534844b8ad83c0145040175a560 = $(`<div id="html_123ed534844b8ad83c0145040175a560" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> SKY142<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 5875.02 m<br>             <b>속도:</b> 210.79 m/s<br>             <b>수직 승강률:</b> 13.33 m/s         </div>         </div>`)[0];
+                popup_1994d008790aa56f3c42404bb96faefa.setContent(html_123ed534844b8ad83c0145040175a560);
+            
+        
+
+        marker_84a55969aaf295e2958856bd8c6f790f.bindPopup(popup_1994d008790aa56f3c42404bb96faefa)
+        ;
+
+        
+    
+    
+            marker_84a55969aaf295e2958856bd8c6f790f.bindTooltip(
+                `<div>
+                     SKY142 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_84a55969aaf295e2958856bd8c6f790f.setIcon(icon_96de0165c5bcbc39a4f5a607ab9ab28d);
+            
+    
+            var marker_c1e29eb56e49b86fdfdbbfa48bdd154f = L.marker(
+                [35.6468, 128.2763],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_3a1123d8f8149f05f2349b689a12998a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4d8ef8e62efd9330413b3824569b3c4 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7a3ae1f11d8011d66d6c5f7499a0b125 = $(`<div id="html_7a3ae1f11d8011d66d6c5f7499a0b125" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> XUM2593<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3352.8 m<br>             <b>속도:</b> 139.12 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_f4d8ef8e62efd9330413b3824569b3c4.setContent(html_7a3ae1f11d8011d66d6c5f7499a0b125);
+            
+        
+
+        marker_c1e29eb56e49b86fdfdbbfa48bdd154f.bindPopup(popup_f4d8ef8e62efd9330413b3824569b3c4)
+        ;
+
+        
+    
+    
+            marker_c1e29eb56e49b86fdfdbbfa48bdd154f.bindTooltip(
+                `<div>
+                     XUM2593 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c1e29eb56e49b86fdfdbbfa48bdd154f.setIcon(icon_3a1123d8f8149f05f2349b689a12998a);
+            
+    
+            var marker_b07d77834d978414a224f82ddd26f24f = L.marker(
+                [37.3374, 127.2281],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_7e2bfa35f8ad5994c34d8ff9211fad81 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3b8bb1a2df44ceb3071daaddbad9fbe = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_7adb18141dc7981dd8c1420a062445e8 = $(`<div id="html_7adb18141dc7981dd8c1420a062445e8" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL2106<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3649.98 m<br>             <b>속도:</b> 170.02 m/s<br>             <b>수직 승강률:</b> -0.33 m/s         </div>         </div>`)[0];
+                popup_d3b8bb1a2df44ceb3071daaddbad9fbe.setContent(html_7adb18141dc7981dd8c1420a062445e8);
+            
+        
+
+        marker_b07d77834d978414a224f82ddd26f24f.bindPopup(popup_d3b8bb1a2df44ceb3071daaddbad9fbe)
+        ;
+
+        
+    
+    
+            marker_b07d77834d978414a224f82ddd26f24f.bindTooltip(
+                `<div>
+                     KAL2106 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b07d77834d978414a224f82ddd26f24f.setIcon(icon_7e2bfa35f8ad5994c34d8ff9211fad81);
+            
+    
+            var marker_3eb9a391ca1a248dd6dcdf1ff3fe8f5c = L.marker(
+                [35.8472, 131.1716],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_1d0136b17af9500b8899d1205dead840 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d6ad77a8eaa7f9648b5ac2840ca02940 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_da18b6225539bee2b628378356f38ec9 = $(`<div id="html_da18b6225539bee2b628378356f38ec9" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> ANA903<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 12184.38 m<br>             <b>속도:</b> 199.44 m/s<br>             <b>수직 승강률:</b> -0.33 m/s         </div>         </div>`)[0];
+                popup_d6ad77a8eaa7f9648b5ac2840ca02940.setContent(html_da18b6225539bee2b628378356f38ec9);
+            
+        
+
+        marker_3eb9a391ca1a248dd6dcdf1ff3fe8f5c.bindPopup(popup_d6ad77a8eaa7f9648b5ac2840ca02940)
+        ;
+
+        
+    
+    
+            marker_3eb9a391ca1a248dd6dcdf1ff3fe8f5c.bindTooltip(
+                `<div>
+                     ANA903 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3eb9a391ca1a248dd6dcdf1ff3fe8f5c.setIcon(icon_1d0136b17af9500b8899d1205dead840);
+            
+    
+            var marker_91ff1270566761919e298ebfa09f2012 = L.marker(
+                [37.4996, 126.4262],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_c15d842ca9f2b9458f2db770c25c7f0b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e5e27cc04dc972ca3940d9909a29cd4 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1a6439b1ff55ba493482929480dc6d86 = $(`<div id="html_1a6439b1ff55ba493482929480dc6d86" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> AAR107<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> nan m<br>             <b>속도:</b> 5.92 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_6e5e27cc04dc972ca3940d9909a29cd4.setContent(html_1a6439b1ff55ba493482929480dc6d86);
+            
+        
+
+        marker_91ff1270566761919e298ebfa09f2012.bindPopup(popup_6e5e27cc04dc972ca3940d9909a29cd4)
+        ;
+
+        
+    
+    
+            marker_91ff1270566761919e298ebfa09f2012.bindTooltip(
+                `<div>
+                     AAR107 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_91ff1270566761919e298ebfa09f2012.setIcon(icon_c15d842ca9f2b9458f2db770c25c7f0b);
+            
+    
+            var marker_7b4687a6ca18e5d9612017083f8f7502 = L.marker(
+                [37.2514, 127.4067],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_f5ef9ff6e1aee6b1492f6d03f95310ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae186cea16a644eee32d197e15ceee3f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_554cff93d1aaafe6f8f3589e27df827c = $(`<div id="html_554cff93d1aaafe6f8f3589e27df827c" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> ABL8806<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3970.02 m<br>             <b>속도:</b> 172.12 m/s<br>             <b>수직 승강률:</b> -5.2 m/s         </div>         </div>`)[0];
+                popup_ae186cea16a644eee32d197e15ceee3f.setContent(html_554cff93d1aaafe6f8f3589e27df827c);
+            
+        
+
+        marker_7b4687a6ca18e5d9612017083f8f7502.bindPopup(popup_ae186cea16a644eee32d197e15ceee3f)
+        ;
+
+        
+    
+    
+            marker_7b4687a6ca18e5d9612017083f8f7502.bindTooltip(
+                `<div>
+                     ABL8806 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7b4687a6ca18e5d9612017083f8f7502.setIcon(icon_f5ef9ff6e1aee6b1492f6d03f95310ee);
+            
+    
+            var marker_7e904d945260eede87ca73dd02f7e87e = L.marker(
+                [35.4701, 126.9024],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_2d5b45f5b1d66617ec9a47a5c5840085 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b3856d238a893c32100bf4fc20a6c607 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_4266213273b82e47e74859ae557839c1 = $(`<div id="html_4266213273b82e47e74859ae557839c1" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL1178<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 7010.4 m<br>             <b>속도:</b> 229.29 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_b3856d238a893c32100bf4fc20a6c607.setContent(html_4266213273b82e47e74859ae557839c1);
+            
+        
+
+        marker_7e904d945260eede87ca73dd02f7e87e.bindPopup(popup_b3856d238a893c32100bf4fc20a6c607)
+        ;
+
+        
+    
+    
+            marker_7e904d945260eede87ca73dd02f7e87e.bindTooltip(
+                `<div>
+                     KAL1178 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e904d945260eede87ca73dd02f7e87e.setIcon(icon_2d5b45f5b1d66617ec9a47a5c5840085);
+            
+    
+            var marker_1abd89259e4d602b56c9097f29132670 = L.marker(
+                [37.1664, 126.3864],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_ce5009a687feccf65bcf1dcd4b22909b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd2c4d1043c73b4f377958141ae2bebd = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_b8db9dbfa3741a1b01323530ba98d085 = $(`<div id="html_b8db9dbfa3741a1b01323530ba98d085" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> AAR551<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3093.72 m<br>             <b>속도:</b> 145.22 m/s<br>             <b>수직 승강률:</b> 10.08 m/s         </div>         </div>`)[0];
+                popup_cd2c4d1043c73b4f377958141ae2bebd.setContent(html_b8db9dbfa3741a1b01323530ba98d085);
+            
+        
+
+        marker_1abd89259e4d602b56c9097f29132670.bindPopup(popup_cd2c4d1043c73b4f377958141ae2bebd)
+        ;
+
+        
+    
+    
+            marker_1abd89259e4d602b56c9097f29132670.bindTooltip(
+                `<div>
+                     AAR551 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1abd89259e4d602b56c9097f29132670.setIcon(icon_ce5009a687feccf65bcf1dcd4b22909b);
+            
+    
+            var marker_10a13daac3dbaefab29fb045357e18b7 = L.marker(
+                [36.6567, 127.1492],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_f9ab92f8d1f5605ef3690a72ae004148 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_25d25a708288809e4385132c6e05830f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_cb0fd26cfcb2aff88e465ceecdb36487 = $(`<div id="html_cb0fd26cfcb2aff88e465ceecdb36487" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL1709<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 3002.28 m<br>             <b>속도:</b> 143.2 m/s<br>             <b>수직 승강률:</b> 16.26 m/s         </div>         </div>`)[0];
+                popup_25d25a708288809e4385132c6e05830f.setContent(html_cb0fd26cfcb2aff88e465ceecdb36487);
+            
+        
+
+        marker_10a13daac3dbaefab29fb045357e18b7.bindPopup(popup_25d25a708288809e4385132c6e05830f)
+        ;
+
+        
+    
+    
+            marker_10a13daac3dbaefab29fb045357e18b7.bindTooltip(
+                `<div>
+                     KAL1709 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10a13daac3dbaefab29fb045357e18b7.setIcon(icon_f9ab92f8d1f5605ef3690a72ae004148);
+            
+    
+            var marker_f05993efdb116a439cb372dd95a2616d = L.marker(
+                [35.0089, 126.0208],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_656b475dcf451a2e8449568d7c69c677 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_26beff0500938b7e00342ea05e529a1a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2ae971965ea5d64b7ed47cd6dc4f0b4e = $(`<div id="html_2ae971965ea5d64b7ed47cd6dc4f0b4e" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> AAR363<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 10972.8 m<br>             <b>속도:</b> 213.91 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_26beff0500938b7e00342ea05e529a1a.setContent(html_2ae971965ea5d64b7ed47cd6dc4f0b4e);
+            
+        
+
+        marker_f05993efdb116a439cb372dd95a2616d.bindPopup(popup_26beff0500938b7e00342ea05e529a1a)
+        ;
+
+        
+    
+    
+            marker_f05993efdb116a439cb372dd95a2616d.bindTooltip(
+                `<div>
+                     AAR363 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f05993efdb116a439cb372dd95a2616d.setIcon(icon_656b475dcf451a2e8449568d7c69c677);
+            
+    
+            var marker_7dc8a4c24598b8766aae3fdd98836e3e = L.marker(
+                [36.9933, 129.6748],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_2ec8f269aed3c0a79f52d3324e7b7a00 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3de936fe85a4c78e223fe225f4703416 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8817f94246aff745d33e1aba97deb382 = $(`<div id="html_8817f94246aff745d33e1aba97deb382" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> KAL037<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 8839.2 m<br>             <b>속도:</b> 284.18 m/s<br>             <b>수직 승강률:</b> 0.0 m/s         </div>         </div>`)[0];
+                popup_3de936fe85a4c78e223fe225f4703416.setContent(html_8817f94246aff745d33e1aba97deb382);
+            
+        
+
+        marker_7dc8a4c24598b8766aae3fdd98836e3e.bindPopup(popup_3de936fe85a4c78e223fe225f4703416)
+        ;
+
+        
+    
+    
+            marker_7dc8a4c24598b8766aae3fdd98836e3e.bindTooltip(
+                `<div>
+                     KAL037 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7dc8a4c24598b8766aae3fdd98836e3e.setIcon(icon_2ec8f269aed3c0a79f52d3324e7b7a00);
+            
+    
+            var marker_7cb4deae55807ab1d70cdcb7bcfc0daa = L.marker(
+                [37.471, 126.4517],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_ee4ac96c923b0ddc6b82a75ca1697c71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_44dc64aa3208f9bd45762eae62d813a3 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2b32090885e9b4722bcc85095a487a3c = $(`<div id="html_2b32090885e9b4722bcc85095a487a3c" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> TZP45<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 0.0 m<br>             <b>속도:</b> 5.4 m/s<br>             <b>수직 승강률:</b> nan m/s         </div>         </div>`)[0];
+                popup_44dc64aa3208f9bd45762eae62d813a3.setContent(html_2b32090885e9b4722bcc85095a487a3c);
+            
+        
+
+        marker_7cb4deae55807ab1d70cdcb7bcfc0daa.bindPopup(popup_44dc64aa3208f9bd45762eae62d813a3)
+        ;
+
+        
+    
+    
+            marker_7cb4deae55807ab1d70cdcb7bcfc0daa.bindTooltip(
+                `<div>
+                     TZP45 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7cb4deae55807ab1d70cdcb7bcfc0daa.setIcon(icon_ee4ac96c923b0ddc6b82a75ca1697c71);
+            
+    
+            var marker_bcffc2cfd54b9db3815bf9136c3ff313 = L.marker(
+                [37.0403, 127.0482],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_7ed7f738845641d6aa32db2208fd2ac6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_67ceb422e08e50f8bc5f9083aa086347 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e2b792b496519836260353efe8fd9ba5 = $(`<div id="html_e2b792b496519836260353efe8fd9ba5" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> JNA471<br>             <b>국적:</b> Republic of Korea<br>             <b>기압 고도:</b> 7924.8 m<br>             <b>속도:</b> 208.27 m/s<br>             <b>수직 승강률:</b> 0.33 m/s         </div>         </div>`)[0];
+                popup_67ceb422e08e50f8bc5f9083aa086347.setContent(html_e2b792b496519836260353efe8fd9ba5);
+            
+        
+
+        marker_bcffc2cfd54b9db3815bf9136c3ff313.bindPopup(popup_67ceb422e08e50f8bc5f9083aa086347)
+        ;
+
+        
+    
+    
+            marker_bcffc2cfd54b9db3815bf9136c3ff313.bindTooltip(
+                `<div>
+                     JNA471 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bcffc2cfd54b9db3815bf9136c3ff313.setIcon(icon_7ed7f738845641d6aa32db2208fd2ac6);
+            
+    
+            var marker_c8e1972ef5dc3c2e6cbe84371308f8b1 = L.marker(
+                [37.4185, 126.9508],
+                {
+}
+            ).addTo(map_53312212b3a04ef64162c397852c5a42);
+        
+    
+            var icon_2e39d66052aeca0ed406b8edd4f6c7f0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plane",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0754e1ab86dada515f3bcad9ca8871a5 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6be80eddc7fde2fabf9f150059ee8aab = $(`<div id="html_6be80eddc7fde2fabf9f150059ee8aab" style="width: 100.0%; height: 100.0%;">         <div style="width: 230px;">             <b>항공편명:</b> APJ736<br>             <b>국적:</b> Japan<br>             <b>기압 고도:</b> 1798.32 m<br>             <b>속도:</b> 141.87 m/s<br>             <b>수직 승강률:</b> 3.25 m/s         </div>         </div>`)[0];
+                popup_0754e1ab86dada515f3bcad9ca8871a5.setContent(html_6be80eddc7fde2fabf9f150059ee8aab);
+            
+        
+
+        marker_c8e1972ef5dc3c2e6cbe84371308f8b1.bindPopup(popup_0754e1ab86dada515f3bcad9ca8871a5)
+        ;
+
+        
+    
+    
+            marker_c8e1972ef5dc3c2e6cbe84371308f8b1.bindTooltip(
+                `<div>
+                     APJ736 상세 정보
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c8e1972ef5dc3c2e6cbe84371308f8b1.setIcon(icon_2e39d66052aeca0ed406b8edd4f6c7f0);
+            
+</script>
+</html>

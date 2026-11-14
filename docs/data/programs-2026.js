@@ -12,12 +12,12 @@ window.PROGRAM_YEAR = {
    "초등 1학년 – 고등학교"
   ],
   [
-   "수업",
-   "8 – 12차시"
-  ],
-  [
    "학생",
    "4,600명"
+  ],
+  [
+   "학교",
+   "217곳"
   ]
  ],
  "programs": [
@@ -36,8 +36,8 @@ window.PROGRAM_YEAR = {
     3
    ],
    "color": "#3A86E8",
-   "tagline": "그림책 속 괴물을 화면 밖으로 꺼내는 수업",
-   "intro": "『괴물들이 사는 나라』를 함께 읽고, 아이들이 떠올린 장면을 옥토 스튜디오로 움직이게 만듭니다. 종이 가면과 도형 스티커로 만든 괴물에 소리와 센서를 더해 모둠마다 디지털 북 한 권을 완성합니다.",
+   "tagline": "그림책 속 괴물이 태블릿에서 춤춘다",
+   "intro": "모리스 샌닥의 『괴물들이 사는 나라』를 읽고, 아이들이 떠올린 장면을 옥토 스튜디오로 움직이게 만듭니다. 종이 가면과 도형 스티커로 만든 괴물에 소리와 센서를 더해 모둠마다 디지털 북 한 권을 완성합니다.",
    "steps": [
     "그림책 읽기, 괴물 특징 설명 놀이",
     "움직임·소리·센서 블록으로 장면 코딩",
@@ -101,7 +101,8 @@ window.PROGRAM_YEAR = {
    ],
    "activities": [],
    "icon": "<path d=\"M6 13c6-2.6 12-2.6 18 1.4 6-4 12-4 18-1.4v24c-6-2.6-12-2.6-18 1.4-6-4-12-4-18-1.4z\"/><path d=\"M24 14.4v25\"/><path d=\"M36 3.5l1.2 2.6 2.8.4-2 2 .5 2.8L36 10l-2.5 1.3.5-2.8-2-2 2.8-.4z\"/>",
-   "participants": null
+   "participants": 1000,
+   "participantsPlus": false
   },
   {
    "id": "play",
@@ -118,8 +119,8 @@ window.PROGRAM_YEAR = {
     3
    ],
    "color": "#12A39B",
-   "tagline": "은박지 버튼 하나로 시작하는 디지털 놀이터",
-   "intro": "메이키메이키에 점토와 은박지를 이어 나만의 입력 장치를 만들고, 베티 주니어로 그 장치에 반응하는 게임을 짭니다. 마지막 시간에는 교실이 친구들 작품을 직접 해 보는 전시장이 됩니다.",
+   "tagline": "은박지 버튼으로 내가 짠 게임을 조종한다",
+   "intro": "메이키메이키에 점토와 은박지를 이어 입력 장치를 만들고, 베티 주니어로 그 장치에 반응하는 게임을 짭니다. 마지막 시간에는 교실이 전시장이 되고, 아이들은 친구 작품을 돌아가며 해 봅니다.",
    "steps": [
     "놀이로 익히는 입력·처리·출력",
     "베티 주니어 게임, 점토·은박지 입력 장치",
@@ -188,7 +189,8 @@ window.PROGRAM_YEAR = {
    ],
    "activities": [],
    "icon": "<path d=\"M15 16h18a9 9 0 0 1 9 9v1.5a6.5 6.5 0 0 1-11.6 4L28 27.5h-8l-2.4 3a6.5 6.5 0 0 1-11.6-4V25a9 9 0 0 1 9-9z\"/><path d=\"M14.5 21.5v7M11 25h7\"/><circle cx=\"31\" cy=\"23\" r=\"1.4\"/><circle cx=\"35\" cy=\"27\" r=\"1.4\"/>",
-   "participants": null
+   "participants": 1100,
+   "participantsPlus": false
   },
   {
    "id": "make",
@@ -205,8 +207,8 @@ window.PROGRAM_YEAR = {
     4
    ],
    "color": "#2A5BAA",
-   "tagline": "교실 안에 작은 시장이 열린다",
-   "intro": "바코드와 QR코드가 정보를 담는 원리를 직접 풀어 본 뒤, 학급 화폐로 물건을 사고팝니다. 거래 규칙과 환불 약관을 정하고, 상품을 등록하고, 사기 문자를 가려내는 일까지 학생들이 맡습니다.",
+   "tagline": "교실에 장이 서고, 값은 QR로 치른다",
+   "intro": "바코드와 QR코드가 정보를 담는 원리를 풀어 본 뒤, 학급 화폐로 물건을 사고팝니다. 거래 규칙과 환불 약관은 학급 회의로 정하고, 상품 등록과 사기 문자 가려내기도 학생들이 맡습니다.",
    "steps": [
     "바코드·QR코드 원리 해독",
     "학급 화폐와 거래 규칙 정하기",
@@ -306,7 +308,8 @@ window.PROGRAM_YEAR = {
     ]
    ],
    "icon": "<rect x=\"7\" y=\"7\" width=\"13\" height=\"13\" rx=\"1.5\"/><rect x=\"28\" y=\"7\" width=\"13\" height=\"13\" rx=\"1.5\"/><rect x=\"7\" y=\"28\" width=\"13\" height=\"13\" rx=\"1.5\"/><path d=\"M12 12h3v3h-3zM33 12h3v3h-3zM12 33h3v3h-3zM28 28h4v4h-4zM37 28h4M28 37v4M33 37h8v4\"/>",
-   "participants": null
+   "participants": 900,
+   "participantsPlus": false
   },
   {
    "id": "design",
@@ -324,7 +327,7 @@ window.PROGRAM_YEAR = {
    ],
    "color": "#5A5FD1",
    "tagline": "학교의 불편 하나를 골라 앱으로 고친다",
-   "intro": "학교생활에서 불편한 점을 찾아 앱 제작 의뢰서로 정리하고, Canva의 AI 코드 생성으로 직접 앱을 만듭니다. 프롬프트를 고쳐 가며 결과를 비교하고, 다른 모둠의 의뢰를 받아 한 번 더 만들어 봅니다.",
+   "intro": "학교생활에서 불편한 점을 찾아 앱 제작 의뢰서로 정리하고, Canva의 AI 코드 생성으로 앱을 만듭니다. 프롬프트를 고쳐 가며 결과를 비교하고, 다른 모둠의 의뢰를 받아 앱을 하나 더 만듭니다.",
    "steps": [
     "문제 찾기와 앱 제작 의뢰서",
     "프롬프트 설계와 앱 구현",
@@ -388,7 +391,8 @@ window.PROGRAM_YEAR = {
    ],
    "activities": [],
    "icon": "<rect x=\"5\" y=\"9\" width=\"38\" height=\"29\" rx=\"3\"/><path d=\"M5 16h38\"/><path d=\"M18 23l-4.5 4.5L18 32M30 23l4.5 4.5L30 32M26.5 21l-5 13\"/>",
-   "participants": null
+   "participants": 500,
+   "participantsPlus": false
   },
   {
    "id": "insight",
@@ -493,9 +497,16 @@ window.PROGRAM_YEAR = {
      "브라우저에서 파이썬 실행"
     ]
    ],
-   "activities": [],
+   "activities": [
+    [
+     "try/flight-map.html",
+     "5~7차시",
+     "실시간 항공 지도"
+    ]
+   ],
    "icon": "<path d=\"M6 41h36\"/><path d=\"M11 41V31M19 41V24M27 41V28M35 41V18\"/><path d=\"M8 22l10-8 8 5 14-11\"/><path d=\"M34 8h6v6\"/>",
-   "participants": null
+   "participants": 300,
+   "participantsPlus": false
   },
   {
    "id": "move",
@@ -597,7 +608,8 @@ window.PROGRAM_YEAR = {
    ],
    "activities": [],
    "icon": "<path d=\"M24 5c6.5 5 9.5 12 9.5 20v8h-19v-8C14.5 17 17.5 10 24 5z\"/><circle cx=\"24\" cy=\"19\" r=\"3.5\"/><path d=\"M14.5 26L9 31.5V37h5.5M33.5 26l5.5 5.5V37h-5.5\"/><path d=\"M20 38c.5 3 2 5 4 6.5 2-1.5 3.5-3.5 4-6.5\"/>",
-   "participants": null
+   "participants": 500,
+   "participantsPlus": false
   },
   {
    "id": "link",
@@ -699,7 +711,8 @@ window.PROGRAM_YEAR = {
    ],
    "activities": [],
    "icon": "<ellipse cx=\"12.5\" cy=\"22\" rx=\"3.3\" ry=\"4.3\"/><ellipse cx=\"19.5\" cy=\"13.5\" rx=\"3.3\" ry=\"4.5\"/><ellipse cx=\"28.5\" cy=\"13.5\" rx=\"3.3\" ry=\"4.5\"/><ellipse cx=\"35.5\" cy=\"22\" rx=\"3.3\" ry=\"4.3\"/><path d=\"M24 25c-6.5 0-11.5 6.2-11.5 11.2 0 3.6 2.6 5.6 5.6 5.6 2.6 0 3.6-1.3 5.9-1.3s3.3 1.3 5.9 1.3c3 0 5.6-2 5.6-5.6C35.5 31.2 30.5 25 24 25z\"/>",
-   "participants": null
+   "participants": 300,
+   "participantsPlus": false
   }
  ]
 };

@@ -8,7 +8,7 @@ YEARS = [
     (2026, "2026 프로그램", "PROGRAM", "assets/img/slide-view.jpg",
      "Create! PLAY! Make! Design! Insight! Move! Link! 한국인공지능교육학회 교사들이 만든 2026 디지털새싹 프로그램."),
     (2025, "2025 프로그램", "ARCHIVE", "assets/img/storyboard.jpg",
-     "나도 보안전문가!부터 나도 도시설계자!까지, 한국인공지능교육학회의 2025 디지털새싹 프로그램과 참여 학교."),
+     "한국인공지능교육학회의 2025 디지털새싹 ‘나도 ○○!’ 6개 프로그램. 학생 6,837명이 참여했습니다."),
 ]
 ALL_YEARS = [2026, 2025]
 
@@ -20,7 +20,7 @@ HEAD = """<!doctype html>
 <title>{title} | 한국인공지능교육학회 디지털새싹</title>
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{title} | 한국인공지능교육학회 디지털새싹">
-<meta property="og:image" content="{img}">
+<meta property="og:image" content="https://emelmusekor.github.io/saessak-archive/{img}">
 <link rel="icon" href="assets/img/kaaie-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +51,7 @@ def header(active):
     <nav class="gnb" id="gnb" aria-label="주요 메뉴">
       <a href="2026.html"{cur('2026')}>프로그램</a>
       <a href="2025.html"{cur('past')}>지난 프로그램</a>
-      <a href="try.html"{cur('try')}>수업 자료</a>
+      <a href="library.html"{cur('lib')}>자료실</a>
       <a class="ext" href="http://aied.or.kr/" target="_blank" rel="noopener">학회 소개<span>↗</span></a>
     </nav>
     <button class="menu-btn" type="button" aria-label="메뉴 열기" aria-controls="gnb" aria-expanded="false"><i></i><i></i><i></i></button>
@@ -65,7 +65,7 @@ FOOTER = """
     <nav class="footer-links" aria-label="바닥글 메뉴">
       <a href="2026.html">2026 프로그램</a>
       <a href="2025.html">지난 프로그램</a>
-      <a href="try.html">수업 자료</a>
+      <a href="library.html">자료실</a>
       <a href="http://aied.or.kr/" target="_blank" rel="noopener">한국인공지능교육학회</a>
     </nav>
     <div class="footer-info">
@@ -112,6 +112,7 @@ for year, title, en, img, desc in YEARS:
     scripts = f"""
 <script src="data/programs-{year}.js"></script>
 <script src="data/schools-{year}.js" onerror="this.remove()"></script>
+<script src="data/materials.js" onerror="this.remove()"></script>
 <script src="assets/programs.js" defer></script>
 <script src="assets/site.js" defer></script>
 </body>

@@ -27,13 +27,26 @@
   var sub = document.getElementById("subnav");
   if (sub) sub.innerHTML = D.programs.map(function (p) { return '<li><a href="#' + p.id + '">' + esc(p.word) + "</a></li>"; }).join("");
 
+  /* 프로그램별 수업 학교 수 (참여 학교 자료가 있을 때) */
+  var S = window.SCHOOL_YEAR, perProg = {};
+  if (S && S.schools) S.schools.forEach(function (s) { (s.programs || []).forEach(function (id) { perProg[id] = (perProg[id] || 0) + 1; }); });
+
   document.getElementById("programs").innerHTML = D.programs.map(function (p) {
     var r = ranges(p.phases);
     var steps = p.steps.map(function (s, i) {
       return "<li><b>" + PH[i] + '</b><span class="n">' + r[i] + "</span><span>" + esc(s) + "</span></li>";
     }).join("");
     var actions = "";
-    if (p.activities && p.activities.length) actions += '<a class="btn btn-navy" href="try.html">수업 자료 열어 보기 <span class="arr" aria-hidden="true">→</span></a>';
+    var mats = ((window.MATERIALS && window.MATERIALS.items) || []).filter(function (m) { return String(m.year) === String(D.year) && m.program_id === p.id; });
+    ["수업 PPT", "교안", "부록 교재"].forEach(function (type) {
+      var m = mats.filter(function (x) { return x.type === type; })[0];
+      if (m) actions += '<a class="btn btn-navy" href="' + esc(m.file) + '" target="_blank" rel="noopener">' + type + ' 보기 <span class="arr" aria-hidden="true">↗</span></a>';
+    });
+    if (p.activities && p.activities.length) {
+      var href = p.activities.length === 1 ? p.activities[0][0] : "try.html";
+      var label = p.activities.length === 1 ? p.activities[0][2] + " 열기" : "웹 활동지 열기";
+      actions += '<a class="btn btn-outline" href="' + esc(href) + '">' + esc(label) + ' <span class="arr" aria-hidden="true">→</span></a>';
+    }
     (p.links || []).slice(0, 2).forEach(function (l) {
       actions += '<a class="btn btn-outline" href="' + esc(l[1]) + '" target="_blank" rel="noopener">' + esc(l[0]) + ' <span class="arr" aria-hidden="true">↗</span></a>';
     });
@@ -52,35 +65,39 @@
           '<div><strong class="poster-verb' + big + '">' + esc(p.label) + '</strong><span class="poster-name">' + esc(p.title) + "</span></div>" +
         "</div>" +
         '<div class="prog-info">' +
-          '<p class="prog-kicker"><span class="tag-sprout">' + esc(p.literacy) + '</span>' + (p.participants ? '<span class="prog-count"><b>' + fmt(p.participants) + "</b>명 참여</span>" : "") + "</p>" +
+          '<p class="prog-kicker"><span class="tag-sprout">' + esc(p.literacy) + '</span>' +
+            (p.participants ? '<span class="prog-count"><b>' + fmt(p.participants) + "</b>명" + (p.participantsPlus ? " 이상" : "") + " 참여</span>" : "") +
+            (perProg[p.id] ? '<span class="prog-count"><b>' + perProg[p.id] + "</b>개 학교</span>" : "") + "</p>" +
           '<h3 id="' + p.id + '-t">' + esc(p.tagline) + "</h3>" +
           '<p class="prog-name"><span class="v' + (hasHangul(p.label) ? " kr" : "") + '">' + esc(p.label) + "</span>" + esc(p.title) + "</p>" +
           '<p class="prog-desc">' + esc(p.intro) + "</p>" +
           '<ol class="steps">' + steps + "</ol>" +
           (p.made ? '<p class="made"><b>학생 결과물</b><span>' + esc(p.made) + "</span></p>" : "") +
           (actions ? '<div class="prog-actions">' + actions + "</div>" : "") +
+          (mats.length ? '<a class="mat-all" href="library.html#' + D.year + "-" + p.id + '">이 프로그램 자료 ' + mats.length + '개 모두 보기 <span aria-hidden="true">→</span></a>' : "") +
           sessions +
         "</div>" +
       "</div></section>";
   }).join("");
 
   /* 참여 학교 */
-  var S = window.SCHOOL_YEAR, box = document.getElementById("schools");
+  var box = document.getElementById("schools");
   if (S && box && S.schools && S.schools.length) {
     var order = ["초", "중", "고", "특수", "기관"];
     var names = { "초": "초등학교", "중": "중학교", "고": "고등학교", "특수": "특수학교", "기관": "기관·센터" };
     var groups = {};
     S.schools.forEach(function (s) { (groups[s.level] = groups[s.level] || []).push(s); });
     var html = '<div class="school-head"><p class="school-total"><b>' + fmt(S.schools.length) + "</b>곳" +
-      (S.participants ? '<span>학생 <b>' + fmt(S.participants) + "</b>명</span>" : "") + "</p>" +
+      (S.participantsLabel ? "<span>학생 <b>" + esc(S.participantsLabel) + "</b></span>" : "") + "</p>" +
       (S.note ? '<p class="school-note">' + esc(S.note) + "</p>" : "") + "</div>";
     order.forEach(function (lv) {
       var list = groups[lv];
       if (!list || !list.length) return;
-      list.sort(function (a, b) { return a.name.localeCompare(b.name, "ko"); });
+      var bare = function (n) { return n.replace(/^(서울|인천|경기|부산|대구|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주)/, ""); };
+      list.sort(function (a, b) { return bare(a.name).localeCompare(bare(b.name), "ko"); });
       html += '<div class="school-group"><h3>' + names[lv] + ' <span>' + list.length + "</span></h3><ul class=\"school-grid\">" +
         list.map(function (s) {
-          var mark = s.logo ? '<img src="' + esc(s.logo) + '" alt="" loading="lazy">' : '<span class="school-initial" aria-hidden="true">' + esc(s.name.replace(/^(서울|인천|경기)/, "").charAt(0)) + "</span>";
+          var mark = s.logo ? '<img src="' + esc(s.logo) + '" alt="" loading="lazy">' : '<span class="school-initial" aria-hidden="true">' + esc(bare(s.name).charAt(0)) + "</span>";
           return '<li><span class="school-logo">' + mark + '</span><span class="school-name">' + esc(s.name) + "</span></li>";
         }).join("") + "</ul></div>";
     });
