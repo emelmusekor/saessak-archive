@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>나만의 QR코드 픽셀아트 · Make! 클래스 마켓</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Jua&family=Nanum+Pen+Script&display=swap">
+<link rel="stylesheet" href="../assets/activity.css">
+</head>
+<body>
+<nav class="topbar" aria-label="이동">
+  <div class="topbar-in">
+    <a class="home" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" fill="none" stroke="#1F8048" stroke-width="2.4" stroke-linecap="round"/><path fill="#1F8048" d="M16 17C16 10 11 5.5 3.5 5.5 3.5 12.5 8.5 17 16 17Z"/><path fill="#56B47B" d="M16 14.5C16 8.5 20.5 4 28.5 4c0 6.5-4.5 10.5-12.5 10.5Z"/></svg>디지털새싹 아카이브</a>
+    <span class="row" style="gap:16px"><a href="../2026.html#make">Make! 클래스 마켓 소개</a><a href="../try.html">체험 목록</a></span>
+  </div>
+</nav>
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow"><span class="wordmark">Make!</span><span>클래스 마켓 · 초등 5~6학년</span><span class="ses">1~2차시 · 진입기</span></p>
+  <h1>나만의 QR코드 픽셀아트</h1>
+  <p class="sub">QR코드는 검은 칸과 흰 칸으로 정보를 담아요. 21×21 칸을 직접 칠해 보고, 글자를 넣으면 진짜 QR코드로 바뀌는 과정을 확인해 보세요.</p>
+</header>
+<section class="two">
+  <div class="card">
+    <h2><span class="step">1</span>QR 픽셀아트 입력판</h2>
+    <p class="hint">칸을 누르거나 끌어서 칠해요. 칠한 칸에서 시작하면 지우개가 돼요. 아래 버튼으로 QR의 기본 패턴을 먼저 채워 볼 수도 있어요.</p>
+    <div id="paint"></div>
+    <div class="qr-tools">
+      <button class="secondary" id="fillFinders" type="button">위치 패턴</button>
+      <button class="secondary" id="fillTiming" type="button">타이밍 패턴</button>
+      <button class="secondary" id="fillFormat" type="button">형식 정보</button>
+      <button id="fillBasic" type="button">기본 요소 모두</button>
+      <button class="secondary" id="clear">입력판 지우기</button>
+    </div>
+    <div id="decoded" class="result" style="margin-top:14px"></div>
+    <p class="small muted" style="margin-top:8px">카메라 예상은 QR 오류복원을 흉내 낸 추정값입니다.</p>
+  </div>
+  <div class="card">
+    <h2><span class="step">2</span>글자를 QR코드로 바꾸기</h2>
+    <input id="textin" maxlength="32" data-example="예: 우리 반 마켓" placeholder="QR에 넣을 내용을 입력하세요">
+    <p id="genstatus" class="small"></p>
+    <div id="generated" style="margin-top:12px"></div>
+    <div class="row" style="margin-top:14px"><button id="copygen">생성 QR을 입력판으로 복사</button></div>
+    <p class="small muted" style="margin-top:10px">짧은 문구만 입력할 수 있습니다.</p>
+    </div>
+</section>
+</div>
+<script>
+function escHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function showExport(canvas,label){
+  const out=document.getElementById('exportOut'); if(!out) return;
+  out.innerHTML='';
+  const img=new Image(); img.alt=label+' 완성 이미지'; img.src=canvas.toDataURL('image/png');
+  const cap=document.createElement('p'); cap.className='small muted';
+  cap.textContent='완성된 이미지입니다. 이미지를 길게 누르거나 마우스 오른쪽 버튼을 눌러 저장하세요.';
+  out.append(img,cap); out.hidden=false;
+  out.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+
+function initExampleFields(){
+  document.querySelectorAll('[data-example]').forEach(el=>{
+    if(!el.value){
+      el.value = el.dataset.example;
+      el.dataset.exampleActive = '1';
+      el.classList.add('example');
+    }
+    el.addEventListener('focus', ()=>{
+      if(el.dataset.exampleActive === '1'){
+        el.value = '';
+        el.dataset.exampleActive = '0';
+        el.classList.remove('example');
+      }
+    }, {once:true});
+  });
+}
+function realValue(el){
+  if(!el) return '';
+  return el.dataset.exampleActive === '1' ? '' : (el.value||'').trim();
+}
+function byId(id){ return document.getElementById(id); }
+function wrapText(ctx,text,x,y,maxWidth,lineHeight){
+  const lines = String(text||'').split(/\n/);
+  for(const src of lines){
+    const words = src.split(/\s+/);
+    let line = '';
+    for(const w of words){
+      const test = line ? line + ' ' + w : w;
+      if(ctx.measureText(test).width > maxWidth && line){ ctx.fillText(line,x,y); line = w; y += lineHeight; }
+      else line = test;
+    }
+    if(line) ctx.fillText(line,x,y);
+    y += lineHeight;
+  }
+  return y;
+}
+function downloadCanvas(canvas, filename){ const a=document.createElement('a'); a.download=filename; a.href=canvas.toDataURL('image/png'); a.click(); }
+
+initExampleFields();
+
+const QR = (() => {
+  const VERSION = 1, SIZE = 21, DATA_CODEWORDS = 19, EC_CODEWORDS = 7, MAX_BYTES = 17;
+  const EXP = Array(512).fill(0), LOG = Array(256).fill(0); let gx = 1;
+  for (let i=0;i<255;i++){EXP[i]=gx;LOG[gx]=i;gx<<=1;if(gx&0x100)gx^=0x11d;} for(let i=255;i<512;i++)EXP[i]=EXP[i-255];
+  const mul=(a,b)=>a&&b?EXP[LOG[a]+LOG[b]]:0;
+  function generatorPoly(degree){let poly=[1];for(let i=0;i<degree;i++){const root=EXP[i],next=Array(poly.length+1).fill(0);for(let j=0;j<poly.length;j++){next[j]^=poly[j];next[j+1]^=mul(poly[j],root);}poly=next;}return poly.slice(1);}
+  function reedSolomon(data,degree){const gen=generatorPoly(degree),res=Array(degree).fill(0);for(const b of data){const factor=b^res[0];res.shift();res.push(0);for(let i=0;i<degree;i++)res[i]^=mul(gen[i],factor);}return res;}
+  const clone=m=>m.map(r=>r.slice());
+  function drawFormat(modules,reserved,mask){const set=(x,y,v)=>{modules[y][x]=!!v;reserved[y][x]=true;};const data=(1<<3)|mask;let rem=data;for(let i=0;i<10;i++)rem=(rem<<1)^(((rem>>>9)&1)?0x537:0);const bits=((data<<10)|rem)^0x5412;const bit=i=>((bits>>>i)&1)!==0;for(let i=0;i<=5;i++)set(8,i,bit(i));set(8,7,bit(6));set(8,8,bit(7));set(7,8,bit(8));for(let i=9;i<15;i++)set(14-i,8,bit(i));for(let i=0;i<8;i++)set(SIZE-1-i,8,bit(i));for(let i=8;i<15;i++)set(8,SIZE-15+i,bit(i));set(8,SIZE-8,true);}
+  function makeBase(){const modules=Array.from({length:SIZE},()=>Array(SIZE).fill(false));const reserved=Array.from({length:SIZE},()=>Array(SIZE).fill(false));const set=(x,y,v,r=true)=>{if(x<0||y<0||x>=SIZE||y>=SIZE)return;modules[y][x]=!!v;if(r)reserved[y][x]=true;};function finder(x0,y0){for(let dy=-1;dy<=7;dy++)for(let dx=-1;dx<=7;dx++){const on=dx>=0&&dx<=6&&dy>=0&&dy<=6&&(dx===0||dx===6||dy===0||dy===6||(dx>=2&&dx<=4&&dy>=2&&dy<=4));set(x0+dx,y0+dy,on,true);}}finder(0,0);finder(SIZE-7,0);finder(0,SIZE-7);for(let i=8;i<=SIZE-9;i++){set(i,6,i%2===0,true);set(6,i,i%2===0,true);}set(8,SIZE-8,true,true);drawFormat(modules,reserved,0);return{modules,reserved};}
+  function appendBits(arr,val,len){for(let i=len-1;i>=0;i--)arr.push(((val>>>i)&1)!==0);}
+  function makeData(bytes){const bits=[];appendBits(bits,4,4);appendBits(bits,bytes.length,8);for(const b of bytes)appendBits(bits,b,8);const cap=DATA_CODEWORDS*8;for(let i=0;i<Math.min(4,cap-bits.length);i++)bits.push(false);while(bits.length%8)bits.push(false);const data=[];for(let i=0;i<bits.length;i+=8){let b=0;for(let j=0;j<8;j++)b=(b<<1)|(bits[i+j]?1:0);data.push(b);}for(let pad=0xec;data.length<DATA_CODEWORDS;pad^=0xfd)data.push(pad);return data;}
+  function place(modules,reserved,codewords){const bits=[];for(const b of codewords)appendBits(bits,b,8);let k=0;for(let right=SIZE-1;right>=1;right-=2){if(right===6)right=5;for(let vert=0;vert<SIZE;vert++){const up=((right+1)&2)===0;const y=up?SIZE-1-vert:vert;for(let j=0;j<2;j++){const x=right-j;if(!reserved[y][x]&&k<bits.length)modules[y][x]=bits[k++];}}}}
+  function maskBit(mask,x,y){switch(mask){case 0:return(x+y)%2===0;case 1:return y%2===0;case 2:return x%3===0;case 3:return(x+y)%3===0;case 4:return(Math.floor(y/2)+Math.floor(x/3))%2===0;case 5:return((x*y)%2+(x*y)%3)===0;case 6:return(((x*y)%2+(x*y)%3)%2)===0;case 7:return(((x+y)%2+(x*y)%3)%2)===0;}return false;}
+  function applyMask(modules,reserved,mask){for(let y=0;y<SIZE;y++)for(let x=0;x<SIZE;x++)if(!reserved[y][x]&&maskBit(mask,x,y))modules[y][x]=!modules[y][x];}
+  function penalty(m){let p=0;for(let y=0;y<SIZE;y++){let run=1;for(let x=1;x<SIZE;x++){if(m[y][x]===m[y][x-1])run++;else{if(run>=5)p+=run-2;run=1;}}if(run>=5)p+=run-2;}for(let x=0;x<SIZE;x++){let run=1;for(let y=1;y<SIZE;y++){if(m[y][x]===m[y-1][x])run++;else{if(run>=5)p+=run-2;run=1;}}if(run>=5)p+=run-2;}for(let y=0;y<SIZE-1;y++)for(let x=0;x<SIZE-1;x++){const c=m[y][x];if(m[y][x+1]===c&&m[y+1][x]===c&&m[y+1][x+1]===c)p+=3;}let dark=0;for(let y=0;y<SIZE;y++)for(let x=0;x<SIZE;x++)if(m[y][x])dark++;p+=(Math.ceil(Math.abs(dark*20-SIZE*SIZE*10)/(SIZE*SIZE))-1)*10;return p;}
+  function encode(text){const bytes=Array.from(new TextEncoder().encode(text));if(bytes.length>MAX_BYTES)throw new Error(`Version 1-L 한계: UTF-8 ${MAX_BYTES}바이트까지 가능합니다. 현재 ${bytes.length}바이트입니다.`);const data=makeData(bytes),ec=reedSolomon(data,EC_CODEWORDS),cw=data.concat(ec),base=makeBase();place(base.modules,base.reserved,cw);let best=null,bp=1e9,bm=0;for(let mask=0;mask<8;mask++){const m=clone(base.modules);applyMask(m,base.reserved,mask);drawFormat(m,base.reserved,mask);const pp=penalty(m);if(pp<bp){bp=pp;best=m;bm=mask;}}return{matrix:best,mask:bm,bytes:bytes.length};}
+  function collectCodewords(matrix,mask){const base=makeBase(),m=clone(matrix);applyMask(m,base.reserved,mask);const bits=[];for(let right=SIZE-1;right>=1;right-=2){if(right===6)right=5;for(let vert=0;vert<SIZE;vert++){const up=((right+1)&2)===0;const y=up?SIZE-1-vert:vert;for(let j=0;j<2;j++){const x=right-j;if(!base.reserved[y][x])bits.push(!!m[y][x]);}}}const cw=[];for(let i=0;i+7<bits.length&&cw.length<DATA_CODEWORDS+EC_CODEWORDS;i+=8){let b=0;for(let j=0;j<8;j++)b=(b<<1)|(bits[i+j]?1:0);cw.push(b);}return cw;}
+  function parseData(data){let pos=0;const get=n=>{let v=0;for(let i=0;i<n;i++){v=(v<<1)|(((data[Math.floor(pos/8)]>>(7-(pos%8)))&1)||0);pos++;}return v;};const mode=get(4);if(mode!==4)throw new Error('byte mode가 아닙니다.');const count=get(8);if(count<0||count>MAX_BYTES)throw new Error('길이 정보가 맞지 않습니다.');const bytes=[];for(let i=0;i<count;i++)bytes.push(get(8));return new TextDecoder('utf-8',{fatal:true}).decode(new Uint8Array(bytes));}
+  function syndromes(cw){const out=[];for(let j=0;j<EC_CODEWORDS;j++){let sum=0;const a=EXP[j];for(const b of cw)sum=b^mul(sum,a);out.push(sum);}return out;}
+  function allZero(arr){return arr.every(v=>v===0);}
+  function inv(a){if(!a)throw new Error('0 inverse');return EXP[255-LOG[a]];}
+  function div(a,b){return a?mul(a,inv(b)):0;}
+  function coeffFor(j,pos,n){return j===0?1:EXP[(j*(n-1-pos))%255];}
+  function solveGF(matrix){const n=matrix.length;const a=matrix.map(r=>r.slice());for(let col=0;col<n;col++){let pivot=col;while(pivot<n&&a[pivot][col]===0)pivot++;if(pivot===n)return null;if(pivot!==col){const tmp=a[col];a[col]=a[pivot];a[pivot]=tmp;}const invPivot=inv(a[col][col]);for(let c=col;c<=n;c++)a[col][c]=mul(a[col][c],invPivot);for(let r=0;r<n;r++){if(r===col)continue;const factor=a[r][col];if(!factor)continue;for(let c=col;c<=n;c++)a[r][c]^=mul(factor,a[col][c]);}}return a.map(r=>r[n]);}
+  function combos(n,k,start=0,prefix=[],out=[]){if(prefix.length===k){out.push(prefix.slice());return out;}for(let i=start;i<=n-(k-prefix.length);i++){prefix.push(i);combos(n,k,i+1,prefix,out);prefix.pop();}return out;}
+  function correctCodewords(cw,limit=3){const syn=syndromes(cw);if(allZero(syn))return{cw:cw.slice(),corrected:0};const n=cw.length;for(let e=1;e<=limit;e++){const sets=combos(n,e);for(const posSet of sets){const mat=[];for(let row=0;row<e;row++){const r=[];for(const pos of posSet)r.push(coeffFor(row,pos,n));r.push(syn[row]);mat.push(r);}const errs=solveGF(mat);if(!errs)continue;const fixed=cw.slice();for(let i=0;i<posSet.length;i++)fixed[posSet[i]]^=errs[i];if(allZero(syndromes(fixed)))return{cw:fixed,corrected:e,positions:posSet};}}return null;}
+  function exactDecode(matrix){for(let mask=0;mask<8;mask++){try{const cw=collectCodewords(matrix,mask);const fixed=correctCodewords(cw,0);if(!fixed)continue;const text=parseData(cw.slice(0,DATA_CODEWORDS));return{text,mask,ok:true,corrected:0,mode:'strict'};}catch(e){}}return null;}
+  function cameraDecode(matrix){const strict=exactDecode(matrix);if(strict)return strict;for(let mask=0;mask<8;mask++){try{const cw=collectCodewords(matrix,mask);const fixed=correctCodewords(cw,3);if(!fixed)continue;const text=parseData(fixed.cw.slice(0,DATA_CODEWORDS));return{text,mask,ok:true,corrected:fixed.corrected,mode:'camera'};}catch(e){}}return null;}
+  function decode(matrix){return exactDecode(matrix)||cameraDecode(matrix);}
+  return {SIZE,MAX_BYTES,encode,decode,decodeStrict:exactDecode,decodeCamera:cameraDecode};
+})();
+let painted = Array.from({length:QR.SIZE*QR.SIZE},()=>false);
+let generated = null;
+function gridHtml(matrix, editable=false){
+  const cls = editable ? 'qrgrid big' : 'qrgrid scan';
+  let html=`<div class="${cls}" style="grid-template-columns:repeat(${QR.SIZE},1fr)">`;
+  for(let i=0;i<QR.SIZE*QR.SIZE;i++){
+    const y=Math.floor(i/QR.SIZE),x=i%QR.SIZE,on=matrix[y]?.[x]||false;
+    html += editable ? `<button class="${on?'on':''}" data-cell="${i}" aria-label="${y+1}행 ${x+1}열"></button>` : `<div class="${on?'on':''}"></div>`;
+  }
+  html+='</div>'; return html;
+}
+function matrixFromFlat(flat){let m=[];for(let y=0;y<QR.SIZE;y++)m.push(flat.slice(y*QR.SIZE,(y+1)*QR.SIZE));return m;}
+function setPaintCell(x,y,v){if(x<0||y<0||x>=QR.SIZE||y>=QR.SIZE)return;painted[y*QR.SIZE+x]=!!v;}
+function fillOneFinder(x0,y0){for(let dy=-1;dy<=7;dy++){for(let dx=-1;dx<=7;dx++){const in7=dx>=0&&dx<=6&&dy>=0&&dy<=6;const on=in7&&(dx===0||dx===6||dy===0||dy===6||(dx>=2&&dx<=4&&dy>=2&&dy<=4));setPaintCell(x0+dx,y0+dy,on);}}}
+function fillFinderPatterns(){fillOneFinder(0,0);fillOneFinder(QR.SIZE-7,0);fillOneFinder(0,QR.SIZE-7);renderPaint();}
+function fillTimingPatterns(){for(let i=8;i<=QR.SIZE-9;i++){setPaintCell(i,6,i%2===0);setPaintCell(6,i,i%2===0);}renderPaint();}
+function fillDarkModule(){setPaintCell(8,QR.SIZE-8,true);}
+function fillFormatInfo(){const mask=(generated&&Number.isInteger(generated.mask))?generated.mask:0;const data=(1<<3)|mask;let rem=data;for(let i=0;i<10;i++)rem=(rem<<1)^(((rem>>>9)&1)?0x537:0);const bits=((data<<10)|rem)^0x5412;const bit=i=>((bits>>>i)&1)!==0;const set=(x,y,v)=>setPaintCell(x,y,v);for(let i=0;i<=5;i++)set(8,i,bit(i));set(8,7,bit(6));set(8,8,bit(7));set(7,8,bit(8));for(let i=9;i<15;i++)set(14-i,8,bit(i));for(let i=0;i<8;i++)set(QR.SIZE-1-i,8,bit(i));for(let i=8;i<15;i++)set(8,QR.SIZE-15+i,bit(i));fillDarkModule();renderPaint();}
+function fillBasicElements(){fillOneFinder(0,0);fillOneFinder(QR.SIZE-7,0);fillOneFinder(0,QR.SIZE-7);for(let i=8;i<=QR.SIZE-9;i++){setPaintCell(i,6,i%2===0);setPaintCell(6,i,i%2===0);}fillFormatInfo();}
+function renderPaint(){
+  document.getElementById('paint').innerHTML=gridHtml(matrixFromFlat(painted),true);
+  const matrix=matrixFromFlat(painted);
+  const strict=QR.decodeStrict(matrix);
+  const camera=QR.decodeCamera(matrix);
+  const box=document.getElementById('decoded');
+  if(strict&&strict.ok){
+    box.innerHTML=`<span class="ok">웹 해석</span><br>${escapeHtml(strict.text)}<br><span class="small muted">카메라 예상도 같은 값입니다.</span>`;
+  }else if(camera&&camera.ok){
+    box.innerHTML=`<span class="warn">웹 해석은 실패했지만, 카메라 예상</span><br>${escapeHtml(camera.text)}<br><span class="small muted">오류복원으로 ${camera.corrected}개 코드워드를 보정해 추정했습니다.</span>`;
+  }else{
+    box.innerHTML='<span class="muted">해석 대기</span><br><span class="small muted">카메라 예상값도 아직 없습니다.</span>';
+  }
+}
+function renderGen(){const input=document.getElementById('textin');const text=(typeof realValue==='function'?realValue(input):input.value.trim());const status=document.getElementById('genstatus');if(!text){generated=null;document.getElementById('generated').innerHTML='';status.textContent='';document.getElementById('copygen').disabled=true;return;}try{generated=QR.encode(text);document.getElementById('generated').innerHTML='<div class="scanbox">'+gridHtml(generated.matrix,false)+'</div>';status.innerHTML='<span class="ok">생성 완료</span>';document.getElementById('copygen').disabled=false;}catch(e){generated=null;document.getElementById('generated').innerHTML='';status.innerHTML=`<span class="bad">${escapeHtml(e.message)}</span>`;document.getElementById('copygen').disabled=true;}}
+function escapeHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+document.getElementById('paint').addEventListener('contextmenu',e=>e.preventDefault());
+(function(){
+  const paint=document.getElementById('paint'); let mode=null;
+  function cellFrom(el){ return el && el.dataset && el.dataset.cell!==undefined && paint.contains(el) ? Number(el.dataset.cell) : null; }
+  function setCell(i){ if(i===null||painted[i]===mode) return; painted[i]=mode; const b=paint.querySelector('[data-cell="'+i+'"]'); if(b) b.classList.toggle('on',mode); }
+  paint.addEventListener('pointerdown',e=>{ const i=cellFrom(e.target); if(i===null) return; e.preventDefault(); mode = e.button===2 ? false : !painted[i]; setCell(i); });
+  paint.addEventListener('pointermove',e=>{ if(mode===null) return; setCell(cellFrom(document.elementFromPoint(e.clientX,e.clientY))); });
+  function end(){ if(mode===null) return; mode=null; renderPaint(); }
+  window.addEventListener('pointerup',end); window.addEventListener('pointercancel',end);
+  paint.addEventListener('click',e=>{ if(e.detail!==0) return; const i=cellFrom(e.target); if(i===null) return; painted[i]=!painted[i]; renderPaint(); const b=paint.querySelector('[data-cell="'+i+'"]'); if(b) b.focus(); });
+})();
+document.getElementById('fillFinders').addEventListener('click',fillFinderPatterns);
+document.getElementById('fillTiming').addEventListener('click',fillTimingPatterns);
+document.getElementById('fillFormat').addEventListener('click',fillFormatInfo);
+document.getElementById('fillBasic').addEventListener('click',fillBasicElements);
+document.getElementById('clear').addEventListener('click',()=>{painted=painted.map(()=>false);renderPaint();});
+document.getElementById('textin').addEventListener('input',renderGen);
+document.getElementById('textin').addEventListener('focus',()=>setTimeout(renderGen,0));
+document.getElementById('copygen').addEventListener('click',()=>{if(!generated)return;painted=generated.matrix.flat();renderPaint();});
+renderPaint(); renderGen();
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>합리적 소비를 위한 지출 계획서 · Make! 클래스 마켓</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Jua&family=Nanum+Pen+Script&display=swap">
+<link rel="stylesheet" href="../assets/activity.css">
+</head>
+<body>
+<nav class="topbar" aria-label="이동">
+  <div class="topbar-in">
+    <a class="home" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" fill="none" stroke="#1F8048" stroke-width="2.4" stroke-linecap="round"/><path fill="#1F8048" d="M16 17C16 10 11 5.5 3.5 5.5 3.5 12.5 8.5 17 16 17Z"/><path fill="#56B47B" d="M16 14.5C16 8.5 20.5 4 28.5 4c0 6.5-4.5 10.5-12.5 10.5Z"/></svg>디지털새싹 아카이브</a>
+    <span class="row" style="gap:16px"><a href="../2026.html#make">Make! 클래스 마켓 소개</a><a href="../try.html">체험 목록</a></span>
+  </div>
+</nav>
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow"><span class="wordmark">Make!</span><span>클래스 마켓 · 초등 5~6학년</span><span class="ses">5~6차시 · 성장기</span></p>
+  <h1>합리적 소비를 위한 지출 계획서</h1>
+  <p class="sub">예산과 사고 싶은 물건을 적고 우선순위를 정하면, 순서대로 샀을 때 남는 코인이 자동으로 계산돼요.</p>
+</header>
+<section class="card"><h2><span class="step">1</span>나의 예산 파악하기</h2><div class="fieldline"><label>현재 나의 총예산</label><div class="row"><input id="budget" type="number" style="max-width:180px" data-example="100"><strong>코인</strong></div></div></section>
+<section class="card"><h2><span class="step">2</span>구매 희망 목록(위시리스트) 작성</h2><div class="table-scroll"><table class="table"><thead><tr><th>물건 이름</th><th>가격(코인)</th><th>사고 싶은 이유</th><th>검토</th></tr></thead><tbody>
+<tr><td><input class="pname writing" data-example="예: 물건 1"></td><td><input class="price" type="number" data-example="0"></td><td><input class="writing" data-example="예: 필요한 이유"></td><td><label><input type="checkbox"> 후보</label></td></tr><tr><td><input class="pname writing" data-example="예: 물건 2"></td><td><input class="price" type="number" data-example="0"></td><td><input class="writing" data-example="예: 필요한 이유"></td><td><label><input type="checkbox"> 후보</label></td></tr><tr><td><input class="pname writing" data-example="예: 물건 3"></td><td><input class="price" type="number" data-example="0"></td><td><input class="writing" data-example="예: 필요한 이유"></td><td><label><input type="checkbox"> 후보</label></td></tr><tr><td><input class="pname writing" data-example="예: 물건 4"></td><td><input class="price" type="number" data-example="0"></td><td><input class="writing" data-example="예: 필요한 이유"></td><td><label><input type="checkbox"> 후보</label></td></tr><tr><td><input class="pname writing" data-example="예: 물건 5"></td><td><input class="price" type="number" data-example="0"></td><td><input class="writing" data-example="예: 필요한 이유"></td><td><label><input type="checkbox"> 후보</label></td></tr>
+</tbody></table></div></section>
+<section class="card"><h2><span class="step">3</span>구매 우선순위 설정</h2><div class="grid grid3"><label>1순위<select id="rank0"></select></label><label>2순위<select id="rank1"></select></label><label>3순위<select id="rank2"></select></label></div></section>
+<section class="card"><h2><span class="step">4</span>지출 시뮬레이션 및 최종 점검</h2><div class="table-scroll"><table class="table"><thead><tr><th>순위</th><th>물건 이름</th><th>지출액</th><th>잔액</th></tr></thead><tbody id="simbody"></tbody></table></div><p id="final" style="font-size:20px;font-weight:900"></p><label class="checkrow"><input id="over" type="checkbox" disabled>예산을 초과하지 않았습니다.</label><label class="checkrow"><input type="checkbox">예산이 부족할 경우 구매를 포기하거나 다음으로 미룰 상품을 정했습니다.</label><textarea class="writing" data-example="예: 3순위는 다음 주로 미루기"></textarea></section>
+</div>
+<script>
+function escHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function showExport(canvas,label){
+  const out=document.getElementById('exportOut'); if(!out) return;
+  out.innerHTML='';
+  const img=new Image(); img.alt=label+' 완성 이미지'; img.src=canvas.toDataURL('image/png');
+  const cap=document.createElement('p'); cap.className='small muted';
+  cap.textContent='완성된 이미지입니다. 이미지를 길게 누르거나 마우스 오른쪽 버튼을 눌러 저장하세요.';
+  out.append(img,cap); out.hidden=false;
+  out.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function initExampleFields(){
+  document.querySelectorAll('[data-example]').forEach(el=>{
+    if(!el.value){
+      el.value = el.dataset.example;
+      el.dataset.exampleActive = '1';
+      el.classList.add('example');
+    }
+    el.addEventListener('focus', ()=>{
+      if(el.dataset.exampleActive === '1'){
+        el.value = '';
+        el.dataset.exampleActive = '0';
+        el.classList.remove('example');
+      }
+    }, {once:true});
+  });
+}
+function realValue(el){
+  if(!el) return '';
+  return el.dataset.exampleActive === '1' ? '' : (el.value||'').trim();
+}
+function byId(id){ return document.getElementById(id); }
+function wrapText(ctx,text,x,y,maxWidth,lineHeight){
+  const lines = String(text||'').split(/\n/);
+  for(const src of lines){
+    const words = src.split(/\s+/);
+    let line = '';
+    for(const w of words){
+      const test = line ? line + ' ' + w : w;
+      if(ctx.measureText(test).width > maxWidth && line){ ctx.fillText(line,x,y); line = w; y += lineHeight; }
+      else line = test;
+    }
+    if(line) ctx.fillText(line,x,y);
+    y += lineHeight;
+  }
+  return y;
+}
+function downloadCanvas(canvas, filename){ const a=document.createElement('a'); a.download=filename; a.href=canvas.toDataURL('image/png'); a.click(); }
+
+initExampleFields();
+function nFromInput(el){ const v = realValue(el); return Number(v)||0; }
+function itemLabels(){ return [...document.querySelectorAll('.pname')].map((el,i)=> realValue(el) || `목록 ${i+1}`); }
+function refreshSelects(){
+  const labels = itemLabels();
+  for(let s=0;s<3;s++){
+    const sel = byId('rank'+s); const current = sel.value || String(s);
+    sel.innerHTML = labels.map((label,i)=>`<option value="${i}">${escHtml(label)}</option>`).join('');
+    sel.value = labels[Number(current)] !== undefined ? current : String(Math.min(s, labels.length-1));
+  }
+}
+function update(){
+  refreshSelects();
+  const budget = nFromInput(byId('budget'));
+  const prices = [...document.querySelectorAll('.price')].map(nFromInput);
+  const names = itemLabels();
+  let rows='', bal=budget;
+  for(let i=0;i<3;i++){ const sel=Number(byId('rank'+i).value||0); bal -= prices[sel]||0; rows += `<tr><td>${i+1}순위</td><td>${escHtml(names[sel])}</td><td class="right">${prices[sel]||0}</td><td class="right ${bal<0?'bad':'ok'}">${bal}</td></tr>`; }
+  byId('simbody').innerHTML = rows; byId('final').textContent = `거래 후 잔액: ${bal}코인`; byId('final').className = bal<0?'bad':'ok'; byId('over').checked = bal>=0;
+}
+document.addEventListener('input',update); document.addEventListener('change',update); refreshSelects(); update();
+</script>
+</body>
+</html>

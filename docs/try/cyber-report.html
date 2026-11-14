@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>사이버 범죄 모의 신고서 · Make! 클래스 마켓</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Jua&family=Nanum+Pen+Script&display=swap">
+<link rel="stylesheet" href="../assets/activity.css">
+</head>
+<body>
+<nav class="topbar" aria-label="이동">
+  <div class="topbar-in">
+    <a class="home" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" fill="none" stroke="#1F8048" stroke-width="2.4" stroke-linecap="round"/><path fill="#1F8048" d="M16 17C16 10 11 5.5 3.5 5.5 3.5 12.5 8.5 17 16 17Z"/><path fill="#56B47B" d="M16 14.5C16 8.5 20.5 4 28.5 4c0 6.5-4.5 10.5-12.5 10.5Z"/></svg>디지털새싹 아카이브</a>
+    <span class="row" style="gap:16px"><a href="../2026.html#make">Make! 클래스 마켓 소개</a><a href="../try.html">체험 목록</a></span>
+  </div>
+</nav>
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow"><span class="wordmark">Make!</span><span>클래스 마켓 · 초등 5~6학년</span><span class="ses">7~8차시 · 성장기</span></p>
+  <h1>사이버 범죄 모의 신고서</h1>
+  <p class="sub">가상의 피해 상황을 정해 신고서를 채워 보며, 온라인 거래에서 피해를 입었을 때 무엇을 기록해야 하는지 익혀요.</p>
+</header>
+<section class="card"><h2><span class="step">1</span>피해자 정보</h2><p class="small muted">실제 개인정보가 아니라 가상의 정보로 작성합니다.</p><div class="grid grid2"><label>성명<input id="name" class="writing" data-example="예: 홍길동"></label><label>연락처<input id="phone" class="writing" data-example="예: 010-1234-5678"></label><label>생년월일<input id="birth" class="writing" data-example="예: 2015-03-15"></label><label>이메일<input id="email" class="writing" data-example="예: student@example.com"></label></div><label style="display:block;margin-top:12px">주소<input id="addr" class="writing" data-example="예: 인천광역시 ○○구 ○○로"></label></section>
+<section class="card"><h2><span class="step">2</span>피해 내용</h2><div class="grid grid2"><label>피해 발생 일시<input id="date" class="writing" data-example="예: 2026년 5월 31일 오후 2시"></label><label>피해 유형<input id="type" class="writing" data-example="예: 스미싱"></label><label>피해 금액<input id="money" class="writing" data-example="예: 100,000원"></label><label>피의자 정보<input id="suspect" class="writing" data-example="예: 닉네임 class123, 123-45-67890"></label></div><label style="display:block;margin-top:12px">피해 발생 경위<textarea id="story" class="writing" data-example="예: 택배 조회 문자를 눌렀다가 개인정보를 입력했습니다."></textarea></label><label style="display:block;margin-top:12px">추가 요청 사항<textarea id="request" class="writing" data-example="예: 계정 정지와 환불을 요청합니다."></textarea></label><label style="display:block;margin-top:12px">증거 자료<textarea id="evidence" class="writing" data-example="예: 채팅 캡처, 송금 내역, 링크 주소 화면"></textarea></label><div class="row" style="margin-top:14px"><button id="export">신고서 이미지 만들기</button></div><div id="exportOut" class="export-out" hidden></div></section>
+</div>
+<script>
+function escHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function showExport(canvas,label){
+  const out=document.getElementById('exportOut'); if(!out) return;
+  out.innerHTML='';
+  const img=new Image(); img.alt=label+' 완성 이미지'; img.src=canvas.toDataURL('image/png');
+  const cap=document.createElement('p'); cap.className='small muted';
+  cap.textContent='완성된 이미지입니다. 이미지를 길게 누르거나 마우스 오른쪽 버튼을 눌러 저장하세요.';
+  out.append(img,cap); out.hidden=false;
+  out.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function initExampleFields(){
+  document.querySelectorAll('[data-example]').forEach(el=>{
+    if(!el.value){
+      el.value = el.dataset.example;
+      el.dataset.exampleActive = '1';
+      el.classList.add('example');
+    }
+    el.addEventListener('focus', ()=>{
+      if(el.dataset.exampleActive === '1'){
+        el.value = '';
+        el.dataset.exampleActive = '0';
+        el.classList.remove('example');
+      }
+    }, {once:true});
+  });
+}
+function realValue(el){
+  if(!el) return '';
+  return el.dataset.exampleActive === '1' ? '' : (el.value||'').trim();
+}
+function byId(id){ return document.getElementById(id); }
+function wrapText(ctx,text,x,y,maxWidth,lineHeight){
+  const lines = String(text||'').split(/\n/);
+  for(const src of lines){
+    const words = src.split(/\s+/);
+    let line = '';
+    for(const w of words){
+      const test = line ? line + ' ' + w : w;
+      if(ctx.measureText(test).width > maxWidth && line){ ctx.fillText(line,x,y); line = w; y += lineHeight; }
+      else line = test;
+    }
+    if(line) ctx.fillText(line,x,y);
+    y += lineHeight;
+  }
+  return y;
+}
+function downloadCanvas(canvas, filename){ const a=document.createElement('a'); a.download=filename; a.href=canvas.toDataURL('image/png'); a.click(); }
+
+initExampleFields();
+function v(id){ return realValue(byId(id)); }
+function exportReport(){ const c=document.createElement('canvas'),ctx=c.getContext('2d'); c.width=1400; c.height=1900; ctx.fillStyle='white'; ctx.fillRect(0,0,c.width,c.height); ctx.fillStyle='#111827'; ctx.font='bold 42px sans-serif'; ctx.fillText('사이버 범죄 모의 신고서',80,90); ctx.font='24px sans-serif'; let y=145; const rows=[['성명',v('name')],['연락처',v('phone')],['생년월일',v('birth')],['이메일',v('email')],['주소',v('addr')],['피해 발생 일시',v('date')],['피해 유형',v('type')],['피해 금액',v('money')],['피의자 정보',v('suspect')],['피해 발생 경위',v('story')],['추가 요청 사항',v('request')],['증거 자료',v('evidence')]]; for(const [label,val] of rows){ const h=['피해 발생 경위','증거 자료','추가 요청 사항'].includes(label)?230:120; ctx.strokeStyle='#d1d5db'; ctx.strokeRect(80,y,1240,h); ctx.fillStyle='#f8fafc'; ctx.fillRect(80,y,260,h); ctx.fillStyle='#111827'; ctx.font='bold 25px sans-serif'; ctx.fillText(label,110,y+42); ctx.font='25px sans-serif'; wrapText(ctx,val,370,y+42,890,35); y+=h; } showExport(c,'사이버 범죄 모의 신고서'); }
+byId('export').addEventListener('click',exportReport);
+</script>
+</body>
+</html>

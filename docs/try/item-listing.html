@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>중고 상품 정보 등록 계획서 · Make! 클래스 마켓</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Jua&family=Nanum+Pen+Script&display=swap">
+<link rel="stylesheet" href="../assets/activity.css">
+</head>
+<body>
+<nav class="topbar" aria-label="이동">
+  <div class="topbar-in">
+    <a class="home" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" fill="none" stroke="#1F8048" stroke-width="2.4" stroke-linecap="round"/><path fill="#1F8048" d="M16 17C16 10 11 5.5 3.5 5.5 3.5 12.5 8.5 17 16 17Z"/><path fill="#56B47B" d="M16 14.5C16 8.5 20.5 4 28.5 4c0 6.5-4.5 10.5-12.5 10.5Z"/></svg>디지털새싹 아카이브</a>
+    <span class="row" style="gap:16px"><a href="../2026.html#make">Make! 클래스 마켓 소개</a><a href="../try.html">체험 목록</a></span>
+  </div>
+</nav>
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow"><span class="wordmark">Make!</span><span>클래스 마켓 · 초등 5~6학년</span><span class="ses">5~6차시 · 성장기</span></p>
+  <h1>중고 상품 정보 등록 계획서</h1>
+  <p class="sub">팔 물건의 상태를 진단하고 알맞은 가격과 설명을 정리해 마켓 등록 카드를 완성해요.</p>
+</header>
+<section class="card"><h2><span class="step">1</span>내 상품의 상태 진단하기</h2><div class="fieldline"><label>내가 팔 물건</label><input id="name" class="writing" data-example="예: 필통"></div><div class="fieldline"><label>상품 사진</label><div><input id="photo" type="file" accept="image/*"><img id="photoPreview" class="previewimg" alt="상품 사진 미리보기"></div></div><p><strong>내 물건의 상태</strong></p><div class="grid grid3"><label class="checkrow"><input type="radio" name="grade" value="S급(최상)">S급(최상): 새것과 같아요.</label><label class="checkrow"><input type="radio" name="grade" value="A급(우수)">A급(우수): 사용감은 조금 있지만 깨끗해요.</label><label class="checkrow"><input type="radio" name="grade" value="B급(보통)">B급(보통): 사용감이나 흠집이 있어요.</label></div><div class="fieldline"><label>장점</label><input id="good" class="writing" data-example="예: 깨끗하고 수납공간이 많아요"></div><div class="fieldline"><label>단점(하자)</label><input id="bad" class="writing" data-example="예: 모서리에 작은 흠집이 있어요"></div></section>
+<section class="card"><h2><span class="step">2</span>적정 가격 산정하기</h2><div class="fieldline"><label>판매 희망 가격</label><div class="row"><input id="price" type="number" style="max-width:180px" data-example="15"><strong>코인</strong></div></div><label><strong>이 가격으로 정한 합리적인 이유</strong><textarea id="reason" class="writing" data-example="예: 사용감은 있지만 아직 쓸 만해서"></textarea></label></section>
+<section class="card"><h2><span class="step">3</span>마켓에 올릴 상품 설명글 완성하기</h2><div class="fieldline"><label>상품 제목</label><input id="title" class="writing" data-example="예: 깔끔한 파란색 필통 판매"></div><label><strong>상세 설명</strong><textarea id="desc" class="writing" data-example="예: 사용한 지 3개월 되었고, 지퍼는 잘 열립니다. 흠집은 사진을 확인해 주세요."></textarea></label><div class="note" style="margin-top:14px"><pre id="pv" style="white-space:pre-wrap;margin:0"></pre></div><div class="row" style="margin-top:14px"><button id="export">등록 카드 이미지 만들기</button></div><div id="exportOut" class="export-out" hidden></div></section>
+</div>
+<script>
+function escHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function showExport(canvas,label){
+  const out=document.getElementById('exportOut'); if(!out) return;
+  out.innerHTML='';
+  const img=new Image(); img.alt=label+' 완성 이미지'; img.src=canvas.toDataURL('image/png');
+  const cap=document.createElement('p'); cap.className='small muted';
+  cap.textContent='완성된 이미지입니다. 이미지를 길게 누르거나 마우스 오른쪽 버튼을 눌러 저장하세요.';
+  out.append(img,cap); out.hidden=false;
+  out.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function initExampleFields(){
+  document.querySelectorAll('[data-example]').forEach(el=>{
+    if(!el.value){
+      el.value = el.dataset.example;
+      el.dataset.exampleActive = '1';
+      el.classList.add('example');
+    }
+    el.addEventListener('focus', ()=>{
+      if(el.dataset.exampleActive === '1'){
+        el.value = '';
+        el.dataset.exampleActive = '0';
+        el.classList.remove('example');
+      }
+    }, {once:true});
+  });
+}
+function realValue(el){
+  if(!el) return '';
+  return el.dataset.exampleActive === '1' ? '' : (el.value||'').trim();
+}
+function byId(id){ return document.getElementById(id); }
+function wrapText(ctx,text,x,y,maxWidth,lineHeight){
+  const lines = String(text||'').split(/\n/);
+  for(const src of lines){
+    const words = src.split(/\s+/);
+    let line = '';
+    for(const w of words){
+      const test = line ? line + ' ' + w : w;
+      if(ctx.measureText(test).width > maxWidth && line){ ctx.fillText(line,x,y); line = w; y += lineHeight; }
+      else line = test;
+    }
+    if(line) ctx.fillText(line,x,y);
+    y += lineHeight;
+  }
+  return y;
+}
+function downloadCanvas(canvas, filename){ const a=document.createElement('a'); a.download=filename; a.href=canvas.toDataURL('image/png'); a.click(); }
+
+initExampleFields(); let photoData='';
+function v(id){ return realValue(byId(id)); }
+function grade(){ return document.querySelector('input[name="grade"]:checked')?.value || ''; }
+function preview(){ byId('pv').textContent = `상품 제목: ${v('title') || v('name')}
+상태 등급: ${grade()}
+장점: ${v('good')}
+단점/하자: ${v('bad')}
+판매 희망 가격: ${v('price')} 코인
+가격 이유: ${v('reason')}
+상세 설명: ${v('desc')}`; }
+byId('photo').addEventListener('change',e=>{ const file=e.target.files[0]; if(!file) return; const reader=new FileReader(); reader.onload=()=>{ photoData=reader.result; const img=byId('photoPreview'); img.src=photoData; img.style.display='block'; }; reader.readAsDataURL(file); });
+function exportImage(){ const c=document.createElement('canvas'),ctx=c.getContext('2d'); c.width=1400; c.height=1800; ctx.fillStyle='white'; ctx.fillRect(0,0,c.width,c.height); ctx.fillStyle='#111827'; ctx.font='bold 42px sans-serif'; ctx.fillText('중고 상품 정보 등록 계획서',80,90); let y=150;
+  if(photoData){ const img=new Image(); img.onload=()=>{ ctx.drawImage(img,100,y,220,220); drawFields(y+250); }; img.src=photoData; } else drawFields(y);
+  function drawFields(startY){ let y2=startY; const rows=[['상품 이름',v('name')],['상태 등급',grade()],['장점',v('good')],['단점/하자',v('bad')],['판매 희망 가격',v('price')?v('price')+' 코인':''],['가격 이유',v('reason')],['상품 제목',v('title')],['상세 설명',v('desc')]]; for(const [label,val] of rows){ ctx.strokeStyle='#d1d5db'; ctx.strokeRect(80,y2,1240,150); ctx.fillStyle='#f8fafc'; ctx.fillRect(80,y2,250,150); ctx.fillStyle='#111827'; ctx.font='bold 26px sans-serif'; ctx.fillText(label,110,y2+45); ctx.font='26px sans-serif'; wrapText(ctx,val,360,y2+45,900,36); y2+=150; } showExport(c,'중고 상품 정보 등록 계획서'); }
+}
+document.addEventListener('input',preview); document.addEventListener('change',preview); byId('export').addEventListener('click',exportImage); preview();
+</script>
+</body>
+</html>

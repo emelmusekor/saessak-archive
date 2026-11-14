@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>바코드 비밀 암호 해독 작전 · Make! 클래스 마켓</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Jua&family=Nanum+Pen+Script&display=swap">
+<link rel="stylesheet" href="../assets/activity.css">
+</head>
+<body>
+<nav class="topbar" aria-label="이동">
+  <div class="topbar-in">
+    <a class="home" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" fill="none" stroke="#1F8048" stroke-width="2.4" stroke-linecap="round"/><path fill="#1F8048" d="M16 17C16 10 11 5.5 3.5 5.5 3.5 12.5 8.5 17 16 17Z"/><path fill="#56B47B" d="M16 14.5C16 8.5 20.5 4 28.5 4c0 6.5-4.5 10.5-12.5 10.5Z"/></svg>디지털새싹 아카이브</a>
+    <span class="row" style="gap:16px"><a href="../2026.html#make">Make! 클래스 마켓 소개</a><a href="../try.html">체험 목록</a></span>
+  </div>
+</nav>
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow"><span class="wordmark">Make!</span><span>클래스 마켓 · 초등 5~6학년</span><span class="ses">1~2차시 · 진입기</span></p>
+  <h1>바코드 비밀 암호 해독 작전</h1>
+  <p class="sub">검은 칸은 1, 흰 칸은 0이에요. 오른쪽 자리부터 1, 2, 4, 8처럼 두 배씩 커지는 자리값을 더해 이진수 바코드를 해독해요.</p>
+</header>
+<section class="card"><h2><span class="step">1</span>이진수 바코드 예시표</h2><p class="note small">1부터 11까지의 예시만 보여 줍니다. 나머지는 자리값을 더하는 규칙을 보고 스스로 유추합니다. 4칸 바코드는 왼쪽부터 8, 4, 2, 1의 자리값을 가집니다.</p><div class="grid grid3" id="rulebox" style="margin-top:14px"></div></section>
+
+<section class="card gamecard" id="gameCard"><div class="gamebar"><div><h2 style="margin:0"><span class="step">2</span>게임 모드: 이진수 바코드 해독</h2><p class="gamehelp">제한 시간을 정하고 시작하면 그 시간 동안 이진수 바코드를 십진수로 해독합니다. 5문제를 맞힐 때마다 비트 수가 1자리씩 늘어납니다.</p></div><div class="row"><div class="timecontrol"><label for="gameDuration">제한 시간</label><input id="gameDuration" type="number" min="10" max="600" step="10" value="60" inputmode="numeric"><span class="small muted">초</span><button type="button" class="secondary timepreset" data-time="30">30초</button><button type="button" class="secondary timepreset" data-time="60">60초</button><button type="button" class="secondary timepreset" data-time="120">120초</button></div><button id="gameStart">게임 시작</button><button class="secondary" id="gameStop" disabled>중지</button></div></div><div class="note small">점수 규칙: 4비트 문제는 1점, 5비트 문제는 2점, 6비트 문제는 3점처럼 문제의 비트 수가 늘어날수록 점수가 1점씩 증가합니다. 답은 이진수가 아니라 십진수 숫자로 입력합니다.</div><div class="gamestats"><div class="metric timer"><b id="gameTime">60</b><span>남은 시간</span></div><div class="metric"><b id="gameScore">0</b><span>점수</span></div><div class="metric"><b id="gameCorrect">0</b><span>정답 수</span></div><div class="metric"><b id="gameLevel">4비트</b><span>현재 난이도</span></div><div class="metric"><b id="gameNext">5문제</b><span>다음 난이도까지</span></div></div><div class="gamequestion" id="gameQuestion"><p class="muted">게임 시작을 누르면 첫 문제가 나옵니다.</p></div><div class="row"><input id="gameAnswer" class="gameinput" inputmode="numeric" autocomplete="off" placeholder="십진수 답" disabled><button id="gameCheck" disabled>정답 확인</button><span class="feedback muted" id="gameFeedback">대기 중</span></div><div class="history small" id="gameHistory"></div></section>
+<section class="card"><div class="row" style="justify-content:space-between"><h2 style="margin:0"><span class="step">3</span>미션 8문제</h2><div class="row"><span class="pill" id="score">자동 채점</span><span class="pill" id="progress">응답 수</span><button id="add">추가 문제</button><button class="secondary" id="reset">문제 리셋하기</button></div></div><div class="grid" id="tasks" style="margin-top:14px"></div></section>
+</div>
+<script>
+function escHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function showExport(canvas,label){
+  const out=document.getElementById('exportOut'); if(!out) return;
+  out.innerHTML='';
+  const img=new Image(); img.alt=label+' 완성 이미지'; img.src=canvas.toDataURL('image/png');
+  const cap=document.createElement('p'); cap.className='small muted';
+  cap.textContent='완성된 이미지입니다. 이미지를 길게 누르거나 마우스 오른쪽 버튼을 눌러 저장하세요.';
+  out.append(img,cap); out.hidden=false;
+  out.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function byId(id){ return document.getElementById(id); }
+const BASE_WIDTH = 4;
+const EXAMPLE_MAX = 11;
+const PRACTICE_MAX = 15;
+let tasks=[];
+
+function toBinary(value, width=BASE_WIDTH){
+  return Number(value).toString(2).padStart(width,'0');
+}
+function bitWeights(length){
+  return Array.from({length},(_,i)=>Math.pow(2,length-1-i));
+}
+function binarySumText(code){
+  const weights = bitWeights(code.length);
+  return code.split('').map((bit,i)=>bit==='1'?String(weights[i]):'0').join(' + ') + ' = ' + parseInt(code,2);
+}
+function bitsHtml(code, editable=false, taskId=''){
+  let html='<div class="barcode">';
+  for(let i=0;i<code.length;i++) html += `<button type="button" class="bit ${code[i]==='1'?'on':''} ${editable?'makecell':''}" ${editable?`data-task="${taskId}" data-index="${i}"`:'disabled'}>${code[i]==='1'?'1':''}</button>`;
+  html += '</div>'; return html;
+}
+function binaryPanelHtml(code){
+  const weights = bitWeights(code.length).map(w=>`<span>${w}</span>`).join('');
+  return `<div class="binarypanel"><div class="weightrow">${weights}</div>${bitsHtml(code)}<div class="coderow">${code}</div></div>`;
+}
+function buildTask(){
+  const value = 1 + Math.floor(Math.random()*PRACTICE_MAX);
+  const type = Math.random() < .5 ? 'decode' : 'make';
+  const code = toBinary(value,BASE_WIDTH);
+  return {type,value,code,id:'t'+Date.now()+Math.random(),answer:type==='make'?'0000':''};
+}
+function newSet(count=8){ tasks = Array.from({length:count}, buildTask); render(); }
+function renderRules(){
+  byId('rulebox').innerHTML = Array.from({length:EXAMPLE_MAX},(_,i)=>i+1).map(value=>{
+    const code = toBinary(value,BASE_WIDTH);
+    return `<div class="rule"><div class="rulemain"><strong>숫자 ${value}</strong><code>${code}</code></div>${bitsHtml(code,false,'').replace('barcode','barcode mini')}<div class="rulecalc">${binarySumText(code)}</div></div>`;
+  }).join('');
+}
+function status(t){
+  if(t.type==='decode'){
+    if(!t.answer) return '<span class="muted">입력 대기</span>';
+    return Number(t.answer)===t.value ? '<span class="ok">정답</span>' : '<span class="bad">다시 확인</span>';
+  }
+  return t.answer===t.code ? '<span class="ok">완성</span>' : '<span class="muted">칸을 눌러 완성</span>';
+}
+function answeredCount(){ return tasks.filter(t=> t.type==='decode' ? t.answer.length>0 : t.answer !== '0000').length; }
+function solvedCount(){ return tasks.filter(t=> t.type==='decode' ? Number(t.answer)===t.value : t.answer===t.code).length; }
+function render(){
+  byId('tasks').innerHTML = tasks.map((t,idx)=>{
+    const label=t.type==='decode'?'해독하기':'만들기';
+    const body=t.type==='decode'
+      ? `<div class="split">${binaryPanelHtml(t.code)}<span>→ 십진수</span><input class="answer" data-answer="${t.id}" inputmode="numeric" maxlength="2" value="${t.answer}" placeholder="1~15"></div>`
+      : `<div class="split"><strong>숫자 ${t.value}</strong><span>→</span>${bitsHtml(t.answer,true,t.id)}<span class="small muted">정답 코드: ${t.code.length}칸</span></div>`;
+    return `<div class="task"><div class="taskhead"><strong>${idx+1}. ${label}</strong>${status(t)}</div>${body}</div>`;
+  }).join('');
+  byId('score').textContent = `정답 수: ${solvedCount()} / ${tasks.length}`;
+  byId('progress').textContent = `응답 수: ${answeredCount()} / ${tasks.length}`;
+}
+
+const game = {active:false,duration:60,timeLeft:60,score:0,correct:0,current:null,timer:null,history:[]};
+function gameLength(){ return 4 + Math.floor(game.correct / 5); }
+function gamePoints(length){ return Math.max(1, length - 3); }
+function gameMaxValue(length){ return Math.pow(2,length)-1; }
+function clampGameDuration(value){
+  const n = Number(value);
+  if(!Number.isFinite(n)) return 60;
+  return Math.min(600, Math.max(10, Math.round(n)));
+}
+function setGameDuration(value){
+  game.duration = clampGameDuration(value);
+  const input = byId('gameDuration');
+  if(input) input.value = game.duration;
+  if(!game.active){
+    game.timeLeft = game.duration;
+    renderGame();
+  }
+}
+function randomGameValue(length){
+  return 1 + Math.floor(Math.random()*gameMaxValue(length));
+}
+function buildGameQuestion(){
+  const length = gameLength();
+  const value = randomGameValue(length);
+  const code = toBinary(value,length);
+  return {value,code,length,points:gamePoints(length)};
+}
+function setGameFeedback(html, cls='muted'){
+  const el = byId('gameFeedback');
+  el.className = 'feedback ' + cls;
+  el.innerHTML = html;
+}
+function renderGame(){
+  if(!byId('gameTime')) return;
+  const length = game.current ? game.current.length : gameLength();
+  const remainToNext = 5 - (game.correct % 5);
+  byId('gameTime').textContent = game.timeLeft;
+  byId('gameScore').textContent = game.score;
+  byId('gameCorrect').textContent = game.correct;
+  byId('gameLevel').textContent = `${length}비트`;
+  byId('gameNext').textContent = `${remainToNext}문제`;
+  byId('gameQuestion').innerHTML = game.current ? binaryPanelHtml(game.current.code) : '<p class="muted">게임 시작을 누르면 첫 문제가 나옵니다.</p>';
+  const input = byId('gameAnswer');
+  const maxValueLength = String(gameMaxValue(length)).length;
+  input.disabled = !game.active;
+  input.maxLength = maxValueLength;
+  input.placeholder = game.active ? `0~${gameMaxValue(length)} 사이 십진수` : '십진수 답';
+  byId('gameCheck').disabled = !game.active;
+  byId('gameStart').disabled = game.active;
+  byId('gameStop').disabled = !game.active;
+  byId('gameDuration').disabled = game.active;
+  document.querySelectorAll('.timepreset').forEach(btn=>btn.disabled = game.active);
+  byId('gameHistory').innerHTML = game.history.length ? `<strong>최근 정답</strong><ul>${game.history.slice(0,5).map(h=>`<li>${h.code} → ${h.value} · ${h.length}비트 · +${h.points}점</li>`).join('')}</ul>` : '';
+}
+function endGame(timeout=false){
+  if(game.timer) clearInterval(game.timer);
+  game.timer = null;
+  game.active = false;
+  if(timeout) game.timeLeft = 0;
+  renderGame();
+  setGameFeedback(`게임 종료: ${game.correct}문제 정답, ${game.score}점`, game.correct ? 'ok' : 'muted');
+}
+function startGame(){
+  if(game.timer) clearInterval(game.timer);
+  setGameDuration(byId('gameDuration').value);
+  game.active = true;
+  game.timeLeft = game.duration;
+  game.score = 0;
+  game.correct = 0;
+  game.history = [];
+  game.current = buildGameQuestion();
+  byId('gameAnswer').value = '';
+  setGameFeedback('해독 시작', 'warn');
+  renderGame();
+  byId('gameAnswer').focus();
+  game.timer = setInterval(()=>{
+    game.timeLeft -= 1;
+    if(game.timeLeft <= 0) endGame(true);
+    else renderGame();
+  },1000);
+}
+function normaliseGameAnswer(){
+  const input = byId('gameAnswer');
+  const max = game.current ? String(gameMaxValue(game.current.length)).length : 2;
+  input.value = (input.value || '').replace(/[^0-9]/g,'').slice(0,max);
+  return input.value;
+}
+function checkGameAnswer(auto=false){
+  if(!game.active || !game.current) return;
+  const input = byId('gameAnswer');
+  const value = normaliseGameAnswer();
+  if(value.length < 1){
+    if(!auto) setGameFeedback('십진수 답을 입력하세요.', 'warn');
+    return;
+  }
+  if(Number(value) === game.current.value){
+    const solved = game.current;
+    game.score += solved.points;
+    game.correct += 1;
+    game.history.unshift({code:solved.code,value:solved.value,length:solved.length,points:solved.points});
+    game.current = buildGameQuestion();
+    input.value = '';
+    setGameFeedback(`정답 +${solved.points}점. 다음 문제`, 'ok');
+    renderGame();
+    input.focus();
+  }else{
+    setGameFeedback('다시 확인하세요.', 'bad');
+  }
+}
+
+document.addEventListener('input',e=>{ const id=e.target.dataset.answer; if(!id) return; const t=tasks.find(x=>x.id===id); t.answer=(e.target.value||'').replace(/[^0-9]/g,'').slice(0,2); render(); });
+document.addEventListener('click',e=>{ const btn=e.target.closest('.makecell'); if(!btn) return; const t=tasks.find(x=>x.id===btn.dataset.task); const i=Number(btn.dataset.index); t.answer=t.answer.slice(0,i)+(t.answer[i]==='1'?'0':'1')+t.answer.slice(i+1); render(); });
+
+byId('gameDuration').addEventListener('change',e=>setGameDuration(e.target.value));
+byId('gameDuration').addEventListener('input',e=>{ if(!game.active){ game.duration = clampGameDuration(e.target.value); game.timeLeft = game.duration; byId('gameTime').textContent = game.timeLeft; } });
+document.querySelectorAll('.timepreset').forEach(btn=>btn.addEventListener('click',()=>setGameDuration(btn.dataset.time)));
+byId('gameStart').addEventListener('click',startGame);
+byId('gameStop').addEventListener('click',()=>endGame(false));
+byId('gameCheck').addEventListener('click',()=>checkGameAnswer(false));
+byId('gameAnswer').addEventListener('input',()=>{
+  normaliseGameAnswer();
+});
+byId('gameAnswer').addEventListener('keydown',e=>{ if(e.key==='Enter') checkGameAnswer(false); });
+byId('add').addEventListener('click',()=>{ tasks.push(buildTask()); render(); });
+byId('reset').addEventListener('click',()=>newSet(8));
+document.addEventListener('DOMContentLoaded',()=>{ renderRules(); newSet(8); setGameDuration(byId('gameDuration').value); renderGame(); });
+</script>
+</body>
+</html>
