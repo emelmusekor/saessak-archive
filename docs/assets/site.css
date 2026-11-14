@@ -478,7 +478,7 @@ a:hover > .plus::before, a:hover > .plus::after, .plus:hover::before, .plus:hove
 
 /* class photos under each program */
 .prog-photos { margin-top: clamp(28px, 4vw, 44px); }
-.prog-photos ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.prog-photos ul { display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: 10px; }
 .prog-photos a { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--soft); }
 .prog-photos img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
 .prog-photos a:hover img { transform: scale(1.04); }

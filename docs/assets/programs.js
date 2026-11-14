@@ -36,7 +36,8 @@
   function photoStrip(p) {
     var list = PHOTOS[p.id];
     if (!list || !list.length) return "";
-    return '<div class="container prog-photos"><ul>' + list.slice(0, 4).map(function (ph) {
+    var shown = list.slice(0, 4);
+    return '<div class="container prog-photos"><ul style="--n:' + shown.length + '">' + shown.map(function (ph) {
       return '<li><a href="' + esc(ph.file) + '" target="_blank" rel="noopener"><img src="' + esc(ph.small || ph.file) + '" alt="' + esc(ph.alt || "") + '" loading="lazy"></a></li>';
     }).join("") + "</ul></div>";
   }

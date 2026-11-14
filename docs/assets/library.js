@@ -25,15 +25,17 @@
 
   function card(i) {
     var thumb = i.thumb ? '<img src="' + esc(i.thumb) + '" alt="" loading="lazy">' : '<span class="lib-ext">' + esc((i.ext || "").toUpperCase()) + "</span>";
-    var meta = [(i.ext || "").toUpperCase(), i.pages ? i.pages + "쪽" : "", i.sessions || "", size(i.size_bytes)].filter(Boolean).join(" · ");
+    var isWeb = /^try\//.test(i.file || "");
+    var meta = isWeb ? ["웹 활동지", i.sessions || ""].filter(Boolean).join(" · ")
+                     : [(i.ext || "").toUpperCase(), i.pages ? i.pages + "쪽" : "", i.sessions || "", size(i.size_bytes)].filter(Boolean).join(" · ");
     var viewable = /^(pdf|mp4|html|png|jpg)$/i.test(i.ext || "");
     return '<li class="lib-card" data-year="' + i.year + '" data-type="' + esc(i.type) + '">' +
       '<a class="lib-thumb" href="' + esc(i.file) + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">' + thumb + "</a>" +
       '<div class="lib-body"><span class="lib-type">' + esc(i.type) + "</span>" +
       "<b>" + esc(i.title) + "</b><span class=\"lib-meta\">" + esc(meta) + "</span>" +
       '<span class="lib-actions">' +
-        (viewable ? '<a href="' + esc(i.file) + '" target="_blank" rel="noopener">보기</a>' : "") +
-        '<a href="' + esc(i.file) + '" download>내려받기</a>' +
+        (isWeb ? '<a href="' + esc(i.file) + '">열기</a>'
+               : (viewable ? '<a href="' + esc(i.file) + '" target="_blank" rel="noopener">보기</a>' : "") + '<a href="' + esc(i.file) + '" download>내려받기</a>') +
       "</span></div></li>";
   }
 
