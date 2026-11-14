@@ -3,25 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>중고 상품 정보 등록 계획서 · Make! 클래스 마켓</title>
+<title>중고 상품 정보 등록 계획서 | 디지털새싹 수업 체험</title>
+<link rel="icon" href="../assets/img/kaaie-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Jua&family=Nanum+Pen+Script&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&family=Nanum+Pen+Script&display=swap">
 <link rel="stylesheet" href="../assets/activity.css">
 </head>
 <body>
-<nav class="topbar" aria-label="이동">
-  <div class="topbar-in">
-    <a class="home" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29V15" fill="none" stroke="#1F8048" stroke-width="2.4" stroke-linecap="round"/><path fill="#1F8048" d="M16 17C16 10 11 5.5 3.5 5.5 3.5 12.5 8.5 17 16 17Z"/><path fill="#56B47B" d="M16 14.5C16 8.5 20.5 4 28.5 4c0 6.5-4.5 10.5-12.5 10.5Z"/></svg>디지털새싹 아카이브</a>
-    <span class="row" style="gap:16px"><a href="../2026.html#make">Make! 클래스 마켓 소개</a><a href="../try.html">체험 목록</a></span>
+<header class="a-head">
+  <div class="a-in">
+    <a class="a-brand" href="../index.html" aria-label="디지털새싹 홈"><img src="../assets/img/kaaie-logo.png" alt="한국인공지능교육학회" width="284" height="53"><span class="sep" aria-hidden="true"></span><span class="name">디지털새싹</span></a>
+    <nav class="a-nav" aria-label="이동"><a href="../2026.html#make">Make! 클래스 마켓</a><a href="../try.html">수업 체험 목록</a></nav>
   </div>
-</nav>
-<div class="wrap">
-<header class="hero">
-  <p class="eyebrow"><span class="wordmark">Make!</span><span>클래스 마켓 · 초등 5~6학년</span><span class="ses">5~6차시 · 성장기</span></p>
-  <h1>중고 상품 정보 등록 계획서</h1>
-  <p class="sub">팔 물건의 상태를 진단하고 알맞은 가격과 설명을 정리해 마켓 등록 카드를 완성해요.</p>
 </header>
+<section class="a-hero">
+  <div class="a-in">
+    <p class="a-kicker"><span class="v">Make!</span><span>클래스 마켓 · 초등 5~6학년</span><span class="ses">5~6차시 · 성장기</span></p>
+    <h1>중고 상품 정보 등록 계획서</h1>
+    <p class="sub">팔 물건의 상태를 진단하고 알맞은 가격과 설명을 정리해 마켓 등록 카드를 완성해요.</p>
+  </div>
+</section>
+<div class="wrap">
 <section class="card"><h2><span class="step">1</span>내 상품의 상태 진단하기</h2><div class="fieldline"><label>내가 팔 물건</label><input id="name" class="writing" data-example="예: 필통"></div><div class="fieldline"><label>상품 사진</label><div><input id="photo" type="file" accept="image/*"><img id="photoPreview" class="previewimg" alt="상품 사진 미리보기"></div></div><p><strong>내 물건의 상태</strong></p><div class="grid grid3"><label class="checkrow"><input type="radio" name="grade" value="S급(최상)">S급(최상): 새것과 같아요.</label><label class="checkrow"><input type="radio" name="grade" value="A급(우수)">A급(우수): 사용감은 조금 있지만 깨끗해요.</label><label class="checkrow"><input type="radio" name="grade" value="B급(보통)">B급(보통): 사용감이나 흠집이 있어요.</label></div><div class="fieldline"><label>장점</label><input id="good" class="writing" data-example="예: 깨끗하고 수납공간이 많아요"></div><div class="fieldline"><label>단점(하자)</label><input id="bad" class="writing" data-example="예: 모서리에 작은 흠집이 있어요"></div></section>
 <section class="card"><h2><span class="step">2</span>적정 가격 산정하기</h2><div class="fieldline"><label>판매 희망 가격</label><div class="row"><input id="price" type="number" style="max-width:180px" data-example="15"><strong>코인</strong></div></div><label><strong>이 가격으로 정한 합리적인 이유</strong><textarea id="reason" class="writing" data-example="예: 사용감은 있지만 아직 쓸 만해서"></textarea></label></section>
 <section class="card"><h2><span class="step">3</span>마켓에 올릴 상품 설명글 완성하기</h2><div class="fieldline"><label>상품 제목</label><input id="title" class="writing" data-example="예: 깔끔한 파란색 필통 판매"></div><label><strong>상세 설명</strong><textarea id="desc" class="writing" data-example="예: 사용한 지 3개월 되었고, 지퍼는 잘 열립니다. 흠집은 사진을 확인해 주세요."></textarea></label><div class="note" style="margin-top:14px"><pre id="pv" style="white-space:pre-wrap;margin:0"></pre></div><div class="row" style="margin-top:14px"><button id="export">등록 카드 이미지 만들기</button></div><div id="exportOut" class="export-out" hidden></div></section>

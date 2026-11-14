@@ -40,25 +40,28 @@ HEAD = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{title} · Make! 클래스 마켓</title>
+<title>{title} | 디지털새싹 수업 체험</title>
+<link rel="icon" href="../assets/img/kaaie-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Jua&family=Nanum+Pen+Script&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&family=Nanum+Pen+Script&display=swap">
 <link rel="stylesheet" href="../assets/activity.css">
 </head>
 <body>
-<nav class="topbar" aria-label="이동">
-  <div class="topbar-in">
-    <a class="home" href="../index.html">{leaf}디지털새싹 아카이브</a>
-    <span class="row" style="gap:16px"><a href="../2026.html#make">Make! 클래스 마켓 소개</a><a href="../try.html">체험 목록</a></span>
+<header class="a-head">
+  <div class="a-in">
+    <a class="a-brand" href="../index.html" aria-label="디지털새싹 홈"><img src="../assets/img/kaaie-logo.png" alt="한국인공지능교육학회" width="284" height="53"><span class="sep" aria-hidden="true"></span><span class="name">디지털새싹</span></a>
+    <nav class="a-nav" aria-label="이동"><a href="../2026.html#make">Make! 클래스 마켓</a><a href="../try.html">수업 체험 목록</a></nav>
   </div>
-</nav>
-<div class="wrap">
-<header class="hero">
-  <p class="eyebrow"><span class="wordmark">Make!</span><span>클래스 마켓 · 초등 5~6학년</span><span class="ses">{session} · {phase}</span></p>
-  <h1>{title}</h1>
-  <p class="sub">{sub}</p>
 </header>
+<section class="a-hero">
+  <div class="a-in">
+    <p class="a-kicker"><span class="v">Make!</span><span>클래스 마켓 · 초등 5~6학년</span><span class="ses">{session} · {phase}</span></p>
+    <h1>{title}</h1>
+    <p class="sub">{sub}</p>
+  </div>
+</section>
+<div class="wrap">
 """
 
 HELPERS = r"""

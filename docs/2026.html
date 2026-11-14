@@ -3,80 +3,83 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>2026 디지털새싹 프로그램</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="(사)한국인공지능교육학회가 개발한 2026 디지털새싹 프로그램 7종: Create!, PLAY!, Make!, Design!, Insight!, Move!, Link!">
+<title>2026 프로그램 | 한국인공지능교육학회 디지털새싹</title>
+<meta name="description" content="Create! PLAY! Make! Design! Insight! Move! Link! 한국인공지능교육학회가 만든 2026 디지털새싹 프로그램 7개.">
+<meta property="og:title" content="2026 디지털새싹 프로그램 | 한국인공지능교육학회">
+<meta property="og:image" content="assets/img/slide-view.jpg">
+<link rel="icon" href="assets/img/kaaie-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Jua&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
-<header class="site-head">
-  <div class="wrap">
-    <a class="brand" href="index.html">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path class="leaf-stem" d="M16 29V15" fill="none" stroke-width="2.4" stroke-linecap="round"/><path class="leaf-a" d="M16 17C16 10 11 5.5 3.5 5.5 3.5 12.5 8.5 17 16 17Z"/><path class="leaf-b" d="M16 14.5C16 8.5 20.5 4 28.5 4c0 6.5-4.5 10.5-12.5 10.5Z"/></svg>
-      <span class="brand-text"><b>디지털새싹 아카이브</b><span>(사)한국인공지능교육학회</span></span>
+<div class="topbar">
+  <div class="container">
+    <span class="en">Korean Association of Artificial Intelligence Education</span>
+    <a href="http://aied.or.kr/" target="_blank" rel="noopener">한국인공지능교육학회 홈페이지 ↗</a>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="디지털새싹 홈">
+      <img src="assets/img/kaaie-logo.png" alt="한국인공지능교육학회" width="284" height="53">
+      <span class="brand-sep" aria-hidden="true"></span>
+      <span class="brand-name">디지털새싹</span>
     </a>
-    <nav class="nav" aria-label="주요 메뉴">
-      <a href="index.html#why">학회 프로그램</a>
-      <a href="index.html#years">연도별 기록</a>
-      <a href="2026.html" aria-current="page">2026 프로그램</a>
-      <a href="try.html">바로 체험</a>
-      <a href="index.html#about">운영 체계</a>
+    <nav class="gnb" id="gnb" aria-label="주요 메뉴">
+      <a href="2026.html" aria-current="page">프로그램</a>
+      <a href="index.html#archive">4년의 기록</a>
+      <a href="try.html">수업 체험</a>
+      <a class="ext" href="http://aied.or.kr/" target="_blank" rel="noopener">학회 소개<span>↗</span></a>
     </nav>
+    <button class="menu-btn" type="button" aria-label="메뉴 열기" aria-controls="gnb" aria-expanded="false"><i></i><i></i><i></i></button>
   </div>
 </header>
 
 <main>
-  <div class="wrap page-hero">
-    <p class="crumb"><a href="index.html#years">연도별 기록</a> / 2026</p>
-    <h1>2026 디지털새싹 프로그램</h1>
-    <p class="lead">(사)한국인공지능교육학회 현직 교사 개발진이 2026년 운영을 위해 개발한 프로그램 7종입니다. 초등 1학년부터 고등학생까지, 프로그램마다 무엇을 하는지 동사 하나로 이름을 붙였습니다.</p>
-    <div class="sum-row">
-      <div><b>7종</b><span>기본 5 · 특화 2</span></div>
-      <div><b>4,600명</b><span>목표 인원</span></div>
-      <div><b>8~12차시</b><span>프로그램 길이</span></div>
-      <div><b>20명</b><span>1회 정원</span></div>
+  <section class="sub-visual" style="background-image:url('assets/img/slide-view.jpg')">
+    <div class="container">
+      <p class="en">PROGRAM</p>
+      <h1>2026 디지털새싹 프로그램</h1>
+      <p class="crumbs"><span>HOME</span><span>프로그램</span><span>2026</span></p>
+    </div>
+  </section>
+
+  <nav class="subnav" aria-label="프로그램 바로가기">
+    <ul id="subnav"></ul>
+  </nav>
+
+  <div class="page-intro">
+    <div class="container">
+      <h2>일곱 개의 동사로 배우는 AI</h2>
+      <p>초등 1학년부터 고등학생까지, 프로그램마다 무엇을 하는지 동사 하나로 이름을 붙였습니다.</p>
+      <ul class="meta-row">
+        <li>기본과정 <b>5</b> · 특화과정 <b>2</b></li>
+        <li>목표 <b>4,600</b>명</li>
+        <li>1회 <b>20</b>명</li>
+        <li><b>8~12</b>차시</li>
+      </ul>
     </div>
   </div>
-
-  <section class="wrap" aria-labelledby="structure-title" style="padding-bottom:clamp(36px,5vw,56px)">
-    <h2 id="structure-title" class="label" style="margin-bottom:10px">수업은 세 단계로 자랍니다</h2>
-    <div class="phase-key">
-      <div class="ph-1"><b>진입기</b><span>디지털의 원리를 놀이와 언플러그드 활동으로 처음 만납니다.</span></div>
-      <div class="ph-2"><b>도약기</b><span>수업 도구로 직접 만들어 보며 기능과 원리를 익힙니다.</span></div>
-      <div class="ph-3"><b>성장기</b><span>친구들과 팀 프로젝트를 완성하고 발표·전시로 나눕니다.</span></div>
-    </div>
-  </section>
-
-  <section class="wrap" id="list" aria-labelledby="list-title" style="padding-bottom:clamp(40px,6vw,72px)">
-    <h2 id="list-title" style="font-size:var(--t-xl)">프로그램 한눈에</h2>
-    <div class="filters" role="group" aria-label="학교급으로 거르기">
-      <button type="button" class="filter" data-filter="all" aria-pressed="true">전체</button>
-      <button type="button" class="filter" data-filter="e1" aria-pressed="false">초등 1~4학년</button>
-      <button type="button" class="filter" data-filter="e2" aria-pressed="false">초등 5~6학년</button>
-      <button type="button" class="filter" data-filter="m" aria-pressed="false">중학교</button>
-      <button type="button" class="filter" data-filter="h" aria-pressed="false">고등학교</button>
-      <button type="button" class="filter" data-filter="special" aria-pressed="false">특화과정</button>
-    </div>
-    <p class="small muted" id="filter-status" aria-live="polite">프로그램 7개</p>
-    <div class="pindex" id="pindex"></div>
-  </section>
 
   <div id="programs"></div>
 </main>
 
-<footer class="site-foot">
-  <div class="wrap foot-grid">
-    <div>
-      <b>디지털새싹 아카이브</b>
-      <span>(사)한국인공지능교육학회 디지털새싹 프로그램 · 주관 ㈜조은에듀테크</span>
-    </div>
-    <div>
-      <span>내용 출처: 2026년도 디지털새싹 사업 운영 프로그램 제안서(새싹B 일반형)</span>
-      <span>하위역량 레벨은 디지털새싹 하위역량별 행동기준척도(1~5)를 따릅니다.</span>
+<footer class="footer">
+  <div class="container">
+    <nav class="footer-links" aria-label="바닥글 메뉴">
+      <a href="2026.html">2026 프로그램</a>
+      <a href="index.html#archive">4년의 기록</a>
+      <a href="try.html">수업 체험</a>
+      <a href="http://aied.or.kr/" target="_blank" rel="noopener">한국인공지능교육학회</a>
+    </nav>
+    <div class="footer-info">
+      <p>한국인공지능교육학회 디지털새싹 프로그램</p>
+      <p>디지털새싹 주관기관 ㈜조은에듀테크 · 협력기관 (사)한국인공지능교육학회</p>
+      <p class="en">Korean Association of Artificial Intelligence Education · Digital Saessak</p>
     </div>
   </div>
 </footer>
@@ -86,105 +89,73 @@
 (function () {
   var D = window.SAESSAK_2026;
   if (!D) return;
-  var CIRC = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫";
-  var COMP = {
-    1: ["디지털 원리 이해", "디지털 소양"], 2: ["소프트웨어 적용", "디지털 소양"],
-    3: ["AI 융합기술 활용", "디지털 소양"], 4: ["디지털 윤리 인식", "디지털 소양"],
-    5: ["융합적 사고", "문제해결"], 6: ["정보탐색", "문제해결"],
-    7: ["해결안 설계", "문제해결"], 8: ["결과해석", "문제해결"],
-    9: ["열정과 집중", "능동적 협력"], 10: ["새로운 도전", "능동적 협력"],
-    11: ["공동체 의식", "능동적 협력"], 12: ["의사소통", "능동적 협력"]
-  };
   var PH = ["진입기", "도약기", "성장기"];
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function fmt(n) { return Number(n).toLocaleString("ko-KR"); }
-  function rail(p) {
-    return '<span class="rail" aria-hidden="true">' + p.phases.map(function (n) { return '<i style="flex:' + n + '"></i>'; }).join("") + "</span>" +
-      '<span class="rail-cap">진입 ' + p.phases[0] + " · 도약 " + p.phases[1] + " · 성장 " + p.phases[2] + "</span>";
+  function ranges(ph) {
+    var out = [], start = 1;
+    ph.forEach(function (n) { out.push(n === 1 ? start + "차시" : start + "–" + (start + n - 1) + "차시"); start += n; });
+    return out;
   }
-  function attrs(p) { return ' data-level="' + p.level + '" data-track="' + esc(p.track) + '"'; }
 
-  /* ---- index ---- */
-  function row(p) {
-    var extra = p.activities.length ? " · 체험 " + p.activities.length + "개" : "";
-    return '<a class="prow lv-' + p.level + '" href="#' + p.id + '"' + attrs(p) + ">" +
-      '<span class="verb">' + esc(p.verb) + "</span>" +
-      '<span class="pname">' + esc(p.name) + "<small>" + esc(p.literacy) + extra + "</small></span>" +
-      '<span class="lvl badge lv">' + esc(p.levelLabel) + "</span>" +
-      '<span class="railbox">' + rail(p) + "</span>" +
-      '<span class="num">' + p.sessions + "차시<span>목표 " + fmt(p.target) + "명</span></span></a>";
-  }
-  var groups = ["기본과정", "특화과정"];
-  var idx = '<div class="prow prow-head" aria-hidden="true"><span style="grid-area:verb">프로그램</span><span style="grid-area:lvl">학교급</span><span style="grid-area:rail">차시 구성</span><span style="grid-area:num;text-align:right">차시·인원</span></div>';
-  groups.forEach(function (g) {
-    var list = D.programs.filter(function (p) { return p.track === g; });
-    idx += '<div class="pgroup-wrap" data-group="' + g + '"><p class="pgroup">' + g + " " + list.length + "종</p>" + list.map(row).join("") + "</div>";
-  });
-  document.getElementById("pindex").innerHTML = idx;
+  document.getElementById("subnav").innerHTML = D.programs.map(function (p) {
+    return '<li><a href="#' + p.id + '">' + esc(p.verb) + "</a></li>";
+  }).join("");
 
-  /* ---- program dossiers ---- */
-  function section(p) {
-    var flow = p.flow.map(function (items, i) {
-      return '<div class="phase ph-' + (i + 1) + '"><div class="phase-h"><b>' + PH[i] + "</b><span>" + p.phases[i] + "차시</span></div>" +
-        (p.stages ? '<p class="phase-sub">' + esc(p.stages[i]) + "</p>" : "") +
-        "<ol>" + items.map(function (it) {
-          return '<li><span class="n">' + esc(it[0]) + '차시</span><span class="t">' + esc(it[1]) + '</span><span class="a">' + esc(it[2]) + "</span></li>";
-        }).join("") + "</ol></div>";
+  document.getElementById("programs").innerHTML = D.programs.map(function (p) {
+    var r = ranges(p.phases);
+    var steps = p.steps.map(function (s, i) {
+      return "<li><b>" + PH[i] + '</b><span class="n">' + r[i] + "</span><span>" + esc(s) + "</span></li>";
     }).join("");
-    var feats = p.features.map(function (f) { return "<div><h4>" + esc(f[0]) + "</h4><p>" + esc(f[1]) + "</p></div>"; }).join("");
-    var facts = [["정원", "1회 " + p.cap + "명"], ["차시", p.sessions + "차시"], ["수업 형태", p.mode]].concat(p.resources).concat([["목표 인원", fmt(p.target) + "명"]]);
-    var dl = facts.map(function (f) { return "<dt>" + esc(f[0]) + "</dt><dd>" + esc(f[1]) + "</dd>"; }).join("");
-    var comp = p.competencies.map(function (c) {
-      var k = c[0], l = c[1], pips = "";
-      for (var i = 1; i <= 5; i++) pips += '<i class="' + (i <= l ? "on" : "") + '"></i>';
-      return '<li><span class="cn" aria-hidden="true">' + CIRC.charAt(k - 1) + "</span><span>" + COMP[k][0] + '<span class="core">' + COMP[k][1] + '</span></span><span class="pips" role="img" aria-label="레벨 ' + l + " / 5\">" + pips + "</span></li>";
-    }).join("");
-    var links = p.links.length ? '<div class="panel"><h3 class="label">수업에서 쓰는 사이트</h3><ul class="links">' + p.links.map(function (l) {
-      return '<li><a href="' + esc(l[1]) + '" target="_blank" rel="noopener"><b>' + esc(l[0]) + "</b><span>" + esc(l[2]) + '</span><span class="ext" aria-hidden="true">↗</span></a></li>';
-    }).join("") + "</ul></div>" : "";
-    var tries = p.activities.length ? '<div class="panel"><h3 class="label">바로 체험 · 웹 활동지 ' + p.activities.length + '개</h3><div class="try-list">' + p.activities.map(function (a) {
-      return '<a href="' + esc(a[0]) + '"><span class="ses">' + esc(a[1]) + "</span><b>" + esc(a[2]) + "</b></a>";
-    }).join("") + "</div></div>" : "";
-    return '<section class="prog lv-' + p.level + '" id="' + p.id + '"' + attrs(p) + ' aria-labelledby="' + p.id + '-title"><div class="wrap">' +
-      '<header class="prog-head"><div class="badges"><span class="badge' + (p.track === "특화과정" ? " special" : "") + '">' + esc(p.track) + '</span><span class="badge lv">' + esc(p.levelLabel) + '</span><span class="badge">' + esc(p.literacy) + "</span></div>" +
-      '<h2 id="' + p.id + '-title"><span class="verb">' + esc(p.verb) + '</span><span class="pname">' + esc(p.name) + "</span></h2>" +
-      '<p class="prog-intro">' + esc(p.intro) + "</p></header>" +
-      '<div class="prog-body"><div class="prog-main">' +
-      '<div class="goal"><span class="label">교육 목표</span><p>' + esc(p.goal) + "</p></div>" +
-      '<div class="block"><h3>프로그램의 특징</h3><div class="features">' + feats + "</div></div>" +
-      '<div class="block"><h3>수업 흐름 · ' + p.sessions + '차시</h3><div class="flow">' + flow + "</div></div>" +
-      (p.lineage ? '<p class="lineage"><b>이어 온 수업</b> · ' + esc(p.lineage) + "</p>" : "") +
-      '</div><aside class="prog-side">' + tries +
-      '<div class="panel"><h3 class="label">한눈에 보기</h3><dl class="facts-dl">' + dl + "</dl></div>" +
-      '<div class="panel"><h3 class="label">중점 하위역량 · 우선순위</h3><ol class="comp">' + comp + "</ol></div>" +
-      links + "</aside></div></div></section>";
-  }
-  document.getElementById("programs").innerHTML = D.programs.map(section).join("");
-
-  /* ---- filters ---- */
-  var buttons = Array.prototype.slice.call(document.querySelectorAll(".filter"));
-  var status = document.getElementById("filter-status");
-  function apply(f) {
-    var shown = 0;
-    document.querySelectorAll(".prow[data-level], .prog[data-level]").forEach(function (el) {
-      var ok = f === "all" || (f === "special" ? el.dataset.track === "특화과정" : el.dataset.level === f);
-      el.hidden = !ok;
-      if (ok && el.classList.contains("prow")) shown++;
+    var actions = "";
+    if (p.activities.length) actions += '<a class="btn btn-navy" href="try.html">수업 체험하기 <span class="arr" aria-hidden="true">→</span></a>';
+    p.links.slice(0, 2).forEach(function (l) {
+      actions += '<a class="btn btn-outline" href="' + esc(l[1]) + '" target="_blank" rel="noopener">' + esc(l[0]) + ' <span class="arr" aria-hidden="true">↗</span></a>';
     });
-    document.querySelectorAll(".pgroup-wrap").forEach(function (g) {
-      g.hidden = !g.querySelector(".prow:not([hidden])");
-    });
-    buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.filter === f)); });
-    status.textContent = "프로그램 " + shown + "개";
-  }
-  buttons.forEach(function (b) { b.addEventListener("click", function () { apply(b.dataset.filter); }); });
+    var sessions = [];
+    p.flow.forEach(function (items) { items.forEach(function (it) { sessions.push('<li><span class="n">' + esc(it[0]) + "차시</span><span>" + esc(it[1]) + "</span></li>"); }); });
+    return '<section class="prog" id="' + p.id + '" style="--pc:var(--p-' + p.id + ')" aria-labelledby="' + p.id + '-t">' +
+      '<div class="container prog-grid">' +
+        '<div class="poster" aria-hidden="true">' +
+          '<div class="poster-top"><span class="poster-tag">' + esc(p.track) + '</span><span class="poster-meta">' + esc(p.levelLabel) + " · " + p.sessions + "차시</span></div>" +
+          '<div class="poster-art"><svg viewBox="0 0 48 48">' + p.icon + "</svg></div>" +
+          '<div><strong class="poster-verb">' + esc(p.verb) + '</strong><span class="poster-name">' + esc(p.name) + "</span></div>" +
+        "</div>" +
+        '<div class="prog-info">' +
+          '<p class="prog-tagline">' + esc(p.tagline) + "</p>" +
+          '<h3 id="' + p.id + '-t"><span class="v">' + esc(p.verb) + "</span>" + esc(p.name) + "</h3>" +
+          '<p class="prog-desc">' + esc(p.intro) + "</p>" +
+          '<ol class="steps">' + steps + "</ol>" +
+          (actions ? '<div class="prog-actions">' + actions + "</div>" : "") +
+          '<details class="sessions"><summary>차시별 수업 보기</summary><ol>' + sessions.join("") + "</ol></details>" +
+        "</div>" +
+      "</div></section>";
+  }).join("");
 
-  /* 링크로 들어온 경우 해당 프로그램으로 이동 */
+  /* highlight the program in view */
+  var links = Array.prototype.slice.call(document.querySelectorAll("#subnav a"));
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (a) {
+          var on = a.getAttribute("href") === "#" + en.target.id;
+          a.classList.toggle("is-active", on);
+          if (on) {
+            var ul = a.closest("ul");
+            if (ul && ul.scrollWidth > ul.clientWidth) ul.scrollTo({ left: a.offsetLeft - (ul.clientWidth - a.offsetWidth) / 2, behavior: "smooth" });
+          }
+        });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    document.querySelectorAll(".prog").forEach(function (s) { io.observe(s); });
+  }
+
   if (location.hash) {
     var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
     if (target) requestAnimationFrame(function () { target.scrollIntoView({ behavior: "instant", block: "start" }); });
   }
 })();
 </script>
+<script src="assets/site.js"></script>
 </body>
 </html>
