@@ -42,7 +42,7 @@ P.forEach(p => Object.assign(p, keep[p.id], { participants: T[p.id], participant
 const data = {
   year: 2026,
   seriesLabel: null,
-  facts: [["구성", "기본 5 · 특화 2"], ["대상", "초등 1학년 – 고등학교"], ["학생", "4,600명"], ["학교", "217곳"]],
+  facts: [["구성", "기본 5 · 특화 2"], ["대상", "초등 1학년 – 고등학교"], ["학생", "4,600명"], ["학교·기관", "217곳"]],
   programs: P
 };
 const out = "/* 2026 디지털새싹 프로그램 (출처: 2026년도 디지털새싹 사업 운영 프로그램 제안서, 새싹B 일반형) */\nwindow.PROGRAM_YEAR = " + JSON.stringify(data, null, 1) + ";\n";

@@ -16,7 +16,7 @@ window.PROGRAM_YEAR = {
    "4,600명"
   ],
   [
-   "학교",
+   "학교·기관",
    "217곳"
   ]
  ],
@@ -467,6 +467,11 @@ window.PROGRAM_YEAR = {
    ],
    "links": [
     [
+     "OpenSky Network",
+     "https://opensky-network.org/",
+     "수업에서 쓰는 항공 데이터 API"
+    ],
+    [
      "FlightAware",
      "https://www.flightaware.com/live/",
      "전 세계 실시간 항공기 위치"
@@ -480,11 +485,6 @@ window.PROGRAM_YEAR = {
      "MarineTraffic",
      "https://www.marinetraffic.com/",
      "실시간 선박 항해 데이터"
-    ],
-    [
-     "OpenSky Network",
-     "https://opensky-network.org/",
-     "수업에서 쓰는 항공 데이터 API"
     ],
     [
      "Kaggle Datasets",
@@ -681,7 +681,7 @@ window.PROGRAM_YEAR = {
     ],
     [
      [
-      "9–10",
+      "9~10",
       "체인리액션 연결 구조 설계",
       "발견·이동·치료·자연 복귀 단계별 조건 · 팀별 구간 임무"
      ],
@@ -700,7 +700,7 @@ window.PROGRAM_YEAR = {
    "links": [
     [
      "베티코드",
-     "https://rewond.com/betycode",
+     "https://motion.bety.kr/code",
      "모션·얼굴 인식 코딩 (수업 코드 필요)"
     ],
     [

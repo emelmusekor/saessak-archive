@@ -29,6 +29,28 @@
 <section class="card"><h2><span class="step">2</span>피해 내용</h2><div class="grid grid2"><label>피해 발생 일시<input id="date" class="writing" data-example="예: 2026년 5월 31일 오후 2시"></label><label>피해 유형<input id="type" class="writing" data-example="예: 스미싱"></label><label>피해 금액<input id="money" class="writing" data-example="예: 100,000원"></label><label>피의자 정보<input id="suspect" class="writing" data-example="예: 닉네임 class123, 123-45-67890"></label></div><label style="display:block;margin-top:12px">피해 발생 경위<textarea id="story" class="writing" data-example="예: 택배 조회 문자를 눌렀다가 개인정보를 입력했습니다."></textarea></label><label style="display:block;margin-top:12px">추가 요청 사항<textarea id="request" class="writing" data-example="예: 계정 정지와 환불을 요청합니다."></textarea></label><label style="display:block;margin-top:12px">증거 자료<textarea id="evidence" class="writing" data-example="예: 채팅 캡처, 송금 내역, 링크 주소 화면"></textarea></label><div class="row" style="margin-top:14px"><button id="export">신고서 이미지 만들기</button></div><div id="exportOut" class="export-out" hidden></div></section>
 </div>
 <script>
+function a11yLabels(){
+  document.querySelectorAll('.fieldline').forEach(function(row){
+    var lab=row.querySelector('label'), el=row.querySelector('input,textarea,select');
+    if(lab && el && !el.closest('label')){ if(!el.id) el.id='f-'+Math.random().toString(36).slice(2,8); lab.htmlFor=el.id; }
+  });
+  document.querySelectorAll('table').forEach(function(tb){
+    var heads=[].map.call(tb.querySelectorAll('thead th'),function(th){return th.textContent.trim();});
+    [].forEach.call(tb.querySelectorAll('tbody tr'),function(tr,ri){
+      [].forEach.call(tr.children,function(td,ci){
+        td.querySelectorAll('input,textarea,select').forEach(function(el){
+          if(!el.getAttribute('aria-label') && !el.closest('label')) el.setAttribute('aria-label',((heads[ci]||'')+' '+(ri+1)).trim());
+        });
+      });
+    });
+  });
+  document.querySelectorAll('.inline-write').forEach(function(el,i){ if(!el.getAttribute('aria-label')) el.setAttribute('aria-label','빈칸 '+(i+1)); });
+  document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(function(el){
+    var named=el.getAttribute('aria-label')||el.closest('label')||(el.id&&document.querySelector('label[for="'+el.id+'"]'));
+    if(!named) el.setAttribute('aria-label',el.placeholder);
+  });
+}
+setTimeout(a11yLabels,0);
 function escHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function showExport(canvas,label){
   const out=document.getElementById('exportOut'); if(!out) return;

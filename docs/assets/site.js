@@ -46,6 +46,19 @@
     });
   });
 
+  /* hero video pause / play */
+  var toggle = document.querySelector(".hero-toggle");
+  var heroVideo = document.querySelector(".hero-video");
+  if (toggle && heroVideo) {
+    toggle.addEventListener("click", function () {
+      var paused = toggle.getAttribute("aria-pressed") === "true";
+      if (paused) { heroVideo.play(); } else { heroVideo.pause(); }
+      toggle.setAttribute("aria-pressed", String(!paused));
+      toggle.setAttribute("aria-label", paused ? "배경 영상 일시정지" : "배경 영상 재생");
+      toggle.innerHTML = paused ? '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12"/><rect x="9.5" y="2" width="3.5" height="12"/></svg>' : '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2l10 6-10 6z"/></svg>';
+    });
+  }
+
   /* respect reduced motion for the hero video */
   var video = document.querySelector(".hero-video");
   if (video && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

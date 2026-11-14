@@ -9,7 +9,7 @@
   function hasHangul(s) { return /[ㄱ-힝]/.test(s); }
   function ranges(ph) {
     var out = [], start = 1;
-    ph.forEach(function (n) { out.push(n === 1 ? start + "차시" : start + "–" + (start + n - 1) + "차시"); start += n; });
+    ph.forEach(function (n) { out.push(n === 1 ? start + "차시" : start + "~" + (start + n - 1) + "차시"); start += n; });
     return out;
   }
 
@@ -30,6 +30,16 @@
   /* 프로그램별 수업 학교 수 (참여 학교 자료가 있을 때) */
   var S = window.SCHOOL_YEAR, perProg = {};
   if (S && S.schools) S.schools.forEach(function (s) { (s.programs || []).forEach(function (id) { perProg[id] = (perProg[id] || 0) + 1; }); });
+
+  /* 수업 사진 (data/photos-YYYY.js 가 있을 때) */
+  var PHOTOS = window.PROGRAM_PHOTOS || {};
+  function photoStrip(p) {
+    var list = PHOTOS[p.id];
+    if (!list || !list.length) return "";
+    return '<div class="container prog-photos"><ul>' + list.slice(0, 4).map(function (ph) {
+      return '<li><a href="' + esc(ph.file) + '" target="_blank" rel="noopener"><img src="' + esc(ph.small || ph.file) + '" alt="' + esc(ph.alt || "") + '" loading="lazy"></a></li>';
+    }).join("") + "</ul></div>";
+  }
 
   document.getElementById("programs").innerHTML = D.programs.map(function (p) {
     var r = ranges(p.phases);
@@ -67,8 +77,8 @@
         '<div class="prog-info">' +
           '<p class="prog-kicker"><span class="tag-sprout">' + esc(p.literacy) + '</span>' +
             (p.participants ? '<span class="prog-count"><b>' + fmt(p.participants) + "</b>명" + (p.participantsPlus ? " 이상" : "") + " 참여</span>" : "") +
-            (perProg[p.id] ? '<span class="prog-count"><b>' + perProg[p.id] + "</b>개 학교</span>" : "") + "</p>" +
-          '<h3 id="' + p.id + '-t">' + esc(p.tagline) + "</h3>" +
+            (perProg[p.id] ? '<span class="prog-count"><b>' + perProg[p.id] + "</b>곳에서 수업</span>" : "") + "</p>" +
+          '<h2 id="' + p.id + '-t">' + esc(p.tagline) + "</h2>" +
           '<p class="prog-name"><span class="v' + (hasHangul(p.label) ? " kr" : "") + '">' + esc(p.label) + "</span>" + esc(p.title) + "</p>" +
           '<p class="prog-desc">' + esc(p.intro) + "</p>" +
           '<ol class="steps">' + steps + "</ol>" +
@@ -77,7 +87,7 @@
           (mats.length ? '<a class="mat-all" href="library.html#' + D.year + "-" + p.id + '">이 프로그램 자료 ' + mats.length + '개 모두 보기 <span aria-hidden="true">→</span></a>' : "") +
           sessions +
         "</div>" +
-      "</div></section>";
+      "</div>" + photoStrip(p) + "</section>";
   }).join("");
 
   /* 참여 학교 */

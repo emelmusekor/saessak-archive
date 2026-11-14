@@ -13,7 +13,7 @@ FILES = [
      "QR코드는 검은 칸과 흰 칸으로 정보를 담아요. 21×21 칸을 칠해 픽셀아트를 만들고, 내가 쓴 글자를 진짜 QR코드로 바꿔 봐요."),
     ("1~2차시) 바코드_비밀_암호_해독_작전_게임모드.html", "barcode-binary.html", "1~2차시", "진입기",
      "바코드 비밀 암호 해독 작전",
-     "검은 칸은 1, 흰 칸은 0이에요. 오른쪽 자리부터 1, 2, 4, 8처럼 두 배씩 커지는 자리값을 더해 이진수 바코드를 해독해요."),
+     "검은 칸은 1, 흰 칸은 0이에요. 오른쪽 자리부터 1, 2, 4, 8처럼 두 배씩 커지는 자릿값을 더해 이진수 바코드를 해독해요."),
     ("3~4차시) 학급 마켓 공정 거래 서약서 및 약관.html", "market-terms.html", "3~4차시", "도약기",
      "학급 마켓 공정 거래 서약서",
      "우리 반 마켓에서 지킬 거래 규칙과 환불 약관을 학급 회의로 정하고, 약관에 동의하면 서명해요."),
@@ -65,6 +65,28 @@ HEAD = """<!doctype html>
 """
 
 HELPERS = r"""
+function a11yLabels(){
+  document.querySelectorAll('.fieldline').forEach(function(row){
+    var lab=row.querySelector('label'), el=row.querySelector('input,textarea,select');
+    if(lab && el && !el.closest('label')){ if(!el.id) el.id='f-'+Math.random().toString(36).slice(2,8); lab.htmlFor=el.id; }
+  });
+  document.querySelectorAll('table').forEach(function(tb){
+    var heads=[].map.call(tb.querySelectorAll('thead th'),function(th){return th.textContent.trim();});
+    [].forEach.call(tb.querySelectorAll('tbody tr'),function(tr,ri){
+      [].forEach.call(tr.children,function(td,ci){
+        td.querySelectorAll('input,textarea,select').forEach(function(el){
+          if(!el.getAttribute('aria-label') && !el.closest('label')) el.setAttribute('aria-label',((heads[ci]||'')+' '+(ri+1)).trim());
+        });
+      });
+    });
+  });
+  document.querySelectorAll('.inline-write').forEach(function(el,i){ if(!el.getAttribute('aria-label')) el.setAttribute('aria-label','빈칸 '+(i+1)); });
+  document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(function(el){
+    var named=el.getAttribute('aria-label')||el.closest('label')||(el.id&&document.querySelector('label[for="'+el.id+'"]'));
+    if(!named) el.setAttribute('aria-label',el.placeholder);
+  });
+}
+setTimeout(a11yLabels,0);
 function escHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function showExport(canvas,label){
   const out=document.getElementById('exportOut'); if(!out) return;
@@ -125,9 +147,21 @@ for src_name, out_name, session, phase, title, sub in FILES:
             "document.getElementById('paint').addEventListener('mousedown',e=>{const c=e.target.dataset.cell;if(c===undefined)return;e.preventDefault();painted[Number(c)]=e.button===2?false:true;renderPaint();});",
             QR_POINTER, out_name)
     elif out_name == "barcode-binary.html":
+        script = must_replace(script,
+            "t.answer=(e.target.value||'').replace(/[^0-9]/g,'').slice(0,2); render(); });",
+            "t.answer=(e.target.value||'').replace(/[^0-9]/g,'').slice(0,2); render(); const el=byId('tasks').querySelector('[data-answer=\"'+id+'\"]'); if(el){ el.focus(); const n=el.value.length; el.setSelectionRange(n,n); } });",
+            out_name)
+        body = body.replace("자리값", "자릿값")
+        script = script.replace("자리값", "자릿값")
         body = must_replace(body, '<h2>이진수 바코드 예시표</h2>', '<h2><span class="step">1</span>이진수 바코드 예시표</h2>', out_name)
         body = must_replace(body, '<h2 style="margin:0">게임 모드: 이진수 바코드 해독</h2>', '<h2 style="margin:0"><span class="step">2</span>게임 모드: 이진수 바코드 해독</h2>', out_name)
         body = must_replace(body, '<h2 style="margin:0">미션 8문제</h2>', '<h2 style="margin:0"><span class="step">3</span>미션 8문제</h2>', out_name)
+    elif out_name == "market-terms.html":
+        body = number_h2(body)
+        body = body.replace("중고 거래(계약)을", "중고 거래(계약)를").replace("고장나 있었다", "고장 나 있었다")
+        script = must_replace(script, "window.addEventListener('resize',fitSign); fitSign();",
+            "let lastW=0; function refit(){ const w=canvas.getBoundingClientRect().width; if(Math.abs(w-lastW)<1) return; const tmp=document.createElement('canvas'); tmp.width=canvas.width; tmp.height=canvas.height; tmp.getContext('2d').drawImage(canvas,0,0); fitSign(); lastW=w; ctx.save(); ctx.setTransform(1,0,0,1,0,0); ctx.drawImage(tmp,0,0); ctx.restore(); } window.addEventListener('resize',refit); fitSign(); lastW=canvas.getBoundingClientRect().width;",
+            out_name)
     elif out_name == "item-listing.html":
         body = re.sub(r'<h2>STEP (\d)\. ', r'<h2><span class="step">\1</span>', body)
         body = must_replace(body, '<button id="export">이미지로 내보내기(PNG)</button></div></section>',

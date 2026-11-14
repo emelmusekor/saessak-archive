@@ -29,6 +29,28 @@
 <section class="card"><h2><span class="step">2</span>생각 정리</h2><div class="fieldline"><label>자산이 가장 늘어날 때</label><input class="writing" data-example="예: 계획적으로 저축을 시작할 때"></div><div class="fieldline"><label>그렇게 생각한 이유</label><input class="writing" data-example="예: 목표를 세우고 꾸준히 모을 수 있어서"></div><div class="fieldline"><label>자산이 줄어들 수 있는 때</label><input class="writing" data-example="예: 충동구매를 많이 할 때"></div><div class="fieldline"><label>자산관리 약속 1</label><input class="writing" data-example="예: 사고 싶은 물건을 하루 생각해 보기"></div><div class="fieldline"><label>자산관리 약속 2</label><input class="writing" data-example="예: 용돈의 일부는 저축하기"></div><div class="fieldline"><label>자산관리 약속 3</label><input class="writing" data-example="예: 지출 내용을 기록하기"></div></section>
 </div>
 <script>
+function a11yLabels(){
+  document.querySelectorAll('.fieldline').forEach(function(row){
+    var lab=row.querySelector('label'), el=row.querySelector('input,textarea,select');
+    if(lab && el && !el.closest('label')){ if(!el.id) el.id='f-'+Math.random().toString(36).slice(2,8); lab.htmlFor=el.id; }
+  });
+  document.querySelectorAll('table').forEach(function(tb){
+    var heads=[].map.call(tb.querySelectorAll('thead th'),function(th){return th.textContent.trim();});
+    [].forEach.call(tb.querySelectorAll('tbody tr'),function(tr,ri){
+      [].forEach.call(tr.children,function(td,ci){
+        td.querySelectorAll('input,textarea,select').forEach(function(el){
+          if(!el.getAttribute('aria-label') && !el.closest('label')) el.setAttribute('aria-label',((heads[ci]||'')+' '+(ri+1)).trim());
+        });
+      });
+    });
+  });
+  document.querySelectorAll('.inline-write').forEach(function(el,i){ if(!el.getAttribute('aria-label')) el.setAttribute('aria-label','빈칸 '+(i+1)); });
+  document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(function(el){
+    var named=el.getAttribute('aria-label')||el.closest('label')||(el.id&&document.querySelector('label[for="'+el.id+'"]'));
+    if(!named) el.setAttribute('aria-label',el.placeholder);
+  });
+}
+setTimeout(a11yLabels,0);
 function escHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function showExport(canvas,label){
   const out=document.getElementById('exportOut'); if(!out) return;

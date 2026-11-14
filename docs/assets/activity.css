@@ -12,7 +12,7 @@
   --raise: #F5F7FB;
   --ink: #1C2331;
   --ink-2: #3B4352;
-  --muted: #6B7383;
+  --muted: #68707F;
   --line: #E2E6ED;
   --line-2: #C9D0DB;
   --accent: #265297;
@@ -189,4 +189,8 @@ input[type="file"] { padding: 8px; }
 @media (max-width: 400px) {
   .qrgrid.big { border-width: 4px; }
   .qrgrid.big button { width: 13px; height: 13px; }
+}
+
+@media (max-width: 600px) {
+  .table-scroll::before { content: "← 표를 옆으로 밀어 보세요 →"; display: block; margin-bottom: 6px; font-size: 13px; color: var(--muted); text-align: center; }
 }

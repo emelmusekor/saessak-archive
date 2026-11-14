@@ -30,6 +30,28 @@
 <section class="card"><h2><span class="step">3</span>마켓에 올릴 상품 설명글 완성하기</h2><div class="fieldline"><label>상품 제목</label><input id="title" class="writing" data-example="예: 깔끔한 파란색 필통 판매"></div><label><strong>상세 설명</strong><textarea id="desc" class="writing" data-example="예: 사용한 지 3개월 되었고, 지퍼는 잘 열립니다. 흠집은 사진을 확인해 주세요."></textarea></label><div class="note" style="margin-top:14px"><pre id="pv" style="white-space:pre-wrap;margin:0"></pre></div><div class="row" style="margin-top:14px"><button id="export">등록 카드 이미지 만들기</button></div><div id="exportOut" class="export-out" hidden></div></section>
 </div>
 <script>
+function a11yLabels(){
+  document.querySelectorAll('.fieldline').forEach(function(row){
+    var lab=row.querySelector('label'), el=row.querySelector('input,textarea,select');
+    if(lab && el && !el.closest('label')){ if(!el.id) el.id='f-'+Math.random().toString(36).slice(2,8); lab.htmlFor=el.id; }
+  });
+  document.querySelectorAll('table').forEach(function(tb){
+    var heads=[].map.call(tb.querySelectorAll('thead th'),function(th){return th.textContent.trim();});
+    [].forEach.call(tb.querySelectorAll('tbody tr'),function(tr,ri){
+      [].forEach.call(tr.children,function(td,ci){
+        td.querySelectorAll('input,textarea,select').forEach(function(el){
+          if(!el.getAttribute('aria-label') && !el.closest('label')) el.setAttribute('aria-label',((heads[ci]||'')+' '+(ri+1)).trim());
+        });
+      });
+    });
+  });
+  document.querySelectorAll('.inline-write').forEach(function(el,i){ if(!el.getAttribute('aria-label')) el.setAttribute('aria-label','빈칸 '+(i+1)); });
+  document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(function(el){
+    var named=el.getAttribute('aria-label')||el.closest('label')||(el.id&&document.querySelector('label[for="'+el.id+'"]'));
+    if(!named) el.setAttribute('aria-label',el.placeholder);
+  });
+}
+setTimeout(a11yLabels,0);
 function escHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function showExport(canvas,label){
   const out=document.getElementById('exportOut'); if(!out) return;

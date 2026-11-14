@@ -35,13 +35,13 @@
 <p>모든 거래는 개인적으로 해결하지 않고, 반드시 공식 학급 마켓 프로그램인 <input class="writing inline-write" data-example="네오뱅크"> 앱을 통해 거래내역과 기록을 남긴다.</p>
 </div></section>
 <section class="card"><h2><span class="step">2</span>우리 반 마켓 환불 규칙(약관) 세우기</h2><div class="table-scroll"><table class="table"><thead><tr><th>발생할 수 있는 상황</th><th>우리 반의 환불 규칙</th></tr></thead><tbody>
-<tr><td><strong>상황 A(판매자 과실)</strong><br>예시: 주문한 물건을 받았는데, 처음부터 고장나 있었다.</td><td><label class="checkrow"><input type="checkbox">100% 환불 또는 교환해 준다.</label><label class="checkrow"><input type="checkbox">환불해 주지 않는다.</label><label>기타:<input class="writing" data-example="예: 사진을 확인한 뒤 교환"></label></td></tr>
+<tr><td><strong>상황 A(판매자 과실)</strong><br>예시: 주문한 물건을 받았는데, 처음부터 고장 나 있었다.</td><td><label class="checkrow"><input type="checkbox">100% 환불 또는 교환해 준다.</label><label class="checkrow"><input type="checkbox">환불해 주지 않는다.</label><label>기타:<input class="writing" data-example="예: 사진을 확인한 뒤 교환"></label></td></tr>
 <tr><td><strong>상황 B(구매자 과실)</strong><br>예시: 물건을 받고 나서, 내가 실수로 떨어뜨려 고장이 났다.</td><td><label class="checkrow"><input type="checkbox">100% 환불 또는 교환해 준다.</label><label class="checkrow"><input type="checkbox">환불해 주지 않는다.</label><label>기타:<input class="writing" data-example="예: 환불 대신 수리 협의"></label></td></tr>
 <tr><td><strong>상황 C(단순 변심)</strong><br>예시: 물건은 멀쩡한데, 그냥 마음이 바뀌어서 다른 걸 사고 싶다.</td><td><label class="checkrow"><input type="checkbox">100% 환불 또는 교환해 준다.</label><label class="checkrow"><input type="checkbox">환불해 주지 않는다.</label><label>기타:<input class="writing" data-example="예: 하루 안에는 교환 가능"></label></td></tr>
 </tbody></table></div></section>
 <section class="card"><h2><span class="step">3</span>약관 동의 및 경제 주체 서명하기</h2><p>위에서 정한 내용은 우리 반 모두가 지켜야 하는 공통 규칙(약관)입니다.</p>
 <label class="checkrow"><input class="agree" type="checkbox">나는 위에서 정한 학급 마켓의 공통 약관을 모두 확인했습니다.</label>
-<label class="checkrow"><input class="agree" type="checkbox">나는 친구와 중고 거래(계약)을 할 때 정직하고 예의 바르게 행동하겠습니다.</label>
+<label class="checkrow"><input class="agree" type="checkbox">나는 친구와 중고 거래(계약)를 할 때 정직하고 예의 바르게 행동하겠습니다.</label>
 <label class="checkrow"><input class="agree" type="checkbox">나는 내 스마트폰과 태블릿에서 누르는 결제 버튼에 책임을 지겠습니다.</label>
 <div class="fieldline"><label>날짜</label><input class="writing" data-example="예: 2026년 5월 31일"></div>
 <div class="fieldline"><label>이름</label><input class="writing" data-example="예: 홍길동"></div>
@@ -49,6 +49,28 @@
 <p id="agreed" class="warn"></p></section>
 </div>
 <script>
+function a11yLabels(){
+  document.querySelectorAll('.fieldline').forEach(function(row){
+    var lab=row.querySelector('label'), el=row.querySelector('input,textarea,select');
+    if(lab && el && !el.closest('label')){ if(!el.id) el.id='f-'+Math.random().toString(36).slice(2,8); lab.htmlFor=el.id; }
+  });
+  document.querySelectorAll('table').forEach(function(tb){
+    var heads=[].map.call(tb.querySelectorAll('thead th'),function(th){return th.textContent.trim();});
+    [].forEach.call(tb.querySelectorAll('tbody tr'),function(tr,ri){
+      [].forEach.call(tr.children,function(td,ci){
+        td.querySelectorAll('input,textarea,select').forEach(function(el){
+          if(!el.getAttribute('aria-label') && !el.closest('label')) el.setAttribute('aria-label',((heads[ci]||'')+' '+(ri+1)).trim());
+        });
+      });
+    });
+  });
+  document.querySelectorAll('.inline-write').forEach(function(el,i){ if(!el.getAttribute('aria-label')) el.setAttribute('aria-label','빈칸 '+(i+1)); });
+  document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(function(el){
+    var named=el.getAttribute('aria-label')||el.closest('label')||(el.id&&document.querySelector('label[for="'+el.id+'"]'));
+    if(!named) el.setAttribute('aria-label',el.placeholder);
+  });
+}
+setTimeout(a11yLabels,0);
 function escHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function showExport(canvas,label){
   const out=document.getElementById('exportOut'); if(!out) return;
@@ -109,7 +131,7 @@ function move(e){ if(!drawing) return; if(e.cancelable) e.preventDefault(); cons
 function end(){ drawing=false; }
 canvas.addEventListener('mousedown',start); canvas.addEventListener('mousemove',move); window.addEventListener('mouseup',end);
 canvas.addEventListener('touchstart',start,{passive:true}); canvas.addEventListener('touchmove',move,{passive:false}); window.addEventListener('touchend',end);
-byId('clearSign').addEventListener('click',()=>ctx.clearRect(0,0,canvas.width,canvas.height)); window.addEventListener('resize',fitSign); fitSign();
+byId('clearSign').addEventListener('click',()=>ctx.clearRect(0,0,canvas.width,canvas.height)); let lastW=0; function refit(){ const w=canvas.getBoundingClientRect().width; if(Math.abs(w-lastW)<1) return; const tmp=document.createElement('canvas'); tmp.width=canvas.width; tmp.height=canvas.height; tmp.getContext('2d').drawImage(canvas,0,0); fitSign(); lastW=w; ctx.save(); ctx.setTransform(1,0,0,1,0,0); ctx.drawImage(tmp,0,0); ctx.restore(); } window.addEventListener('resize',refit); fitSign(); lastW=canvas.getBoundingClientRect().width;
 </script>
 </body>
 </html>

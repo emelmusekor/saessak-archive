@@ -63,14 +63,14 @@ FOOTER = """
 <footer class="footer">
   <div class="container">
     <nav class="footer-links" aria-label="바닥글 메뉴">
-      <a href="2026.html">2026 프로그램</a>
+      <a href="2026.html">프로그램</a>
       <a href="2025.html">지난 프로그램</a>
       <a href="library.html">자료실</a>
-      <a href="http://aied.or.kr/" target="_blank" rel="noopener">한국인공지능교육학회</a>
+      <a href="http://aied.or.kr/" target="_blank" rel="noopener">학회 소개</a>
     </nav>
     <div class="footer-info">
       <p>한국인공지능교육학회 디지털새싹 프로그램</p>
-      <p>디지털새싹 주관기관 ㈜조은에듀테크 · 협력기관 (사)한국인공지능교육학회</p>
+      <p>디지털새싹 주관기관 ㈜조은에듀테크 · 협력기관 <span class="nowrap">(사)한국인공지능교육학회</span></p>
       <p class="en">Korean Association of Artificial Intelligence Education · Digital Saessak</p>
     </div>
   </div>
@@ -113,6 +113,7 @@ for year, title, en, img, desc in YEARS:
 <script src="data/programs-{year}.js"></script>
 <script src="data/schools-{year}.js" onerror="this.remove()"></script>
 <script src="data/materials.js" onerror="this.remove()"></script>
+<script src="data/photos-{year}.js" onerror="this.remove()"></script>
 <script src="assets/programs.js" defer></script>
 <script src="assets/site.js" defer></script>
 </body>
