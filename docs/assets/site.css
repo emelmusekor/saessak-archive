@@ -496,3 +496,5 @@ a:hover > .plus::before, a:hover > .plus::after, .plus:hover::before, .plus:hove
   .steps .n { display: block; grid-column: 1; grid-row: 2; font-size: 12px; margin-top: -6px; }
   .footer-links a + a { border-left: 0; }
 }
+
+.lib-year { scroll-margin-top: calc(var(--header-h) + 16px); }

@@ -10,6 +10,22 @@ from pathlib import Path
 mat, site = Path(sys.argv[1]), Path(sys.argv[2])
 items = json.loads((mat / "manifest.json").read_text(encoding="utf-8"))
 
+# 재배포 권리가 불분명한 외부 자료는 공개하지 않는다
+#  - 핑퐁 로봇 제조사 배포 워크북·스크래치 예제, 출처·라이선스를 알 수 없는 뇌 MRI 데이터셋
+def excluded(it):
+    t, ext = it["title"], (it.get("ext") or "").lower()
+    if "핑퐁로봇과 함께하는 스크래치 코딩" in t:
+        return True
+    if it["program_id"] == "ai-robot-in-hand" and ext == "sb3":
+        return True
+    if it["program_id"] == "alzheimer-ai" and ext == "zip":
+        return True
+    return False
+
+before = len(items)
+items = [it for it in items if not excluded(it)]
+print("excluded for rights:", before - len(items))
+
 # 프로그램 표시 정보: 2026·2025는 프로그램 데이터에서, 나머지는 여기서
 programs = {}
 for year in (2026, 2025):
@@ -35,12 +51,31 @@ for it in items:  # 2023 등 목록에 없는 프로그램은 manifest의 이름
     key = f"{it['year']}:{it['program_id']}"
     programs.setdefault(key, {"word": "", "name": it.get("program") or it["program_id"], "color": "#265297"})
 
+# 원본 HTML 활동지는 사이트에서 다시 만든 웹 활동지(try/*.html)로 연결한다
+TRY_MAP = [
+    ("바코드", "try/barcode-binary.html", "assets/img/try-barcode.jpg"),
+    ("QR코드 픽셀아트", "try/qr-pixel-art.html", "assets/img/try-qr.jpg"),
+    ("서약서", "try/market-terms.html", "assets/img/try-terms.jpg"),
+    ("중고 상품", "try/item-listing.html", "assets/img/try-listing.jpg"),
+    ("지출 계획서", "try/spending-plan.html", "assets/img/try-spending.jpg"),
+    ("사이버 범죄", "try/cyber-report.html", "assets/img/try-cyber.jpg"),
+    ("생애곡선", "try/life-curve.html", "assets/img/try-life.jpg"),
+    ("항공기 지도", "try/flight-map.html", "assets/img/try-flight.jpg"),
+]
+
 dst = site / "materials"
 if dst.exists():
     shutil.rmtree(dst)
 out_items, total = [], 0
 for it in items:
     rec = dict(it)
+    if (it.get("ext") or "").lower() in ("html", "htm"):
+        hit = next((m for m in TRY_MAP if m[0] in it["title"]), None)
+        if hit:
+            rec.update(file=hit[1], thumb=hit[2], size_bytes=None, type="활동지",
+                       title=it["title"].replace(" 결과 예시: 한반도 항공기 지도 (HTML)", " 웹 활동지: 실시간 항공 지도"))
+            out_items.append(rec)
+            continue
     for key in ("file", "thumb"):
         rel = it.get(key)
         if not rel:
@@ -58,7 +93,8 @@ for it in items:
         out_items.append(rec)
 
 order = {"수업 PPT": 0, "교안": 1, "활동지": 2, "부록 교재": 3, "영상": 4, "예제 파일": 5}
-out_items.sort(key=lambda r: (-int(r["year"]), r["program_id"], order.get(r["type"], 9), r["title"]))
+prog_order = {k: i for i, k in enumerate(programs)}
+out_items.sort(key=lambda r: (-int(r["year"]), prog_order.get(f"{r['year']}:{r['program_id']}", 999), order.get(r["type"], 9), r["title"]))
 payload = {"programs": programs, "items": out_items}
 (site / "data" / "materials.js").write_text(
     "/* 자료실 목록 (tools/make_materials_js.py 로 생성) */\nwindow.MATERIALS = " + json.dumps(payload, ensure_ascii=False, indent=1) + ";\n",

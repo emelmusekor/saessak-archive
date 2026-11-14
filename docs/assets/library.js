@@ -45,7 +45,7 @@
       var inYear = items.filter(function (i) { return String(i.year) === y; });
       var groups = [];
       inYear.forEach(function (i) { if (groups.indexOf(i.program_id) < 0) groups.push(i.program_id); });
-      html += '<section class="lib-year" data-year="' + y + '"><h2 class="lib-year-h">' + y + '<span>' + inYear.length + "개 자료</span></h2>";
+      html += '<section class="lib-year" id="y' + y + '" data-year="' + y + '"><h2 class="lib-year-h">' + y + '<span>' + inYear.length + "개 자료</span></h2>";
       groups.forEach(function (pid) {
         var p = programs[y + ":" + pid] || { name: (inYear.find(function (i) { return i.program_id === pid; }) || {}).program || pid };
         var list = inYear.filter(function (i) { return i.program_id === pid; });

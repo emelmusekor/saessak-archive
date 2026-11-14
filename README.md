@@ -10,7 +10,8 @@
 docs/                    공개되는 사이트 (GitHub Pages가 이 폴더를 배포)
   index.html             홈: 메인 영상, 프로그램, 선생님, 연도별 프로그램, 수업 자료, 참여 후기
   2026.html, 2025.html   연도별 프로그램 페이지 (tools/make_year_pages.py로 생성, assets/programs.js가 data/programs-YYYY.js를 읽어 그림)
-  library.html           자료실 (data/materials.js가 있으면 연도·프로그램별 자료 목록이 열림)
+  library.html           자료실: 2023~2026 수업 PPT·교안·활동지·부록 교재·영상·예제 파일 150개 (data/materials.js)
+  materials/             자료실 파일(PDF·영상·예제)과 썸네일
   try.html               웹 활동지 모음 + 프로그램별 수업 도구 링크
   try/*.html             Make! 클래스 마켓 웹 활동지 7개, Insight! 실시간 항공 지도(try/flight-map.html)
   data/programs-YYYY.js  연도별 프로그램 내용 (한 줄 소개, 설명, 3단계, 학생 결과물, 참여 인원)
@@ -22,6 +23,7 @@ docs/                    공개되는 사이트 (GitHub Pages가 이 폴더를 �
 tools/build_activities.py  원본 활동지 HTML을 사이트 디자인으로 다시 만드는 스크립트
 tools/fetch_logos.py       학교명 → 나이스 학교정보 → 학교 누리집에서 교표를 찾아 PNG로 저장
 tools/make_schools_js.py   참여 학교 자료(private/) + 교표 → docs/data/schools-YYYY.js
+tools/make_materials_js.py 자료 정리 결과(private/materials) → docs/materials/ + docs/data/materials.js
 private/                   내부 원자료 (git에 올리지 않음)
 ```
 
@@ -32,6 +34,9 @@ private/                   내부 원자료 (git에 올리지 않음)
 - 언론 보도: 머니투데이 등 기사 원문 확인 후 링크
 - 2026 참여 학교: 운영기관이 정리한 결과보고용 수업 사진 폴더(학교별). 교표는 각 학교 누리집에서 가져옴
 - 2026 참여 인원: 프로그램별 목표 인원(전 프로그램 목표 달성)
+- 자료실: 공유 드라이브 디지털새싹캠프 폴더 691개 파일 중 수업 자료만 골라 PDF로 변환(최종본만). 행정 서류·개인정보·사진·녹화·글꼴은 제외.
+  학생 얼굴이 나온 쪽은 가림 처리, 시연자 얼굴은 흐림 처리, 작성자 정보 등 메타데이터 제거.
+  로봇 제조사 배포 워크북·예제, 라이선스가 불분명한 데이터셋은 공개하지 않음 (tools/make_materials_js.py의 excluded)
 - 연도별 참여 인원·수료율·만족도: 2023년 상·하반기, 2024년, 2025년 디지털새싹 사업 결과보고서
 - 2026 프로그램 소개·차시·하위역량: 2026년도 디지털새싹 사업 운영 프로그램 제안서(새싹B 일반형)
 - 참여 학생 22,170명은 2023 상반기 3,097 + 하반기 6,284 + 2024년 5,952 + 2025년 6,837의 합(연인원)입니다.
