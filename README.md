@@ -9,10 +9,11 @@
 ```
 docs/                    공개되는 사이트 (GitHub Pages가 이 폴더를 배포)
   index.html             홈: 메인 영상, 프로그램, 선생님, 4년의 기록, 수업 체험, 참여 후기
-  2026.html              2026 프로그램 7종 (data/programs-2026.js를 읽어 화면을 그림)
+  2026.html, 2025.html   연도별 프로그램 페이지 (tools/make_year_pages.py로 생성, assets/programs.js가 data/programs-YYYY.js를 읽어 그림)
   try.html               체험 허브: 웹 활동지 7개 + 프로그램별 수업 도구 링크
   try/*.html             Make! 클래스 마켓 웹 활동지 7개
-  data/programs-2026.js  2026 프로그램 내용
+  data/programs-YYYY.js  연도별 프로그램 내용 (한 줄 소개, 설명, 3단계, 학생 결과물, 참여 인원)
+  data/schools-YYYY.js   연도별 참여 학교 (있을 때만 페이지 아래 참여 학교 영역이 열림)
   assets/site.css        사이트 공통 디자인 (한국인공지능교육학회 홈페이지 톤: 네이비·블루·청록, Noto Sans KR)
   assets/site.js         머리글 메뉴, 연도 탭
   assets/activity.css    활동지 공통 디자인
@@ -30,10 +31,10 @@ tools/build_activities.py  원본 활동지 HTML을 사이트 디자인으로 �
 
 ## 고치는 방법
 
-- **2026 프로그램 내용 수정**: `docs/data/programs-2026.js`만 고치면 2026 페이지에 반영됩니다.
+- **프로그램 내용 수정**: `docs/data/programs-YYYY.js`만 고치면 해당 연도 페이지에 반영됩니다.
+- **연도 페이지 추가**: `tools/make_year_pages.py`의 YEARS·ALL_YEARS에 연도를 넣고 실행합니다.
 - **활동지 원본이 바뀌었을 때**: 아래 명령으로 7개를 다시 만듭니다. 원본 문구가 바뀌어 바꿀 곳을 찾지 못하면 스크립트가 멈추고 알려 줍니다.
   ```
   python tools/build_activities.py "<원본 활동지 폴더>" docs/try
   ```
-- **다른 연도 상세 페이지 추가**: `data/programs-2026.js`와 같은 형식으로 `data/programs-2025.js`를 만들고, `2026.html`을 복사해 데이터 파일 이름만 바꿉니다. 홈의 해당 연도 ‘상세 페이지 준비 중’을 링크로 바꿉니다.
 - 수정 후 `main` 브랜치에 push하면 1~2분 뒤 사이트에 반영됩니다.

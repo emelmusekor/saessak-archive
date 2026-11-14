@@ -51,7 +51,7 @@ HEAD = """<!doctype html>
 <header class="a-head">
   <div class="a-in">
     <a class="a-brand" href="../index.html" aria-label="디지털새싹 홈"><img src="../assets/img/kaaie-logo.png" alt="한국인공지능교육학회" width="284" height="53"><span class="sep" aria-hidden="true"></span><span class="name">디지털새싹</span></a>
-    <nav class="a-nav" aria-label="이동"><a href="../2026.html#make">Make! 클래스 마켓</a><a href="../try.html">수업 체험 목록</a></nav>
+    <nav class="a-nav" aria-label="이동"><a href="../2026.html#make">Make! 클래스 마켓</a><a href="../try.html">수업 자료 목록</a></nav>
   </div>
 </header>
 <section class="a-hero">
