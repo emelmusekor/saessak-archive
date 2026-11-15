@@ -83,30 +83,38 @@ FOOTER = """
 
 for year, title, en, img, desc in YEARS:
     tabs = "".join(
-        f'<a href="{y}.html"{" aria-current=\"page\"" if y == year else ""}>{y}</a>' for y in ALL_YEARS
+        f'<li><a href="{y}.html"{" aria-current=\"page\"" if y == year else ""}>{y}</a></li>' for y in ALL_YEARS
     )
+    crumb = "프로그램" if year == ALL_YEARS[0] else "지난 프로그램"
     body = f"""
 <main>
   <section class="sub-visual" style="background-image:url('{img}')">
     <div class="container">
-      <p class="en">{en}</p>
+      <p class="crumb"><a href="index.html">홈</a><span aria-hidden="true">›</span>{crumb}</p>
       <h1>{title}</h1>
-      <nav class="visual-years" aria-label="연도">{tabs}</nav>
     </div>
   </section>
 
-  <nav class="subnav" aria-label="프로그램 바로가기">
-    <ul id="subnav"></ul>
+  <nav class="year-tabs" aria-label="연도">
+    <div class="container"><ul>{tabs}</ul></div>
   </nav>
 
-  <div class="container lineup" id="lineup"></div>
+  <section class="section prog-list-wrap">
+    <div class="container">
+      <div class="list-head">
+        <h2>{year} 디지털새싹 프로그램</h2>
+        <p id="list-sum"></p>
+      </div>
+      <div id="prog-list"></div>
+    </div>
+  </section>
 
   <div id="programs"></div>
 
   <section class="section soft" id="schools-section" hidden>
     <div class="container">
-      <div class="sec-head">
-        <h2><span class="en">Schools</span><span class="kr">{year} 참여 학교</span></h2>
+      <div class="list-head">
+        <h2>{year} 참여 학교</h2>
       </div>
       <div id="schools"></div>
     </div>
