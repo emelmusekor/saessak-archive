@@ -13,16 +13,10 @@
     return out;
   }
 
-  /* 첫머리: 프로그램 이름을 그대로 크게 */
+  /* 첫머리: 한 해 요약 */
   var lineup = document.getElementById("lineup");
   if (lineup) {
-    lineup.innerHTML =
-      (D.seriesLabel ? '<p class="lineup-label">' + esc(D.seriesLabel) + "</p>" : "") +
-      '<p class="lineup-words">' + D.programs.map(function (p, i) {
-        var half = p.half && (i === 0 || D.programs[i - 1].half !== p.half) ? '<span class="lineup-half">' + esc(p.half) + "</span>" : "";
-        return half + '<a href="#' + p.id + '" style="--pc:' + p.color + '"' + (hasHangul(p.word) ? ' class="kr"' : "") + ">" + esc(p.word) + "</a>";
-      }).join("") + "</p>" +
-      '<dl class="lineup-facts">' + D.facts.map(function (f) { return "<div><dt>" + esc(f[0]) + "</dt><dd>" + esc(f[1]) + "</dd></div>"; }).join("") + "</dl>";
+    lineup.innerHTML = '<dl class="lineup-facts">' + D.facts.map(function (f) { return "<div><dt>" + esc(f[0]) + "</dt><dd>" + esc(f[1]) + "</dd></div>"; }).join("") + "</dl>";
   }
 
   var sub = document.getElementById("subnav");
@@ -52,15 +46,15 @@
     var mats = ((window.MATERIALS && window.MATERIALS.items) || []).filter(function (m) { return String(m.year) === String(D.year) && m.program_id === p.id; });
     ["수업 PPT", "교안", "부록 교재"].forEach(function (type) {
       var m = mats.filter(function (x) { return x.type === type; })[0];
-      if (m) actions += '<a class="btn btn-navy" href="' + esc(m.file) + '" target="_blank" rel="noopener">' + type + ' 보기 <span class="arr" aria-hidden="true">↗</span></a>';
+      if (m) actions += '<a class="btn btn-navy" href="' + esc(m.file) + '" target="_blank" rel="noopener">' + type + ' 보기</a>';
     });
     if (p.activities && p.activities.length) {
       var href = p.activities.length === 1 ? p.activities[0][0] : "try.html";
       var label = p.activities.length === 1 ? p.activities[0][2] + " 열기" : "웹 활동지 열기";
-      actions += '<a class="btn btn-outline" href="' + esc(href) + '">' + esc(label) + ' <span class="arr" aria-hidden="true">→</span></a>';
+      actions += '<a class="btn btn-outline" href="' + esc(href) + '">' + esc(label) + '</a>';
     }
     (p.links || []).slice(0, 2).forEach(function (l) {
-      actions += '<a class="btn btn-outline" href="' + esc(l[1]) + '" target="_blank" rel="noopener">' + esc(l[0]) + ' <span class="arr" aria-hidden="true">↗</span></a>';
+      actions += '<a class="btn btn-outline" href="' + esc(l[1]) + '" target="_blank" rel="noopener">' + esc(l[0]) + '</a>';
     });
     var sessions = "";
     if (p.flow && p.flow.length) {
@@ -68,26 +62,39 @@
       p.flow.forEach(function (items) { items.forEach(function (it) { rows.push('<li><span class="n">' + esc(it[0]) + "차시</span><span>" + esc(it[1]) + "</span></li>"); }); });
       sessions = '<details class="sessions"><summary>차시별 수업 보기</summary><ol>' + rows.join("") + "</ol></details>";
     }
-    var big = hasHangul(p.label) ? ' kr' : "";
+    var cover = mats.filter(function (x) { return x.thumb && x.type === "수업 PPT"; })[0] || mats.filter(function (x) { return x.thumb && /\.jpe?g$|\.png$/.test(x.thumb) && x.type !== "영상"; })[0];
+    var photo = (PHOTOS[p.id] || [])[0];
+    var fig = cover
+      ? '<figure class="prog-cover"><a href="' + esc(cover.file) + '" target="_blank" rel="noopener"><img src="' + esc(cover.thumb) + '" alt="' + esc(p.title + " " + cover.type) + '" loading="lazy"></a></figure>'
+      : photo
+        ? '<figure class="prog-cover"><img src="' + esc(photo.small || photo.file) + '" alt="' + esc(photo.alt || "") + '" loading="lazy"></figure>'
+        : '<div class="prog-cover is-blank" aria-hidden="true"><span>' + esc(p.label) + "</span></div>";
+    var rowsInfo = [
+      ["대상", p.levelLabel],
+      ["차시", p.sessions + "차시"],
+      ["과정", (p.half ? p.half + " " : "") + p.track],
+      ["영역", p.literacy],
+      ["참여 학생", p.participants ? fmt(p.participants) + "명" + (p.participantsPlus ? " 이상" : "") : ""],
+      ["수업 학교", perProg[p.id] ? perProg[p.id] + "곳" : ""]
+    ].filter(function (r) { return r[1]; });
+    var info = '<dl class="prog-facts">' + rowsInfo.map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + esc(r[1]) + "</dd></div>"; }).join("") + "</dl>";
+    var name = p.title !== p.label ? esc(p.title) : "";
     return '<section class="prog" id="' + p.id + '" style="--pc:' + p.color + '" aria-labelledby="' + p.id + '-t">' +
-      '<div class="container prog-grid">' +
-        '<div class="poster" aria-hidden="true">' +
-          '<div class="poster-top"><span class="poster-tag">' + esc((p.half ? p.half + " · " : "") + p.track) + '</span><span class="poster-meta">' + esc(p.levelLabel) + " · " + p.sessions + "차시</span></div>" +
-          '<div class="poster-art"><svg viewBox="0 0 48 48">' + p.icon + "</svg></div>" +
-          '<div><strong class="poster-verb' + big + '">' + esc(p.label) + '</strong>' + (p.title !== p.label ? '<span class="poster-name">' + esc(p.title) + "</span>" : "") + "</div>" +
-        "</div>" +
-        '<div class="prog-info">' +
-          '<p class="prog-kicker"><span class="tag-sprout">' + esc(p.literacy) + '</span>' +
-            (p.participants ? '<span class="prog-count"><b>' + fmt(p.participants) + "</b>명" + (p.participantsPlus ? " 이상" : "") + " 참여</span>" : "") +
-            (perProg[p.id] ? '<span class="prog-count"><b>' + perProg[p.id] + "</b>곳에서 수업</span>" : "") + "</p>" +
-          '<h2 id="' + p.id + '-t">' + esc(p.tagline) + "</h2>" +
-          '<p class="prog-name"><span class="v' + (hasHangul(p.label) ? " kr" : "") + '">' + esc(p.label) + "</span>" + (p.title !== p.label ? esc(p.title) : "") + "</p>" +
-          '<p class="prog-desc">' + esc(p.intro) + "</p>" +
-          '<ol class="steps">' + steps + "</ol>" +
-          (p.made ? '<p class="made"><b>학생 결과물</b><span>' + esc(p.made) + "</span></p>" : "") +
-          (actions ? '<div class="prog-actions">' + actions + "</div>" : "") +
-          (mats.length ? '<a class="mat-all" href="library.html#' + D.year + "-" + p.id + '">이 프로그램 자료 ' + mats.length + '개 모두 보기 <span aria-hidden="true">→</span></a>' : "") +
-          sessions +
+      '<div class="container">' +
+        '<header class="prog-head">' +
+          '<h2 id="' + p.id + '-t">' + (p.half ? esc(p.title) : '<span class="v' + (hasHangul(p.label) ? " kr" : "") + '">' + esc(p.label) + "</span>" + name) + "</h2>" +
+          (p.tagline ? '<p class="prog-sub">' + esc(p.tagline) + "</p>" : "") +
+        "</header>" +
+        '<div class="prog-grid">' +
+          '<div class="prog-side">' + fig + info + "</div>" +
+          '<div class="prog-info">' +
+            '<p class="prog-desc">' + esc(p.intro) + "</p>" +
+            '<ol class="steps">' + steps + "</ol>" +
+            (p.made ? '<p class="made"><b>학생 결과물</b><span>' + esc(p.made) + "</span></p>" : "") +
+            (actions ? '<div class="prog-actions">' + actions + "</div>" : "") +
+            (mats.length ? '<a class="mat-all" href="library.html#' + D.year + "-" + p.id + '">자료 ' + mats.length + "개 전체 보기</a>" : "") +
+            sessions +
+          "</div>" +
         "</div>" +
       "</div>" + photoStrip(p) + "</section>";
   }).join("");
