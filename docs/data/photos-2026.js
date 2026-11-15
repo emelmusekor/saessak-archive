@@ -15,6 +15,21 @@ window.PROGRAM_PHOTOS = {
    "file": "assets/photos/2026/create-4.jpg",
    "small": "assets/photos/2026/create-4-sm.jpg",
    "alt": "태블릿 옥토스튜디오로 블록 코딩을 하며 자기가 만든 게임을 해 보는 아이들의 뒷모습"
+  },
+  {
+   "file": "assets/photos/2026/create-5.jpg",
+   "small": "assets/photos/2026/create-5-sm.jpg",
+   "alt": "괴물 카드 활동지와 색종이 스티커로 꾸민 괴물을 책상 가득 펼쳐 놓은 모둠 책상"
+  },
+  {
+   "file": "assets/photos/2026/create-6.jpg",
+   "small": "assets/photos/2026/create-6-sm.jpg",
+   "alt": "강사가 태블릿을 들고 'Create! 괴물나라 디지털 북' 화면 앞에서 수업을 설명하는 모습"
+  },
+  {
+   "file": "assets/photos/2026/create-7.jpg",
+   "small": "assets/photos/2026/create-7-sm.jpg",
+   "alt": "옥토스튜디오를 켠 태블릿과 괴물 꾸미기용 스티커 꾸러미가 놓인 책상"
   }
  ],
  "play": [
@@ -32,6 +47,26 @@ window.PROGRAM_PHOTOS = {
    "file": "assets/photos/2026/play-3.jpg",
    "small": "assets/photos/2026/play-3-sm.jpg",
    "alt": "메이키메이키를 연결한 노트북으로 '길 건너 베티' 게임을 하는 교실 뒷모습"
+  },
+  {
+   "file": "assets/photos/2026/play-5.jpg",
+   "small": "assets/photos/2026/play-5-sm.jpg",
+   "alt": "메이키메이키 보드를 손에 들고 노트북 봉고 연주 화면을 두드리는 학생의 뒷모습"
+  },
+  {
+   "file": "assets/photos/2026/play-6.jpg",
+   "small": "assets/photos/2026/play-6-sm.jpg",
+   "alt": "메이키메이키와 집게 전선을 연결해 달리기 게임을 하는 책상(위에서 본 모습)"
+  },
+  {
+   "file": "assets/photos/2026/play-7.jpg",
+   "small": "assets/photos/2026/play-7-sm.jpg",
+   "alt": "블록 코딩으로 베티가 길을 건너는 장면을 만드는 학생의 어깨 너머 모습"
+  },
+  {
+   "file": "assets/photos/2026/play-8.jpg",
+   "small": "assets/photos/2026/play-8-sm.jpg",
+   "alt": "강사가 메이키메이키 앞면과 뒷면 사진을 가리키며 설명하는 교실 앞쪽"
   }
  ],
  "make": [
@@ -54,6 +89,16 @@ window.PROGRAM_PHOTOS = {
    "file": "assets/photos/2026/make-4.jpg",
    "small": "assets/photos/2026/make-4-sm.jpg",
    "alt": "태블릿을 하나씩 들고 클래스 마켓 활동 화면을 보는 교실 뒷모습"
+  },
+  {
+   "file": "assets/photos/2026/make-5.jpg",
+   "small": "assets/photos/2026/make-5-sm.jpg",
+   "alt": "노트북으로 '블라인드 해독 챌린지' 이진수 문제를 푸는 학생의 뒷모습"
+  },
+  {
+   "file": "assets/photos/2026/make-7.jpg",
+   "small": "assets/photos/2026/make-7-sm.jpg",
+   "alt": "노트북에 '중고 상품 정보 등록 계획서'를 작성한 화면"
   }
  ],
  "design": [
@@ -76,6 +121,16 @@ window.PROGRAM_PHOTOS = {
    "file": "assets/photos/2026/design-4.jpg",
    "small": "assets/photos/2026/design-4-sm.jpg",
    "alt": "학생이 만든 타이머 웹앱을 교실 스크린에 띄워 발표하는 모습"
+  },
+  {
+   "file": "assets/photos/2026/design-5.jpg",
+   "small": "assets/photos/2026/design-5-sm.jpg",
+   "alt": "강사가 화면을 가리키며 학생이 만든 '선생님 위치 공유 보드' 앱을 함께 살펴보는 모습"
+  },
+  {
+   "file": "assets/photos/2026/design-6.jpg",
+   "small": "assets/photos/2026/design-6-sm.jpg",
+   "alt": "친구 노트북 옆에 서서 직접 만든 카드 뒤집기 앱을 지켜보는 학생의 뒷모습"
   }
  ],
  "insight": [
@@ -98,6 +153,26 @@ window.PROGRAM_PHOTOS = {
    "file": "assets/photos/2026/insight-4.jpg",
    "small": "assets/photos/2026/insight-4-sm.jpg",
    "alt": "학생이 만든 실시간 에너지 대시보드를 스크린에 띄운 모습"
+  },
+  {
+   "file": "assets/photos/2026/insight-5.jpg",
+   "small": "assets/photos/2026/insight-5-sm.jpg",
+   "alt": "노트북 지도 화면에 인공위성 위치 데이터를 띄워 놓고 마우스를 잡은 손"
+  },
+  {
+   "file": "assets/photos/2026/insight-6.jpg",
+   "small": "assets/photos/2026/insight-6-sm.jpg",
+   "alt": "강사가 스크린에 띄운 파이썬 판다스 코드를 짚으며 데이터 분석을 설명하는 모습"
+  },
+  {
+   "file": "assets/photos/2026/insight-7.jpg",
+   "small": "assets/photos/2026/insight-7-sm.jpg",
+   "alt": "구글 코랩 지도에 위치를 표시해 본 노트북 화면"
+  },
+  {
+   "file": "assets/photos/2026/insight-8.jpg",
+   "small": "assets/photos/2026/insight-8-sm.jpg",
+   "alt": "실시간 항공기 위치 데이터를 지도로 보여 주는 노트북 화면"
   }
  ],
  "move": [
@@ -115,6 +190,26 @@ window.PROGRAM_PHOTOS = {
    "file": "assets/photos/2026/move-4.jpg",
    "small": "assets/photos/2026/move-4-sm.jpg",
    "alt": "바닥에 펼친 우주 지도 위 로봇과 노트북을 둘러싼 아이들(위에서 본 모습)"
+  },
+  {
+   "file": "assets/photos/2026/move-5.jpg",
+   "small": "assets/photos/2026/move-5-sm.jpg",
+   "alt": "바닥 매트 위에 놓인 바퀴 달린 탐사 로봇"
+  },
+  {
+   "file": "assets/photos/2026/move-6.jpg",
+   "small": "assets/photos/2026/move-6-sm.jpg",
+   "alt": "웹캠이 학생의 동작을 뼈대 선으로 인식하는 노트북 화면(얼굴은 흐리게 처리)"
+  },
+  {
+   "file": "assets/photos/2026/move-7.jpg",
+   "small": "assets/photos/2026/move-7-sm.jpg",
+   "alt": "노트북 웹캠 앞에서 팔을 들어 동작 인식 활동을 하는 학생"
+  },
+  {
+   "file": "assets/photos/2026/move-8.jpg",
+   "small": "assets/photos/2026/move-8-sm.jpg",
+   "alt": "스크린에 '감각 훈련' 게임 목록을 띄우고 팔을 들어 동작 게임을 하는 교실 뒷모습"
   }
  ],
  "link": [
@@ -137,6 +232,16 @@ window.PROGRAM_PHOTOS = {
    "file": "assets/photos/2026/link-4.jpg",
    "small": "assets/photos/2026/link-4-sm.jpg",
    "alt": "구조 지도 위에 종이컵 장치를 세우는 아이들(위에서 본 모습)"
+  },
+  {
+   "file": "assets/photos/2026/link-5.jpg",
+   "small": "assets/photos/2026/link-5-sm.jpg",
+   "alt": "노트북 화면을 보며 AION 로봇을 손으로 조립하는 학생들의 뒷모습"
+  },
+  {
+   "file": "assets/photos/2026/link-6.jpg",
+   "small": "assets/photos/2026/link-6-sm.jpg",
+   "alt": "종이 터널과 종이컵 장치, 로봇을 올려놓은 동물 구조 지도(위에서 본 모습)"
   }
  ]
 };

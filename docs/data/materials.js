@@ -193,7 +193,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 4159024,
    "pages": 104,
-   "thumb": "materials/thumbs/2026-create-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2026-create-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -245,7 +245,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5129668,
    "pages": 132,
-   "thumb": "materials/thumbs/2026-play-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2026-play-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -284,7 +284,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 3845499,
    "pages": 66,
-   "thumb": "materials/thumbs/2026-make-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2026-make-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -427,7 +427,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 3873165,
    "pages": 87,
-   "thumb": "materials/thumbs/2026-design-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2026-design-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -453,7 +453,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 7540405,
    "pages": 156,
-   "thumb": "materials/thumbs/2026-insight-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2026-insight-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -583,7 +583,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5330564,
    "pages": 55,
-   "thumb": "materials/thumbs/2026-move-slides-01-04.jpg",
+   "thumb": "assets/covers/items/2026-move-slides-01-04.jpg",
    "sessions": "1~4차시"
   },
   {
@@ -596,7 +596,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 995560,
    "pages": 47,
-   "thumb": "materials/thumbs/2026-move-slides-05-08.jpg",
+   "thumb": "assets/covers/items/2026-move-slides-05-08.jpg",
    "sessions": "5~8차시"
   },
   {
@@ -609,7 +609,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 1411451,
    "pages": 65,
-   "thumb": "materials/thumbs/2026-move-slides-09-12.jpg",
+   "thumb": "assets/covers/items/2026-move-slides-09-12.jpg",
    "sessions": "9~12차시"
   },
   {
@@ -661,7 +661,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 7616508,
    "pages": 113,
-   "thumb": "materials/thumbs/2026-link-slides-01-04.jpg",
+   "thumb": "assets/covers/items/2026-link-slides-01-04.jpg",
    "sessions": "1~4차시"
   },
   {
@@ -674,7 +674,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 2083362,
    "pages": 67,
-   "thumb": "materials/thumbs/2026-link-slides-05-08.jpg",
+   "thumb": "assets/covers/items/2026-link-slides-05-08.jpg",
    "sessions": "5~8차시"
   },
   {
@@ -687,7 +687,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 830406,
    "pages": 15,
-   "thumb": "materials/thumbs/2026-link-slides-09-12.jpg",
+   "thumb": "assets/covers/items/2026-link-slides-09-12.jpg",
    "sessions": "9~12차시"
   },
   {
@@ -752,7 +752,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 3782375,
    "pages": 80,
-   "thumb": "materials/thumbs/2025-security-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2025-security-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -778,7 +778,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5525403,
    "pages": 107,
-   "thumb": "materials/thumbs/2025-eco-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2025-eco-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -804,7 +804,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 1935755,
    "pages": 59,
-   "thumb": "materials/thumbs/2025-store-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2025-store-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -830,7 +830,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5115611,
    "pages": 89,
-   "thumb": "materials/thumbs/2025-remix-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2025-remix-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -856,7 +856,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 11752984,
    "pages": 252,
-   "thumb": "materials/thumbs/2025-data-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2025-data-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -882,7 +882,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 6986864,
    "pages": 115,
-   "thumb": "materials/thumbs/2025-city-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2025-city-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -908,7 +908,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 734726,
    "pages": 33,
-   "thumb": "materials/thumbs/2024-moveit-slides-01-04.jpg",
+   "thumb": "assets/covers/items/2024-moveit-slides-01-04.jpg",
    "sessions": "1~4차시"
   },
   {
@@ -1090,7 +1090,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 8539327,
    "pages": 143,
-   "thumb": "materials/thumbs/2024-makeit-slides-01-04.jpg",
+   "thumb": "assets/covers/items/2024-makeit-slides-01-04.jpg",
    "sessions": "1~4차시"
   },
   {
@@ -1155,7 +1155,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5459145,
    "pages": 151,
-   "thumb": "materials/thumbs/2024-gotit-slides-epl-pingpong.jpg",
+   "thumb": "assets/covers/items/2024-gotit-slides-epl-pingpong.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -1168,7 +1168,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5982988,
    "pages": 231,
-   "thumb": "materials/thumbs/2024-gotit-slides-python.jpg",
+   "thumb": "assets/covers/items/2024-gotit-slides-python.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -1181,7 +1181,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 6175705,
    "pages": 174,
-   "thumb": "materials/thumbs/2024-gotit-slides-entry.jpg",
+   "thumb": "assets/covers/items/2024-gotit-slides-entry.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -1246,7 +1246,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 7740433,
    "pages": 117,
-   "thumb": "materials/thumbs/2024-connectit-slides-module-1-2.jpg",
+   "thumb": "assets/covers/items/2024-connectit-slides-module-1-2.jpg",
    "sessions": "1~2모듈"
   },
   {
@@ -1259,7 +1259,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 1583954,
    "pages": 44,
-   "thumb": "materials/thumbs/2024-connectit-slides-module-3-4.jpg",
+   "thumb": "assets/covers/items/2024-connectit-slides-module-3-4.jpg",
    "sessions": "3~4모듈"
   },
   {
@@ -1324,7 +1324,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 4875892,
    "pages": 24,
-   "thumb": "materials/thumbs/2023-coding-robot-friend-slides-day1.jpg",
+   "thumb": "assets/covers/items/2023-coding-robot-friend-slides-day1.jpg",
    "sessions": "1~4차시"
   },
   {
@@ -1337,7 +1337,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5176998,
    "pages": 39,
-   "thumb": "materials/thumbs/2023-coding-robot-friend-slides-day2.jpg",
+   "thumb": "assets/covers/items/2023-coding-robot-friend-slides-day2.jpg",
    "sessions": "5~8차시"
   },
   {
@@ -1350,7 +1350,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 4762865,
    "pages": 22,
-   "thumb": "materials/thumbs/2023-coding-robot-friend-slides-day3.jpg",
+   "thumb": "assets/covers/items/2023-coding-robot-friend-slides-day3.jpg",
    "sessions": "9~12차시"
   },
   {
@@ -1363,7 +1363,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5014754,
    "pages": 37,
-   "thumb": "materials/thumbs/2023-coding-robot-friend-slides-day4.jpg",
+   "thumb": "assets/covers/items/2023-coding-robot-friend-slides-day4.jpg",
    "sessions": "13~16차시"
   },
   {
@@ -1376,7 +1376,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5079914,
    "pages": 29,
-   "thumb": "materials/thumbs/2023-coding-robot-friend-slides-day5.jpg",
+   "thumb": "assets/covers/items/2023-coding-robot-friend-slides-day5.jpg",
    "sessions": "17~20차시"
   },
   {
@@ -1389,7 +1389,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 581499,
    "pages": 19,
-   "thumb": "materials/thumbs/2023-coding-robot-friend-slides-day6.jpg",
+   "thumb": "assets/covers/items/2023-coding-robot-friend-slides-day6.jpg",
    "sessions": "21~24차시"
   },
   {
@@ -1428,7 +1428,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 4981261,
    "pages": 103,
-   "thumb": "materials/thumbs/2023-earth-is-sick-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2023-earth-is-sick-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -1506,7 +1506,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 8422551,
    "pages": 161,
-   "thumb": "materials/thumbs/2023-ai-art-class-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2023-ai-art-class-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -1532,7 +1532,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 2830507,
    "pages": 101,
-   "thumb": "materials/thumbs/2023-kind-words-slides-01-04.jpg",
+   "thumb": "assets/covers/items/2023-kind-words-slides-01-04.jpg",
    "sessions": "1~4차시"
   },
   {
@@ -1545,7 +1545,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 1068874,
    "pages": 32,
-   "thumb": "materials/thumbs/2023-kind-words-slides-05-08.jpg",
+   "thumb": "assets/covers/items/2023-kind-words-slides-05-08.jpg",
    "sessions": "5~8차시"
   },
   {
@@ -1610,7 +1610,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 2222920,
    "pages": 105,
-   "thumb": "materials/thumbs/2023-ai-robot-in-hand-slides-day1.jpg",
+   "thumb": "assets/covers/items/2023-ai-robot-in-hand-slides-day1.jpg",
    "sessions": "1~4차시"
   },
   {
@@ -1623,7 +1623,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 1718888,
    "pages": 87,
-   "thumb": "materials/thumbs/2023-ai-robot-in-hand-slides-day2.jpg",
+   "thumb": "assets/covers/items/2023-ai-robot-in-hand-slides-day2.jpg",
    "sessions": "5~8차시"
   },
   {
@@ -1636,7 +1636,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 2493394,
    "pages": 82,
-   "thumb": "materials/thumbs/2023-ai-robot-in-hand-slides-day3.jpg",
+   "thumb": "assets/covers/items/2023-ai-robot-in-hand-slides-day3.jpg",
    "sessions": "9~12차시"
   },
   {
@@ -1649,7 +1649,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 2785674,
    "pages": 80,
-   "thumb": "materials/thumbs/2023-ai-robot-in-hand-slides-day4.jpg",
+   "thumb": "assets/covers/items/2023-ai-robot-in-hand-slides-day4.jpg",
    "sessions": "13~16차시"
   },
   {
@@ -1662,7 +1662,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 3015291,
    "pages": 83,
-   "thumb": "materials/thumbs/2023-ai-robot-in-hand-slides-day5.jpg",
+   "thumb": "assets/covers/items/2023-ai-robot-in-hand-slides-day5.jpg",
    "sessions": "17~20차시"
   },
   {
@@ -1675,7 +1675,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 2550118,
    "pages": 82,
-   "thumb": "materials/thumbs/2023-ai-robot-in-hand-slides-day6.jpg",
+   "thumb": "assets/covers/items/2023-ai-robot-in-hand-slides-day6.jpg",
    "sessions": "21~24차시"
   },
   {
@@ -1792,7 +1792,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5336001,
    "pages": 132,
-   "thumb": "materials/thumbs/2023-aiot-morning-slides.jpg",
+   "thumb": "assets/covers/items/2023-aiot-morning-slides.jpg",
    "sessions": "1~12차시"
   },
   {
@@ -1818,7 +1818,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 1893454,
    "pages": 67,
-   "thumb": "materials/thumbs/2023-guide-bot-slides.jpg",
+   "thumb": "assets/covers/items/2023-guide-bot-slides.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -1883,7 +1883,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 3486590,
    "pages": 71,
-   "thumb": "materials/thumbs/2023-drone-agent-slides.jpg",
+   "thumb": "assets/covers/items/2023-drone-agent-slides.jpg",
    "sessions": "1~12차시"
   },
   {
@@ -1922,7 +1922,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 4039740,
    "pages": 125,
-   "thumb": "materials/thumbs/2023-robot-fairytale-slides-01-08.jpg",
+   "thumb": "assets/covers/items/2023-robot-fairytale-slides-01-08.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -1974,7 +1974,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 2282844,
    "pages": 70,
-   "thumb": "materials/thumbs/2023-smartwatch-health-slides.jpg",
+   "thumb": "assets/covers/items/2023-smartwatch-health-slides.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -2000,7 +2000,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 5382533,
    "pages": 174,
-   "thumb": "materials/thumbs/2023-youtube-movie-ai-slides.jpg",
+   "thumb": "assets/covers/items/2023-youtube-movie-ai-slides.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -2026,7 +2026,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 6938811,
    "pages": 185,
-   "thumb": "materials/thumbs/2023-smart-healthcare-slides.jpg",
+   "thumb": "assets/covers/items/2023-smart-healthcare-slides.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -2065,7 +2065,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 4575508,
    "pages": 88,
-   "thumb": "materials/thumbs/2023-ai-game-slides.jpg",
+   "thumb": "assets/covers/items/2023-ai-game-slides.jpg",
    "sessions": null
   },
   {
@@ -2091,7 +2091,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 2420369,
    "pages": 52,
-   "thumb": "materials/thumbs/2023-alzheimer-ai-slides.jpg",
+   "thumb": "assets/covers/items/2023-alzheimer-ai-slides.jpg",
    "sessions": null
   },
   {
@@ -2104,7 +2104,7 @@ window.MATERIALS = {
    "ext": "pdf",
    "size_bytes": 3010356,
    "pages": 56,
-   "thumb": "materials/thumbs/2023-smart-cctv-slides.jpg",
+   "thumb": "assets/covers/items/2023-smart-cctv-slides.jpg",
    "sessions": null
   },
   {

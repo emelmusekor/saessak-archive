@@ -1,0 +1,68 @@
+[
+ {
+  "file": "assets/photos/pool/pool-1.jpg",
+  "alt": "블록 코딩 화면을 띄우고 설명하는 강사와 따라 하는 선생님들",
+  "kind": "teachers",
+  "note": "2024 강사 사전 연수 (Make IT!)"
+ },
+ {
+  "file": "assets/photos/pool/pool-2.jpg",
+  "alt": "'Make IT!' 첫 화면을 띄우고 마이크로 연수를 여는 강사",
+  "kind": "event",
+  "note": "2024 강사 사전 연수 시작"
+ },
+ {
+  "file": "assets/photos/pool/pool-3.jpg",
+  "alt": "컴퓨터실에서 피아노 코딩 화면을 실습하는 선생님들",
+  "kind": "teachers",
+  "note": "2024 강사 사전 연수 (Make IT!)"
+ },
+ {
+  "file": "assets/photos/pool/pool-4.jpg",
+  "alt": "대형 화면의 블록 코드를 설명하는 강사와 노트북으로 따라 하는 학생들",
+  "kind": "class",
+  "note": "2025 특화과정 수업"
+ },
+ {
+  "file": "assets/photos/pool/pool-5.jpg",
+  "alt": "강사가 화면 앞에서 설명하고 학생들이 노트북 코딩을 하는 교실",
+  "kind": "class",
+  "note": "2025 특화과정 수업"
+ },
+ {
+  "file": "assets/photos/pool/pool-6.jpg",
+  "alt": "복도 바닥에 노트북을 놓고 로봇을 코딩하는 학생들의 뒷모습",
+  "kind": "hands",
+  "note": "2025 특화과정 복도 로봇 주행"
+ },
+ {
+  "file": "assets/photos/pool/pool-7.jpg",
+  "alt": "종이컵·빨대·로봇 차로 만든 체인 리액션 장치와 태블릿",
+  "kind": "hands",
+  "note": "체인 리액션 활동"
+ },
+ {
+  "file": "assets/photos/pool/pool-8.jpg",
+  "alt": "골판지 길 위에서 태블릿으로 로봇을 조종하는 모습",
+  "kind": "hands",
+  "note": "체인 리액션 활동"
+ },
+ {
+  "file": "assets/photos/pool/pool-9.jpg",
+  "alt": "노트북과 풍선, 로봇 차가 놓인 활동 책상",
+  "kind": "class",
+  "note": "체인 리액션 활동"
+ },
+ {
+  "file": "assets/photos/pool/pool-10.jpg",
+  "alt": "키보드로 코드를 입력하는 손",
+  "kind": "hands",
+  "note": "학회 홍보 영상 192초, 자막·로고 잘라냄"
+ },
+ {
+  "file": "assets/photos/pool/pool-11.jpg",
+  "alt": "모니터에 띄운 영상 스토리보드 작업 화면",
+  "kind": "screen",
+  "note": "학회 홍보 영상 232초, 자막·로고 잘라냄"
+ }
+]

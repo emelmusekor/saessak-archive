@@ -30,13 +30,7 @@
 
   var MATS = (window.MATERIALS && window.MATERIALS.items) || [];
   function matsOf(p) { return MATS.filter(function (m) { return String(m.year) === String(D.year) && m.program_id === p.id; }); }
-  function coverOf(p) {
-    var mats = matsOf(p);
-    var c = mats.filter(function (x) { return x.thumb && x.type === "수업 PPT"; })[0] || mats.filter(function (x) { return x.thumb && x.type !== "영상"; })[0];
-    if (c) return c.thumb;
-    var ph = (PHOTOS[p.id] || [])[0];
-    return ph ? (ph.small || ph.file) : "";
-  }
+  function coverOf(p) { return "assets/covers/" + D.year + "-" + p.id + ".jpg"; }
   function fullName(p) { return p.half ? p.title : p.label + (p.title !== p.label ? " " + p.title : ""); }
 
   /* 프로그램 목록 (카드) */

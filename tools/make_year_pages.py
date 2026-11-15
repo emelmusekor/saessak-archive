@@ -56,6 +56,7 @@ def header(active):
       <a href="2026.html"{cur('2026')}>프로그램</a>
       <a href="2025.html"{cur('past')}>지난 프로그램</a>
       <a href="library.html"{cur('lib')}>자료실</a>
+      <a href="album.html"{cur('album')}>앨범</a>
       <a class="ext" href="http://aied.or.kr/" target="_blank" rel="noopener">학회 소개<span>↗</span></a>
     </nav>
     <button class="menu-btn" type="button" aria-label="메뉴 열기" aria-controls="gnb" aria-expanded="false"><i></i><i></i><i></i></button>
@@ -70,6 +71,7 @@ FOOTER = """
       <a href="2026.html">프로그램</a>
       <a href="2025.html">지난 프로그램</a>
       <a href="library.html">자료실</a>
+      <a href="album.html"{cur('album')}>앨범</a>
       <a href="http://aied.or.kr/" target="_blank" rel="noopener">학회 소개</a>
     </nav>
     <div class="footer-info">
