@@ -498,3 +498,7 @@ a:hover > .plus::before, a:hover > .plus::after, .plus:hover::before, .plus:hove
 }
 
 .lib-year { scroll-margin-top: calc(var(--header-h) + 16px); }
+
+/* 2023: 상반기·하반기 구분 */
+.lineup-words .lineup-half { display: block; width: 100%; margin: 18px 0 4px; text-align: center; font: 600 13px/1.4 var(--f-kr); letter-spacing: .08em; color: #68707F; }
+.lineup-words .lineup-half:first-child { margin-top: 0; }

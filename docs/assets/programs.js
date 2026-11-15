@@ -3,7 +3,7 @@
 (function () {
   var D = window.PROGRAM_YEAR;
   if (!D) return;
-  var PH = ["진입기", "도약기", "성장기"];
+  var PH = ["진입기", "도약기", "성장기", "완성기"];
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function fmt(n) { return Number(n).toLocaleString("ko-KR"); }
   function hasHangul(s) { return /[ㄱ-힝]/.test(s); }
@@ -18,8 +18,9 @@
   if (lineup) {
     lineup.innerHTML =
       (D.seriesLabel ? '<p class="lineup-label">' + esc(D.seriesLabel) + "</p>" : "") +
-      '<p class="lineup-words">' + D.programs.map(function (p) {
-        return '<a href="#' + p.id + '" style="--pc:' + p.color + '"' + (hasHangul(p.word) ? ' class="kr"' : "") + ">" + esc(p.word) + "</a>";
+      '<p class="lineup-words">' + D.programs.map(function (p, i) {
+        var half = p.half && (i === 0 || D.programs[i - 1].half !== p.half) ? '<span class="lineup-half">' + esc(p.half) + "</span>" : "";
+        return half + '<a href="#' + p.id + '" style="--pc:' + p.color + '"' + (hasHangul(p.word) ? ' class="kr"' : "") + ">" + esc(p.word) + "</a>";
       }).join("") + "</p>" +
       '<dl class="lineup-facts">' + D.facts.map(function (f) { return "<div><dt>" + esc(f[0]) + "</dt><dd>" + esc(f[1]) + "</dd></div>"; }).join("") + "</dl>";
   }
@@ -29,7 +30,7 @@
 
   /* 프로그램별 수업 학교 수 (참여 학교 자료가 있을 때) */
   var S = window.SCHOOL_YEAR, perProg = {};
-  if (S && S.schools) S.schools.forEach(function (s) { (s.programs || []).forEach(function (id) { perProg[id] = (perProg[id] || 0) + 1; }); });
+  if (S && S.schools && !S.partial) S.schools.forEach(function (s) { (s.programs || []).forEach(function (id) { perProg[id] = (perProg[id] || 0) + 1; }); });
 
   /* 수업 사진 (data/photos-YYYY.js 가 있을 때) */
   var PHOTOS = window.PROGRAM_PHOTOS || {};
@@ -71,16 +72,16 @@
     return '<section class="prog" id="' + p.id + '" style="--pc:' + p.color + '" aria-labelledby="' + p.id + '-t">' +
       '<div class="container prog-grid">' +
         '<div class="poster" aria-hidden="true">' +
-          '<div class="poster-top"><span class="poster-tag">' + esc(p.track) + '</span><span class="poster-meta">' + esc(p.levelLabel) + " · " + p.sessions + "차시</span></div>" +
+          '<div class="poster-top"><span class="poster-tag">' + esc((p.half ? p.half + " · " : "") + p.track) + '</span><span class="poster-meta">' + esc(p.levelLabel) + " · " + p.sessions + "차시</span></div>" +
           '<div class="poster-art"><svg viewBox="0 0 48 48">' + p.icon + "</svg></div>" +
-          '<div><strong class="poster-verb' + big + '">' + esc(p.label) + '</strong><span class="poster-name">' + esc(p.title) + "</span></div>" +
+          '<div><strong class="poster-verb' + big + '">' + esc(p.label) + '</strong>' + (p.title !== p.label ? '<span class="poster-name">' + esc(p.title) + "</span>" : "") + "</div>" +
         "</div>" +
         '<div class="prog-info">' +
           '<p class="prog-kicker"><span class="tag-sprout">' + esc(p.literacy) + '</span>' +
             (p.participants ? '<span class="prog-count"><b>' + fmt(p.participants) + "</b>명" + (p.participantsPlus ? " 이상" : "") + " 참여</span>" : "") +
             (perProg[p.id] ? '<span class="prog-count"><b>' + perProg[p.id] + "</b>곳에서 수업</span>" : "") + "</p>" +
           '<h2 id="' + p.id + '-t">' + esc(p.tagline) + "</h2>" +
-          '<p class="prog-name"><span class="v' + (hasHangul(p.label) ? " kr" : "") + '">' + esc(p.label) + "</span>" + esc(p.title) + "</p>" +
+          '<p class="prog-name"><span class="v' + (hasHangul(p.label) ? " kr" : "") + '">' + esc(p.label) + "</span>" + (p.title !== p.label ? esc(p.title) : "") + "</p>" +
           '<p class="prog-desc">' + esc(p.intro) + "</p>" +
           '<ol class="steps">' + steps + "</ol>" +
           (p.made ? '<p class="made"><b>학생 결과물</b><span>' + esc(p.made) + "</span></p>" : "") +
@@ -98,9 +99,10 @@
     var names = { "초": "초등학교", "중": "중학교", "고": "고등학교", "특수": "특수학교", "기관": "기관·센터" };
     var groups = {};
     S.schools.forEach(function (s) { (groups[s.level] = groups[s.level] || []).push(s); });
-    var html = '<div class="school-head"><p class="school-total"><b>' + fmt(S.schools.length) + "</b>곳" +
+    var total = S.totalLabel ? '<b>' + esc(S.totalLabel.replace(/곳$/, "")) + "</b>곳" : "<b>" + fmt(S.schools.length) + "</b>곳";
+    var html = '<div class="school-head"><p class="school-total">' + total +
       (S.participantsLabel ? "<span>학생 <b>" + esc(S.participantsLabel) + "</b></span>" : "") + "</p>" +
-      (S.note ? '<p class="school-note">' + esc(S.note) + "</p>" : "") + "</div>";
+      '<p class="school-note">' + (S.partial ? "수업 기록이 남은 " + fmt(S.schools.length) + "곳" + (S.note ? " · " : "") : "") + esc(S.note || "") + "</p></div>";
     order.forEach(function (lv) {
       var list = groups[lv];
       if (!list || !list.length) return;

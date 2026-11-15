@@ -89,82 +89,97 @@ window.MATERIALS = {
   "2023:coding-robot-friend": {
    "word": "",
    "name": "처음 만나는 코딩 로봇 친구",
-   "color": "#265297"
+   "color": "#B3502A"
   },
   "2023:earth-is-sick": {
    "word": "",
    "name": "지구가 아파요",
-   "color": "#265297"
+   "color": "#3F7F2A"
   },
   "2023:ai-art-class": {
    "word": "",
-   "name": "AI와 함께 하는 미술시간",
-   "color": "#265297"
+   "name": "AI와 함께하는 미술시간",
+   "color": "#8E3480"
   },
   "2023:kind-words": {
    "word": "",
-   "name": "바른 말 고운 말 AI 지킴이",
-   "color": "#265297"
+   "name": "바른말 고운말 AI 지킴이",
+   "color": "#A8344F"
   },
   "2023:ai-robot-in-hand": {
    "word": "",
-   "name": "손 안의 AI 로봇",
-   "color": "#265297"
+   "name": "손안의 인공지능",
+   "color": "#255F9A"
+  },
+  "2023:space-rover": {
+   "word": "",
+   "name": "우주탐사 플러버 프로젝트",
+   "color": "#6B4A2E"
   },
   "2023:aiot-morning": {
    "word": "",
    "name": "AIoT로 여는 아침",
-   "color": "#265297"
+   "color": "#A8661A"
   },
   "2023:guide-bot": {
    "word": "",
-   "name": "시각장애인을 위한 우리 학교 안내봇",
-   "color": "#265297"
+   "name": "시각장애인을 위한 안내봇",
+   "color": "#1F7A70"
   },
   "2023:ai-scientist": {
    "word": "",
    "name": "AI 과학자 되어보기",
-   "color": "#265297"
+   "color": "#4542A3"
   },
   "2023:drone-agent": {
    "word": "",
    "name": "인간을 돕는 드론 에이전트",
-   "color": "#265297"
+   "color": "#4B5A6B"
   },
   "2023:robot-fairytale": {
    "word": "",
-   "name": "로봇과 함께하는 동화나라",
-   "color": "#265297"
-  },
-  "2023:youtube-movie-ai": {
-   "word": "",
-   "name": "생성형 인공지능으로 유튜브 영화 만들기",
-   "color": "#265297"
+   "name": "로봇과 함께하는 동화 나라 - 토끼와 자라 이야기",
+   "color": "#6E7A1A"
   },
   "2023:smartwatch-health": {
    "word": "",
    "name": "스마트워치로 스마트한 건강 관리",
-   "color": "#265297"
+   "color": "#A83232"
+  },
+  "2023:youtube-movie-ai": {
+   "word": "",
+   "name": "생성형 인공지능으로 유튜브 영화 만들기",
+   "color": "#7A3896"
   },
   "2023:smart-healthcare": {
    "word": "",
    "name": "1인 가구를 위한 스마트 의료 서비스",
-   "color": "#265297"
-  },
-  "2023:smart-cctv": {
-   "word": "",
-   "name": "사람 및 물체 검출 지능형 CCTV 만들기",
-   "color": "#265297"
-  },
-  "2023:alzheimer-ai": {
-   "word": "",
-   "name": "알츠하이머 치매 뇌 사진 판독하기",
-   "color": "#265297"
+   "color": "#1E6F86"
   },
   "2023:ai-game": {
    "word": "",
    "name": "인공지능 모델을 이용한 게임 만들기",
-   "color": "#265297"
+   "color": "#2A7F52"
+  },
+  "2023:smart-cctv": {
+   "word": "",
+   "name": "사람 및 물체 검출 지능형 CCTV 만들기",
+   "color": "#2E4FA0"
+  },
+  "2023:alzheimer-ai": {
+   "word": "",
+   "name": "알츠하이머 치매 뇌 사진 판독 인공지능 만들기",
+   "color": "#A0356A"
+  },
+  "2023:major-data-eda": {
+   "word": "",
+   "name": "내 전공의 정형 데이터 탐색적 데이터 분석하기",
+   "color": "#8F6E10"
+  },
+  "2023:pedestrian-commerce": {
+   "word": "",
+   "name": "보행자 통행량으로 상권 분석하기",
+   "color": "#5E3CA0"
   }
  },
  "items": [
@@ -1951,32 +1966,6 @@ window.MATERIALS = {
   },
   {
    "year": 2023,
-   "program_id": "youtube-movie-ai",
-   "program": "생성형 인공지능으로 유튜브 영화 만들기",
-   "type": "수업 PPT",
-   "title": "생성형 인공지능으로 유튜브 영화 만들기 수업 PPT",
-   "file": "materials/files/2023/youtube-movie-ai/2023-youtube-movie-ai-slides.pdf",
-   "ext": "pdf",
-   "size_bytes": 5382533,
-   "pages": 174,
-   "thumb": "materials/thumbs/2023-youtube-movie-ai-slides.jpg",
-   "sessions": "1~8차시"
-  },
-  {
-   "year": 2023,
-   "program_id": "youtube-movie-ai",
-   "program": "생성형 인공지능으로 유튜브 영화 만들기",
-   "type": "교안",
-   "title": "생성형 인공지능으로 유튜브 영화 만들기 교안 (v1.1)",
-   "file": "materials/files/2023/youtube-movie-ai/2023-youtube-movie-ai-lesson-plan.pdf",
-   "ext": "pdf",
-   "size_bytes": 410524,
-   "pages": 9,
-   "thumb": "materials/thumbs/2023-youtube-movie-ai-lesson-plan.jpg",
-   "sessions": "1~8차시"
-  },
-  {
-   "year": 2023,
    "program_id": "smartwatch-health",
    "program": "스마트워치로 스마트한 건강 관리",
    "type": "수업 PPT",
@@ -1999,6 +1988,32 @@ window.MATERIALS = {
    "size_bytes": 81567,
    "pages": 1,
    "thumb": "materials/thumbs/2023-smartwatch-health-lesson-plan.jpg",
+   "sessions": "1~8차시"
+  },
+  {
+   "year": 2023,
+   "program_id": "youtube-movie-ai",
+   "program": "생성형 인공지능으로 유튜브 영화 만들기",
+   "type": "수업 PPT",
+   "title": "생성형 인공지능으로 유튜브 영화 만들기 수업 PPT",
+   "file": "materials/files/2023/youtube-movie-ai/2023-youtube-movie-ai-slides.pdf",
+   "ext": "pdf",
+   "size_bytes": 5382533,
+   "pages": 174,
+   "thumb": "materials/thumbs/2023-youtube-movie-ai-slides.jpg",
+   "sessions": "1~8차시"
+  },
+  {
+   "year": 2023,
+   "program_id": "youtube-movie-ai",
+   "program": "생성형 인공지능으로 유튜브 영화 만들기",
+   "type": "교안",
+   "title": "생성형 인공지능으로 유튜브 영화 만들기 교안 (v1.1)",
+   "file": "materials/files/2023/youtube-movie-ai/2023-youtube-movie-ai-lesson-plan.pdf",
+   "ext": "pdf",
+   "size_bytes": 410524,
+   "pages": 9,
+   "thumb": "materials/thumbs/2023-youtube-movie-ai-lesson-plan.jpg",
    "sessions": "1~8차시"
   },
   {
@@ -2042,41 +2057,15 @@ window.MATERIALS = {
   },
   {
    "year": 2023,
-   "program_id": "smart-cctv",
-   "program": "사람 및 물체 검출 지능형 CCTV 만들기",
+   "program_id": "ai-game",
+   "program": "인공지능 모델을 이용한 게임 만들기",
    "type": "수업 PPT",
-   "title": "사람 및 물체 검출 지능형 CCTV 만들기 수업 PPT (통행량 분석)",
-   "file": "materials/files/2023/smart-cctv/2023-smart-cctv-slides.pdf",
+   "title": "인공지능 모델을 이용한 게임 만들기 수업 PPT",
+   "file": "materials/files/2023/ai-game/2023-ai-game-slides.pdf",
    "ext": "pdf",
-   "size_bytes": 3010356,
-   "pages": 56,
-   "thumb": "materials/thumbs/2023-smart-cctv-slides.jpg",
-   "sessions": null
-  },
-  {
-   "year": 2023,
-   "program_id": "smart-cctv",
-   "program": "사람 및 물체 검출 지능형 CCTV 만들기",
-   "type": "예제 파일",
-   "title": "지능형 CCTV 실습 데이터: 보행자 통행량 (passby_data.csv)",
-   "file": "materials/files/2023/smart-cctv/2023-smart-cctv-passby-data.csv",
-   "ext": "csv",
-   "size_bytes": 1338,
-   "pages": null,
-   "thumb": null,
-   "sessions": null
-  },
-  {
-   "year": 2023,
-   "program_id": "smart-cctv",
-   "program": "사람 및 물체 검출 지능형 CCTV 만들기",
-   "type": "예제 파일",
-   "title": "지능형 CCTV 실습 데이터: 보행자 통행량 2 (passby_data2.csv)",
-   "file": "materials/files/2023/smart-cctv/2023-smart-cctv-passby-data2.csv",
-   "ext": "csv",
-   "size_bytes": 1339,
-   "pages": null,
-   "thumb": null,
+   "size_bytes": 4575508,
+   "pages": 88,
+   "thumb": "materials/thumbs/2023-ai-game-slides.jpg",
    "sessions": null
   },
   {
@@ -2107,15 +2096,41 @@ window.MATERIALS = {
   },
   {
    "year": 2023,
-   "program_id": "ai-game",
-   "program": "인공지능 모델을 이용한 게임 만들기",
+   "program_id": "pedestrian-commerce",
+   "program": "보행자 통행량으로 상권 분석하기",
    "type": "수업 PPT",
-   "title": "인공지능 모델을 이용한 게임 만들기 수업 PPT",
-   "file": "materials/files/2023/ai-game/2023-ai-game-slides.pdf",
+   "title": "보행자 통행량으로 상권 분석하기 수업 PPT",
+   "file": "materials/files/2023/smart-cctv/2023-smart-cctv-slides.pdf",
    "ext": "pdf",
-   "size_bytes": 4575508,
-   "pages": 88,
-   "thumb": "materials/thumbs/2023-ai-game-slides.jpg",
+   "size_bytes": 3010356,
+   "pages": 56,
+   "thumb": "materials/thumbs/2023-smart-cctv-slides.jpg",
+   "sessions": null
+  },
+  {
+   "year": 2023,
+   "program_id": "pedestrian-commerce",
+   "program": "보행자 통행량으로 상권 분석하기",
+   "type": "예제 파일",
+   "title": "상권 분석 실습 데이터: 보행자 통행량 (passby_data.csv)",
+   "file": "materials/files/2023/smart-cctv/2023-smart-cctv-passby-data.csv",
+   "ext": "csv",
+   "size_bytes": 1338,
+   "pages": null,
+   "thumb": null,
+   "sessions": null
+  },
+  {
+   "year": 2023,
+   "program_id": "pedestrian-commerce",
+   "program": "보행자 통행량으로 상권 분석하기",
+   "type": "예제 파일",
+   "title": "상권 분석 실습 데이터: 보행자 통행량 2 (passby_data2.csv)",
+   "file": "materials/files/2023/smart-cctv/2023-smart-cctv-passby-data2.csv",
+   "ext": "csv",
+   "size_bytes": 1339,
+   "pages": null,
+   "thumb": null,
    "sessions": null
   }
  ]

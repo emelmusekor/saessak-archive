@@ -1,4 +1,4 @@
-"""Write the year pages (2026.html, 2025.html) from one template so they stay identical in structure."""
+"""Write the year pages (2026~2023.html) from one template so they stay identical in structure."""
 import sys
 from pathlib import Path
 
@@ -9,8 +9,12 @@ YEARS = [
      "Create! PLAY! Make! Design! Insight! Move! Link! 한국인공지능교육학회 교사들이 만든 2026 디지털새싹 프로그램."),
     (2025, "2025 프로그램", "ARCHIVE", "assets/img/storyboard.jpg",
      "한국인공지능교육학회의 2025 디지털새싹 ‘나도 ○○!’ 6개 프로그램. 학생 6,837명이 참여했습니다."),
+    (2024, "2024 프로그램", "ARCHIVE", "assets/img/team-meeting.jpg",
+     "한국인공지능교육학회의 2024 디지털새싹 MOVE IT! MAKE IT! GOT IT! Connect IT! 학생 5,952명이 참여했습니다."),
+    (2023, "2023 프로그램", "ARCHIVE", "assets/img/class-teach.jpg",
+     "한국인공지능교육학회의 첫 디지털새싹, 2023 상반기·하반기 프로그램. 학생 9,381명이 참여했습니다."),
 ]
-ALL_YEARS = [2026, 2025]
+ALL_YEARS = [2026, 2025, 2024, 2023]
 
 HEAD = """<!doctype html>
 <html lang="ko">
